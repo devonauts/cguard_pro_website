@@ -1,0 +1,419 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const features = [
+  {
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    title: 'Guard Management',
+    desc: 'Assign, track, and manage all your security personnel in real time. Monitor attendance, certifications, and performance from one dashboard.',
+  },
+  {
+    icon: `<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>`,
+    title: 'Client Portal',
+    desc: 'Give clients transparent access to their coverage, incident reports, and service history. Professional-grade portals that build trust.',
+  },
+  {
+    icon: `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`,
+    title: 'Incident Reporting',
+    desc: 'Guards submit detailed incident reports from the mobile app instantly. Auto-stamped, geo-tagged, and delivered to the right people.',
+  },
+  {
+    icon: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>`,
+    title: 'Shift Scheduling',
+    desc: 'Build and publish schedules in minutes. Guards get instant notifications. No more spreadsheets, no more missed shifts.',
+  },
+  {
+    icon: `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
+    title: 'GPS Patrol Tracking',
+    desc: 'Real-time location tracking ensures guards are where they need to be. Automated patrol checkpoints with QR code or NFC scanning.',
+  },
+  {
+    icon: `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+    title: 'Analytics & Reports',
+    desc: 'Actionable insights on coverage, incidents, and performance. Export professional PDF reports for any stakeholder.',
+  },
+];
+
+const stats = [
+  { value: '500+', label: 'Security Companies', sub: 'trust CGuardPro' },
+  { value: '12K+', label: 'Guards Managed', sub: 'across the platform' },
+  { value: '99.9%', label: 'Uptime SLA', sub: 'guaranteed' },
+  { value: '4.8★', label: 'Avg Rating', sub: 'from security professionals' },
+];
+
+const howItWorks = [
+  {
+    step: '01',
+    title: 'Set Up Your Company',
+    desc: 'Create your account, configure your locations, and import your guard roster in under 30 minutes.',
+  },
+  {
+    step: '02',
+    title: 'Onboard Clients',
+    desc: 'Invite clients to their portal. Assign guards, define coverage zones, and agree on service levels.',
+  },
+  {
+    step: '03',
+    title: 'Guards Work Any Shift',
+    desc: 'Your team uses the CGuardPro mobile app to clock in, scan checkpoints, and file reports.',
+  },
+  {
+    step: '04',
+    title: 'You Stay in Command',
+    desc: 'Monitor everything live from the web dashboard. Get alerts, generate invoices, and grow your business.',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "CGuardPro transformed how we run operations. What used to take hours of paperwork now happens automatically.",
+    name: "Carlos M.",
+    role: "Director of Operations",
+    company: "Secure Shield Corp.",
+  },
+  {
+    quote: "Our clients love the portal. Transparency and real-time reporting have made us stand out from the competition.",
+    name: "Jennifer R.",
+    role: "CEO",
+    company: "Guardian Force LLC",
+  },
+  {
+    quote: "The mobile app for guards is intuitive. Incident reporting time dropped by 70% in the first month.",
+    name: "David L.",
+    role: "Operations Manager",
+    company: "ProWatch Security",
+  },
+];
+---
+
+<Layout
+  title="CGuardPro — Security Management Platform"
+  description="CGuardPro is the all-in-one security company management platform. Manage guards, clients, shifts, patrol routes, and incident reports from one powerful command center."
+>
+  <Navbar />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Grid background -->
+    <div class="absolute inset-0 grid-bg opacity-100 pointer-events-none" aria-hidden="true"></div>
+    <!-- Radial glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] 
+                bg-brand/8 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 text-center">
+      <!-- Badge -->
+      <div class="flex justify-center mb-6 animate-fade-in">
+        <span class="section-label">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand animate-pulse inline-block"></span>
+          Security Management Platform
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-6 animate-fade-up"
+          style="animation-delay:0.1s">
+        Command Your<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light glow-text">
+          Security Operation
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up"
+         style="animation-delay:0.2s">
+        One platform to manage your guards, delight your clients, and scale your security company—
+        without the chaos.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+           style="animation-delay:0.3s">
+        <a href="/contact" class="btn-primary text-base px-8 py-3.5 w-full sm:w-auto justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Request a Free Demo
+        </a>
+        <a href="/#features" class="btn-outline text-base px-8 py-3.5 w-full sm:w-auto justify-center">
+          See Features
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-12 flex items-center justify-center gap-6 text-white/30 text-xs font-mono animate-fade-up"
+           style="animation-delay:0.4s">
+        <span>✓ No credit card required</span>
+        <span class="hidden sm:inline">·</span>
+        <span class="hidden sm:inline">✓ 14-day free trial</span>
+        <span class="hidden md:inline">·</span>
+        <span class="hidden md:inline">✓ Cancel anytime</span>
+      </div>
+
+      <!-- Hero mockup / visual -->
+      <div class="mt-20 relative max-w-5xl mx-auto animate-fade-up" style="animation-delay:0.5s">
+        <div class="card-glass p-1 rounded-2xl shadow-2xl shadow-black/40">
+          <!-- Dashboard mockup -->
+          <div class="bg-navy-lighter rounded-xl overflow-hidden">
+            <!-- Mock browser bar -->
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                <div class="w-3 h-3 rounded-full bg-white/10"></div>
+              </div>
+              <div class="flex-1 bg-navy/60 rounded-md px-4 py-1 text-xs text-white/30 font-mono mx-4">
+                app.cguardpro.com/dashboard
+              </div>
+            </div>
+            <!-- Mock dashboard content -->
+            <div class="p-6 grid grid-cols-3 gap-4">
+              <div class="col-span-3 grid grid-cols-4 gap-3 mb-2">
+                {['Guards On Duty', 'Active Sites', 'Open Incidents', 'This Month'].map((label, i) => (
+                  <div class="bg-navy/60 rounded-xl p-4 border border-white/5">
+                    <div class="text-white/30 text-xs mb-1">{label}</div>
+                    <div class="text-2xl font-bold text-white">{['24', '7', '2', '$18.4k'][i]}</div>
+                    <div class="text-xs text-brand mt-1">{['▲ 3 from yesterday', '▲ 1 new', '↓ 1 resolved', '▲ +12%'][i]}</div>
+                  </div>
+                ))}
+              </div>
+              <div class="col-span-2 bg-navy/60 rounded-xl p-4 border border-white/5 h-32 flex flex-col justify-between">
+                <div class="text-white/30 text-xs">Live Map — Guard Positions</div>
+                <div class="flex gap-1 items-end h-16">
+                  {[40,60,50,80,70,90,65,85].map(h => (
+                    <div class="flex-1 bg-brand/20 rounded-sm" style={`height:${h}%`}></div>
+                  ))}
+                </div>
+              </div>
+              <div class="bg-navy/60 rounded-xl p-4 border border-white/5 h-32">
+                <div class="text-white/30 text-xs mb-3">Recent Incidents</div>
+                {['Perimeter check — Site A', 'Access denied — Site C'].map(line => (
+                  <div class="flex items-center gap-2 py-1">
+                    <div class="w-1.5 h-1.5 rounded-full bg-brand shrink-0"></div>
+                    <span class="text-white/50 text-xs truncate">{line}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Glow under mockup -->
+        <div class="absolute inset-x-10 -bottom-10 h-20 bg-brand/10 blur-2xl rounded-full pointer-events-none" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats ─────────────────────────────────────────────────────── -->
+  <section class="py-16 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map(({ value, label, sub }) => (
+          <div class="text-center animate-on-scroll">
+            <div class="font-display font-bold text-4xl text-brand mb-1">{value}</div>
+            <div class="text-white font-medium text-sm">{label}</div>
+            <div class="text-white/40 text-xs">{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ─────────────────────────────────────────────────── -->
+  <section id="features" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="flex justify-center mb-4 animate-on-scroll">
+          <span class="section-label">Platform Features</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl lg:text-5xl mb-4 animate-on-scroll">
+          Everything your security company needs<br />
+          <span class="text-brand">in one control center</span>
+        </h2>
+        <p class="text-white/50 text-lg max-w-xl mx-auto animate-on-scroll">
+          Stop juggling spreadsheets, WhatsApp chats, and paper forms. 
+          CGuardPro brings it all together.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {features.map(({ icon, title, desc }, i) => (
+          <article
+            class="card-glass p-6 group animate-on-scroll"
+            style={`transition-delay:${i * 70}ms`}
+          >
+            <div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center mb-4
+                        group-hover:bg-brand/20 group-hover:border-brand/40 transition-all duration-300">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <Fragment set:html={icon} />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+            <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─────────────────────────────────────────────── -->
+  <section id="how-it-works" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-50 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="flex justify-center mb-4 animate-on-scroll">
+          <span class="section-label">How It Works</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl lg:text-5xl animate-on-scroll">
+          Up and running <span class="text-brand">in one day</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <!-- Connector line (desktop) -->
+        <div class="absolute top-[2.25rem] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent hidden lg:block pointer-events-none" aria-hidden="true"></div>
+
+        {howItWorks.map(({ step, title, desc }, i) => (
+          <div class="text-center animate-on-scroll" style={`transition-delay:${i * 100}ms`}>
+            <div class="w-12 h-12 rounded-full border border-brand/40 bg-brand/10 text-brand
+                        font-mono font-bold text-sm flex items-center justify-center mx-auto mb-4
+                        relative z-10">
+              {step}
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-2">{title}</h3>
+            <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Mobile App Callout ────────────────────────────────────────── -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="card-glass rounded-3xl overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand/8 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="relative grid md:grid-cols-2 gap-12 p-12 items-center">
+          <div class="animate-on-scroll">
+            <span class="section-label mb-4 inline-flex">Mobile First</span>
+            <h2 class="font-display font-bold text-4xl mb-4">
+              Your guards work in the field.<br />
+              <span class="text-brand">Give them the right tools.</span>
+            </h2>
+            <ul class="space-y-3 text-white/60 text-sm mb-8">
+              {[
+                'One-tap clock-in with GPS verification',
+                'QR / NFC checkpoint scanning on patrol',
+                'Submit incident reports with photos from the field',
+                'Real-time shift briefings and announcements',
+                'Works offline, syncs when connected',
+              ].map(item => (
+                <li class="flex items-start gap-3">
+                  <svg class="mt-0.5 shrink-0 text-brand" width="16" height="16" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="flex gap-3">
+              <a href="/contact" class="btn-primary">Get Demo</a>
+              <a href="/mobile-app" class="btn-outline">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Phone mockup -->
+          <div class="flex justify-center animate-on-scroll">
+            <div class="w-56 bg-navy rounded-[2.5rem] border-4 border-white/10 shadow-2xl overflow-hidden">
+              <div class="bg-navy-lighter p-4">
+                <div class="w-16 h-1 bg-white/10 rounded mx-auto mb-6"></div>
+                <div class="bg-brand/10 rounded-2xl p-3 mb-3 border border-brand/20">
+                  <div class="text-xs text-brand font-mono mb-1">ON DUTY</div>
+                  <div class="text-white font-semibold">Site A — North Gate</div>
+                  <div class="text-white/40 text-xs mt-0.5">Shift: 22:00 – 06:00</div>
+                </div>
+                {['Checkpoint 1 ✓', 'Checkpoint 2 ✓', 'Checkpoint 3 ⏳'].map((c, i) => (
+                  <div class="flex items-center gap-2 py-1.5 border-b border-white/5">
+                    <div class={`w-2 h-2 rounded-full shrink-0 ${i < 2 ? 'bg-brand' : 'bg-white/20'}`}></div>
+                    <span class="text-xs text-white/60">{c}</span>
+                  </div>
+                ))}
+                <button class="w-full mt-3 py-2.5 bg-brand rounded-xl text-xs font-semibold text-white">
+                  File Incident Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ─────────────────────────────────────────────── -->
+  <section class="py-24 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand/3 to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="flex justify-center mb-4 animate-on-scroll">
+          <span class="section-label">Testimonials</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl animate-on-scroll">
+          Trusted by security professionals
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {testimonials.map(({ quote, name, role, company }, i) => (
+          <blockquote
+            class="card-glass p-6 animate-on-scroll"
+            style={`transition-delay:${i * 100}ms`}
+          >
+            <svg class="text-brand mb-4" width="28" height="20" fill="currentColor" viewBox="0 0 28 20" aria-hidden="true">
+              <path d="M0 20V12.5C0 5.833 3.667 1.583 11 0l1.75 2.75C9.5 3.583 7.583 5.25 7 8H12V20H0zm16 0V12.5C16 5.833 19.667 1.583 27 0l1.75 2.75C25.5 3.583 23.583 5.25 23 8H28V20H16z"/>
+            </svg>
+            <p class="text-white/70 text-sm leading-relaxed mb-5">{quote}</p>
+            <footer class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-brand/20 border border-brand/30 flex items-center justify-center text-brand text-xs font-bold">
+                {name.charAt(0)}
+              </div>
+              <div>
+                <div class="text-white text-sm font-medium">{name}</div>
+                <div class="text-white/40 text-xs">{role}, {company}</div>
+              </div>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────────────────────────── -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="relative rounded-3xl bg-gradient-to-br from-brand/20 to-brand/5 border border-brand/20
+                  p-12 text-center overflow-hidden animate-on-scroll">
+        <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none" aria-hidden="true"></div>
+        <div class="relative">
+          <h2 class="font-display font-bold text-4xl lg:text-5xl mb-4">
+            Ready to take command?
+          </h2>
+          <p class="text-white/60 text-lg max-w-xl mx-auto mb-8">
+            Join hundreds of security companies already using CGuardPro to run smarter, faster operations.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/contact" class="btn-primary text-base px-8 py-3.5">
+              Request Your Free Demo
+            </a>
+            <a href="/pricing" class="btn-outline text-base px-8 py-3.5">
+              View Pricing
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

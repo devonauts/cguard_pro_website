@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  { title: 'Mission-Driven', desc: "We exist to help security professionals do their jobs better. Every feature we build serves that mission." },
+  { title: 'Built for Professionals', desc: "CGuardPro is designed by people who understand the security industry's unique operational demands." },
+  { title: 'Relentlessly Reliable', desc: "99.9% uptime. Your operation never sleeps, and neither does our infrastructure." },
+  { title: 'Partner, Not Vendor', desc: "We treat each security company as a long-term partner. Your success directly drives our roadmap." },
+];
+---
+
+<Layout
+  title="About CGuardPro"
+  description="Learn about CGuardPro — the security management platform built to give security companies the operational edge they need to compete and win."
+>
+  <Navbar />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="max-w-3xl mb-20">
+        <span class="section-label mb-6 inline-flex animate-on-scroll">About Us</span>
+        <h1 class="font-display font-bold text-5xl lg:text-6xl mb-6 leading-tight animate-on-scroll">
+          Built for the security industry.<br />
+          <span class="text-brand">By people who get it.</span>
+        </h1>
+        <p class="text-white/60 text-xl leading-relaxed animate-on-scroll">
+          CGuardPro was built to solve a real problem: security companies running critical operations on spreadsheets, WhatsApp, and paper forms. 
+          We set out to build the platform the industry actually deserves.
+        </p>
+      </div>
+
+      <!-- Story -->
+      <div class="grid lg:grid-cols-2 gap-16 items-start mb-24">
+        <div class="animate-on-scroll">
+          <h2 class="font-display font-bold text-3xl mb-4">Our Story</h2>
+          <div class="space-y-4 text-white/60 leading-relaxed">
+            <p>
+              Security companies protect what matters most — people, property, and assets. Yet the back-office tools available to them were decades behind. 
+              Guard schedules lived in Excel. Incident reports went out via WhatsApp. Invoices were handwritten.
+            </p>
+            <p>
+              We built CGuardPro to change that. A modern, mobile-first platform that gives security operations the same quality of tooling that large enterprises take for granted — accessible to companies of any size.
+            </p>
+            <p>
+              From day one, every feature has been designed with one question in mind: <em class="text-white/80">does this make a security professional's job easier?</em>
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 animate-on-scroll">
+          {[
+            { n: '500+', l: 'Companies Onboarded' },
+            { n: '12K+', l: 'Guards Managed Daily' },
+            { n: '18+', l: 'Countries Served' },
+            { n: '4.8★', l: 'Platform Rating' },
+          ].map(({ n, l }) => (
+            <div class="card-glass p-6 text-center">
+              <div class="font-display font-bold text-3xl text-brand mb-1">{n}</div>
+              <div class="text-white/50 text-sm">{l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="mb-24">
+        <h2 class="font-display font-bold text-3xl mb-10 animate-on-scroll">What we stand for</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {values.map(({ title, desc }, i) => (
+            <div class="card-glass p-6 animate-on-scroll" style={`transition-delay:${i * 80}ms`}>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-2 h-2 rounded-full bg-brand"></div>
+                <h3 class="font-display font-semibold text-lg">{title}</h3>
+              </div>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center card-glass rounded-3xl p-12 animate-on-scroll relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand/10 to-transparent pointer-events-none" aria-hidden="true"></div>
+        <div class="relative">
+          <h2 class="font-display font-bold text-4xl mb-4">Ready to see it in action?</h2>
+          <p class="text-white/60 mb-8 max-w-lg mx-auto">Schedule a 30-minute demo and we'll walk you through the entire platform.</p>
+          <a href="/contact" class="btn-primary text-base px-8 py-3.5">Book Your Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

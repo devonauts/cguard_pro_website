@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Contact Us"
+  description="Request a demo or get in touch with the CGuardPro team. We'll show you how to transform your security company operations."
+>
+  <Navbar />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left column -->
+        <div>
+          <span class="section-label mb-6 inline-flex">Contact Us</span>
+          <h1 class="font-display font-bold text-5xl mb-6 leading-tight animate-on-scroll">
+            See CGuardPro<br />
+            <span class="text-brand">in action</span>
+          </h1>
+          <p class="text-white/60 text-lg leading-relaxed mb-10 animate-on-scroll">
+            Request a personalized demo and we'll show you exactly how CGuardPro can 
+            streamline your security operations—from guard management to client reporting.
+          </p>
+
+          <div class="space-y-6 animate-on-scroll">
+            {[
+              { icon: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.42 2 2 0 0 1 3.62 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`, label: 'Phone', value: '+1 (800) 000-0000' },
+              { icon: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`, label: 'Email', value: 'sales@cguardpro.com' },
+            ].map(({ icon, label, value }) => (
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"
+                       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <Fragment set:html={icon} />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-white/40 text-xs">{label}</div>
+                  <div class="text-white font-medium">{value}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="card-glass p-8 rounded-2xl animate-on-scroll">
+          <h2 class="font-display font-semibold text-xl mb-6">Request a Demo</h2>
+          <form
+            id="contact-form"
+            class="space-y-5"
+            novalidate
+          >
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="firstName" class="block text-sm text-white/60 mb-1.5">First Name <span class="text-brand">*</span></label>
+                <input id="firstName" name="firstName" type="text" required autocomplete="given-name"
+                       class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20
+                              focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm"
+                       placeholder="John" />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm text-white/60 mb-1.5">Last Name <span class="text-brand">*</span></label>
+                <input id="lastName" name="lastName" type="text" required autocomplete="family-name"
+                       class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20
+                              focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm"
+                       placeholder="Smith" />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm text-white/60 mb-1.5">Work Email <span class="text-brand">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email"
+                     class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20
+                            focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm"
+                     placeholder="john@yourcompany.com" />
+            </div>
+
+            <div>
+              <label for="company" class="block text-sm text-white/60 mb-1.5">Company Name <span class="text-brand">*</span></label>
+              <input id="company" name="company" type="text" required autocomplete="organization"
+                     class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20
+                            focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm"
+                     placeholder="Secure Shield Corp." />
+            </div>
+
+            <div>
+              <label for="guards" class="block text-sm text-white/60 mb-1.5">Number of Guards</label>
+              <select id="guards" name="guards"
+                      class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white/80
+                             focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm">
+                <option value="">Select range</option>
+                <option value="1-10">1 – 10 guards</option>
+                <option value="11-50">11 – 50 guards</option>
+                <option value="51-150">51 – 150 guards</option>
+                <option value="150+">150+ guards</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm text-white/60 mb-1.5">How can we help?</label>
+              <textarea id="message" name="message" rows="3"
+                        class="w-full bg-navy/60 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20
+                               focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/30 transition-colors text-sm resize-none"
+                        placeholder="Tell us about your operation..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full justify-center text-base py-3.5">
+              <span id="btn-text">Send Request</span>
+              <svg id="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <p id="form-msg" class="text-center text-sm hidden"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btnText = document.getElementById('btn-text')!;
+  const formMsg = document.getElementById('form-msg')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btnText.textContent = 'Sending…';
+
+    await new Promise(r => setTimeout(r, 1000)); // Simulate submit
+
+    form.reset();
+    btnText.textContent = 'Send Request';
+    formMsg.textContent = "✓ Thanks! We'll be in touch within one business day.";
+    formMsg.className = 'text-center text-sm text-brand';
+  });
+</script>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #C8860A;
+  --color-brand-light: #E9A832;
+  --color-brand-dark: #9B6508;
+  --color-navy: #0F1923;
+  --color-navy-light: #162030;
+  --color-navy-lighter: #1E2D3E;
+  --color-navy-900: #0A1119;
+  --color-gunmetal: #1C2B3A;
+  --color-steel: #2E4057;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+
+  --animate-fade-up: fadeUp 0.7s ease-out forwards;
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-glow-pulse: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(200,134,10,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(200,134,10,0.5); }
+}
+
+@layer base {
+  :root {
+    --brand: #C8860A;
+    --brand-light: #E9A832;
+    --navy: #0F1923;
+    --navy-light: #162030;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-navy text-white font-sans;
+    background-image: 
+      radial-gradient(ellipse at 50% -10%, rgba(200,134,10,0.08) 0%, transparent 55%);
+  }
+
+  ::selection {
+    background: rgba(200, 134, 10, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F1923;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(200, 134, 10, 0.4);
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brand text-white font-semibold rounded-lg
+           transition-all duration-200 hover:bg-brand-light hover:shadow-[0_0_24px_rgba(200,134,10,0.4)]
+           focus:outline-none focus:ring-2 focus:ring-brand/50;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-brand/50 text-brand font-semibold rounded-lg
+           transition-all duration-200 hover:bg-brand/10 hover:border-brand
+           focus:outline-none focus:ring-2 focus:ring-brand/50;
+  }
+
+  .card-glass {
+    @apply bg-navy-light/60 border border-white/5 rounded-2xl backdrop-blur-sm
+           hover:border-brand/30 transition-all duration-300;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-brand font-mono text-xs font-medium tracking-widest uppercase
+           px-3 py-1 rounded-full border border-brand/20 bg-brand/5;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px rgba(200, 134, 10, 0.6);
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(200,134,10,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,134,10,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

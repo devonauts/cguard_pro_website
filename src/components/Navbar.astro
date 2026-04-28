@@ -1,0 +1,111 @@
+---
+const navLinks = [
+  { href: '/#features', label: 'Features' },
+  { href: '/#how-it-works', label: 'How It Works' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group" aria-label="CGuardPro Home">
+      <div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center
+                  group-hover:shadow-[0_0_20px_rgba(200,134,10,0.6)] transition-shadow duration-300">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7L12 2z" 
+                fill="white" stroke="none"/>
+        </svg>
+      </div>
+      <span class="font-display font-semibold text-lg tracking-tight">
+        <span class="text-white">CGuard</span><span class="text-brand">Pro</span>
+      </span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200
+                   relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px]
+                   after:bg-brand after:transition-all after:duration-300 hover:after:w-full"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="https://app.cguardpro.com" class="text-sm font-medium text-white/70 hover:text-white transition-colors">
+        Sign In
+      </a>
+      <a href="/contact" class="btn-primary text-sm py-2 px-5">
+        Request Demo
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
+            aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg id="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-navy/95 backdrop-blur-lg">
+    <ul class="px-6 py-4 flex flex-col gap-4">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a href={href} class="text-white/80 hover:text-white font-medium transition-colors block py-1">{label}</a>
+        </li>
+      ))}
+      <li class="pt-2 border-t border-white/5 flex flex-col gap-3">
+        <a href="https://app.cguardpro.com" class="text-white/70 hover:text-white text-sm font-medium transition-colors">Sign In</a>
+        <a href="/contact" class="btn-primary text-sm justify-center">Request Demo</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const navbar  = document.getElementById('navbar')!;
+  const toggle  = document.getElementById('menu-toggle')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const iconOpen  = document.getElementById('icon-open')!;
+  const iconClose = document.getElementById('icon-close')!;
+
+  // Scroll-based navbar background
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-navy/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-xl');
+    } else {
+      navbar.classList.remove('bg-navy/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-xl');
+    }
+  }, { passive: true });
+
+  // Mobile menu toggle
+  toggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close menu on link click
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => { mobileMenu.classList.add('hidden'); })
+  );
+</script>

@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const plans = [
+  {
+    name: 'Starter',
+    price: '89',
+    period: '/mo',
+    desc: 'Perfect for small security companies getting started.',
+    features: [
+      'Up to 15 guards',
+      '3 client accounts',
+      'Shift scheduling & clock-in',
+      'Incident reporting',
+      'Mobile app access',
+      'Email support',
+    ],
+    cta: 'Start Free Trial',
+    href: '/contact',
+    highlight: false,
+  },
+  {
+    name: 'Professional',
+    price: '199',
+    period: '/mo',
+    desc: 'For growing security operations that need more power.',
+    features: [
+      'Up to 75 guards',
+      'Unlimited clients',
+      'GPS patrol tracking',
+      'Advanced reporting & analytics',
+      'Client portal with branding',
+      'Invoice generation',
+      'Priority support',
+    ],
+    cta: 'Request Demo',
+    href: '/contact',
+    highlight: true,
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    desc: 'For large security firms with complex, multi-site operations.',
+    features: [
+      'Unlimited guards',
+      'Unlimited clients & sites',
+      'Multi-tenant / franchise support',
+      'Custom integrations & API access',
+      'Dedicated onboarding manager',
+      'SLA-backed uptime guarantee',
+      '24/7 priority support',
+    ],
+    cta: 'Contact Sales',
+    href: '/contact',
+    highlight: false,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Is there a free trial?',
+    a: 'Yes. All plans include a 14-day free trial with full feature access. No credit card required to start.',
+  },
+  {
+    q: 'Can I change plans later?',
+    a: 'Absolutely. You can upgrade or downgrade at any time. Changes take effect immediately with prorated billing.',
+  },
+  {
+    q: 'How does the mobile app work for guards?',
+    a: 'Guards download the CGuardPro mobile app on iOS or Android. They clock in, run patrols, scan checkpoints, and submit reports directly from their phone. Everything syncs instantly to your dashboard.',
+  },
+  {
+    q: 'Do clients need to pay for portal access?',
+    a: 'No. Client portal access is included in your plan. You invite clients at no extra cost, and they can view reports, guard activity, and incidents for their sites.',
+  },
+  {
+    q: 'Is my data secure?',
+    a: 'Yes. All data is encrypted in transit and at rest. We follow industry security best practices and maintain a 99.9% uptime SLA.',
+  },
+];
+---
+
+<Layout
+  title="Pricing"
+  description="Simple, transparent pricing for security companies of all sizes. Start free, scale as you grow. No hidden fees."
+>
+  <Navbar />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="section-label mb-4 inline-flex">Pricing</span>
+        <h1 class="font-display font-bold text-5xl mb-4 animate-on-scroll">
+          Simple pricing.<br />
+          <span class="text-brand">No surprises.</span>
+        </h1>
+        <p class="text-white/50 text-lg max-w-xl mx-auto animate-on-scroll">
+          Start with a 14-day free trial. Choose the plan that fits your security operation.
+        </p>
+      </div>
+
+      <!-- Plans -->
+      <div class="grid md:grid-cols-3 gap-6 mb-20">
+        {plans.map(({ name, price, period, desc, features, cta, href, highlight }, i) => (
+          <div
+            class={`relative card-glass p-8 animate-on-scroll flex flex-col
+              ${highlight ? 'border-brand/50 shadow-[0_0_40px_rgba(200,134,10,0.12)]' : ''}`}
+            style={`transition-delay:${i * 100}ms`}
+          >
+            {highlight && (
+              <div class="absolute -top-px left-1/2 -translate-x-1/2 px-4 py-1 bg-brand text-white
+                          text-xs font-mono font-medium rounded-b-lg tracking-widest uppercase">
+                Most Popular
+              </div>
+            )}
+            <div class="mb-6">
+              <div class="font-display font-semibold text-white/70 text-sm mb-2">{name}</div>
+              <div class="flex items-end gap-1 mb-2">
+                {price === 'Custom' ? (
+                  <span class="font-display font-bold text-4xl text-white">Custom</span>
+                ) : (
+                  <>
+                    <span class="font-mono text-lg text-white/50 mt-2">$</span>
+                    <span class="font-display font-bold text-5xl text-white">{price}</span>
+                    <span class="text-white/40 text-sm mb-2">{period}</span>
+                  </>
+                )}
+              </div>
+              <p class="text-white/50 text-sm">{desc}</p>
+            </div>
+
+            <ul class="space-y-3 mb-8 flex-1">
+              {features.map(feat => (
+                <li class="flex items-start gap-3 text-sm text-white/70">
+                  <svg class={`mt-0.5 shrink-0 ${highlight ? 'text-brand' : 'text-white/40'}`}
+                       width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {feat}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={href}
+              class={highlight ? 'btn-primary justify-center' : 'btn-outline justify-center'}
+            >
+              {cta}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- FAQ -->
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-bold text-3xl text-center mb-10 animate-on-scroll">
+          Frequently asked questions
+        </h2>
+        <div class="space-y-4">
+          {faqs.map(({ q, a }, i) => (
+            <details
+              class="card-glass group animate-on-scroll"
+              style={`transition-delay:${i * 60}ms`}
+            >
+              <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-medium text-white/90 hover:text-white">
+                {q}
+                <svg class="shrink-0 transition-transform duration-300 group-open:rotate-180 text-brand"
+                     width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </summary>
+              <p class="px-6 pb-5 text-white/50 text-sm leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

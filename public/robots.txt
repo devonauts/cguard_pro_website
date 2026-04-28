@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cguardpro.com/sitemap-index.xml
