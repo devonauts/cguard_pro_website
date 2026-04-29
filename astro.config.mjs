@@ -7,8 +7,20 @@ export default defineConfig({
   site: 'https://cguardpro.com',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: { es: 'es', en: 'en' },
+      },
+    }),
   ],
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false, // Spanish lives at / (no /es/ prefix)
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

@@ -1,8 +1,10 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n/index';
 
 export interface Props {
   title: string;
+  lang?: Lang;
   description?: string;
   image?: string;
   canonicalURL?: string;
@@ -11,7 +13,8 @@ export interface Props {
 
 const {
   title,
-  description = 'CGuardPro — The intelligent security management platform built for modern security companies. Manage guards, clients, shifts, and incidents from a single command center.',
+  lang = 'es',
+  description = 'CGuardPro — La plataforma inteligente de gestión de seguridad diseñada para empresas de seguridad modernas.',
   image = '/og-image.jpg',
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   noIndex = false,
@@ -19,10 +22,13 @@ const {
 
 const siteName = 'CGuardPro';
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const pathname = Astro.url.pathname;
+const esURL = new URL(pathname.replace(/^\/en/, '') || '/', Astro.site).href;
+const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, '')}`, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,6 +53,11 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).href} />
+
+    <!-- hreflang alternate links -->
+    <link rel="alternate" hreflang="es" href={esURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="x-default" href={esURL} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

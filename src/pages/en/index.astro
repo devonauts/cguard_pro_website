@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { useTranslations, localePath } from '../i18n/index';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations, localePath } from '../../i18n/index';
 
-const lang = 'es';
+const lang = 'en';
 const t = useTranslations(lang);
 const p = (path: string) => localePath(lang, path);
 
@@ -19,7 +19,7 @@ const featureIcons = [
 ---
 
 <Layout
-  title="CGuardPro — Plataforma de Gestión de Seguridad"
+  title="CGuardPro — Security Management Platform"
   lang={lang}
   description={t.siteDescription}
 >

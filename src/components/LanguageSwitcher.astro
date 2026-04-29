@@ -1,0 +1,39 @@
+---
+import { alternatePath } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang: Lang;
+  pathname: string;
+}
+
+const { lang, pathname } = Astro.props;
+const altPath = alternatePath(lang, pathname);
+---
+
+<div class="flex items-center gap-1 border border-white/10 rounded-lg p-0.5">
+  <a
+    href="/"
+    class={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
+      lang === 'es'
+        ? 'bg-brand/20 text-brand border border-brand/30'
+        : 'text-white/40 hover:text-white/70'
+    }`}
+    aria-label="Español"
+    aria-current={lang === 'es' ? 'true' : undefined}
+  >
+    ES
+  </a>
+  <a
+    href={altPath}
+    class={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
+      lang === 'en'
+        ? 'bg-brand/20 text-brand border border-brand/30'
+        : 'text-white/40 hover:text-white/70'
+    }`}
+    aria-label="English"
+    aria-current={lang === 'en' ? 'true' : undefined}
+  >
+    EN
+  </a>
+</div>
