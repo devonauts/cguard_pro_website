@@ -184,7 +184,7 @@ export const es = {
         price: '5',
         period: '/usuario/mes',
         desc: 'Todo lo que necesitas para gestionar tu operación de seguridad — sin costos ocultos.',
-        features: ['Guardias y clientes ilimitados', 'Programación y fichaje de turnos', 'Rastreo GPS de rondas', 'Reportes de incidentes', 'Reportes y análisis avanzados', 'Portal de cliente con marca propia', 'Generación de facturas', 'App móvil (iOS y Android)', 'Soporte multi-empresa / franquicia', 'Acceso a API', 'Soporte prioritario'],
+        features: ['$5 por usuario — admins, guardias, supervisores y clientes', 'Programación y fichaje de turnos', 'Rastreo GPS de rondas', 'Reportes de incidentes', 'Reportes y análisis avanzados', 'Portal de cliente con marca propia', 'Generación de facturas', 'App móvil (iOS y Android)', 'Soporte multi-empresa / franquicia', 'Acceso a API', 'Soporte prioritario'],
         cta: 'Iniciar Prueba Gratuita',
         highlight: true,
       },

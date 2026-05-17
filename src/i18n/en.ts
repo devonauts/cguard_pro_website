@@ -175,7 +175,7 @@ export const en: Translations = {
         price: '5',
         period: '/user/mo',
         desc: 'Everything you need to run your security operation — no hidden fees.',
-        features: ['Unlimited guards & clients', 'Shift scheduling & clock-in', 'GPS patrol tracking', 'Incident reporting', 'Advanced reporting & analytics', 'Client portal with branding', 'Invoice generation', 'Mobile app access (iOS & Android)', 'Multi-tenant / franchise support', 'API access', 'Priority support'],
+        features: ['$5 per user — admins, guards, supervisors & clients', 'Shift scheduling & clock-in', 'GPS patrol tracking', 'Incident reporting', 'Advanced reporting & analytics', 'Client portal with branding', 'Invoice generation', 'Mobile app access (iOS & Android)', 'Multi-tenant / franchise support', 'API access', 'Priority support'],
         cta: 'Start Free Trial',
         highlight: true,
       },
