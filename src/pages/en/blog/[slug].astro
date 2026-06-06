@@ -1,0 +1,126 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(post => post.data.lang === 'en')
+    .map((post) => ({
+      params: { slug: post.id },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const lang = 'en';
+---
+
+<Layout
+  title={post.data.title}
+  lang={lang}
+  description={post.data.description}
+>
+  <Navbar lang={lang} />
+
+  <!-- Article Structured Data -->
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "datePublished": post.data.pubDate.toISOString(),
+    "dateModified": (post.data.updatedDate || post.data.pubDate).toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": post.data.author || "CGuardPro",
+      "url": "https://cguardpro.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CGuardPro",
+      "url": "https://cguardpro.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cguardpro.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://cguardpro.com/en/blog/${post.id}`
+    }
+  })}</script>`} />
+
+  <!-- BreadcrumbList -->
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cguardpro.com/en" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cguardpro.com/en/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.data.title }
+    ]
+  })}</script>`} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm text-white/40 animate-on-scroll">
+        <a href="/en" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/en/blog" class="hover:text-white transition-colors">Blog</a>
+        <span class="mx-2">›</span>
+        <span class="text-white/60">{post.data.title}</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="mb-12 animate-on-scroll">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.data.tags?.map((tag: string) => (
+            <span class="text-xs bg-brand/10 text-brand/80 px-2 py-0.5 rounded-full">{tag}</span>
+          ))}
+        </div>
+        <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
+          {post.data.title}
+        </h1>
+        <div class="flex items-center gap-4 text-sm text-white/40">
+          <span>{post.data.author || 'CGuardPro'}</span>
+          <span>•</span>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-invert prose-lg max-w-none
+                      prose-headings:font-display prose-headings:font-bold
+                      prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+                      prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                      prose-p:text-white/70 prose-p:leading-relaxed
+                      prose-li:text-white/70
+                      prose-strong:text-white
+                      prose-a:text-brand prose-a:no-underline hover:prose-a:underline
+                      prose-code:text-brand/80 prose-code:bg-brand/10 prose-code:px-1 prose-code:rounded
+                      prose-table:text-sm
+                      prose-th:text-white/80 prose-th:border-white/10
+                      prose-td:text-white/60 prose-td:border-white/10">
+        <Content />
+      </article>
+
+      <!-- CTA -->
+      <div class="mt-16 card-glass p-8 rounded-2xl text-center animate-on-scroll">
+        <h2 class="font-display font-bold text-2xl mb-3">Ready to modernize your security operation?</h2>
+        <p class="text-white/60 mb-6">See how CGuardPro can transform your security company — schedule a free demo today.</p>
+        <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

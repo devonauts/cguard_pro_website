@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 import type { Lang } from '../i18n/index';
 
 export interface Props {
@@ -28,7 +29,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang === 'es' ? 'es-EC' : lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +41,23 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     <link rel="canonical" href={canonicalURL} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
+    <!-- Geo Targeting -->
+    {lang === 'es' ? (
+      <>
+        <meta name="geo.region" content="EC" />
+        <meta name="geo.placename" content="Quito, Ecuador" />
+        <meta name="geo.position" content="-0.1807;-78.4678" />
+        <meta name="ICBM" content="-0.1807, -78.4678" />
+      </>
+    ) : (
+      <>
+        <meta name="geo.region" content="US-TX" />
+        <meta name="geo.placename" content="Austin, Texas" />
+        <meta name="geo.position" content="30.2672;-97.7431" />
+        <meta name="ICBM" content="30.2672, -97.7431" />
+      </>
+    )}
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
@@ -47,6 +65,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site).href} />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_EC' : 'en_US'} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -65,7 +84,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#0F1923" />
 
-    <!-- Structured Data -->
+    <!-- Structured Data: SoftwareApplication -->
     <script type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
@@ -77,12 +96,100 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
         "url": "https://cguardpro.com",
         "offers": {
           "@type": "Offer",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "price": "5.00",
+          "priceValidUntil": "2027-12-31"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "127"
         },
         "provider": {
           "@type": "Organization",
           "name": "CGuardPro",
           "url": "https://cguardpro.com"
+        },
+        "areaServed": lang === 'es' ? {
+          "@type": "Country",
+          "name": "Ecuador"
+        } : [
+          { "@type": "State", "name": "Texas" },
+          { "@type": "Country", "name": "United States" }
+        ]
+      })}
+    </script>
+
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+      {JSON.stringify(lang === 'es' ? {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CGuardPro",
+        "description": "Plataforma de gestión de seguridad para empresas de seguridad privada en Ecuador",
+        "url": "https://cguardpro.com",
+        "telephone": "+593984699286",
+        "email": "sales@cguardpro.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Quito",
+          "addressRegion": "Pichincha",
+          "addressCountry": "EC"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -0.1807,
+          "longitude": -78.4678
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Quito" },
+          { "@type": "City", "name": "Guayaquil" },
+          { "@type": "City", "name": "Cuenca" },
+          { "@type": "Country", "name": "Ecuador" }
+        ],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      } : {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "CGuardPro",
+        "description": "Security guard management software headquartered in Austin, Texas. Serving security companies across Texas and the United States.",
+        "url": "https://cguardpro.com/en",
+        "telephone": "+15127012880",
+        "email": "sales@cguardpro.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "289 Centuryplant Rd",
+          "addressLocality": "Leander",
+          "addressRegion": "TX",
+          "postalCode": "78641",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.5788,
+          "longitude": -97.8531
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Leander" },
+          { "@type": "City", "name": "Austin" },
+          { "@type": "City", "name": "San Antonio" },
+          { "@type": "City", "name": "Houston" },
+          { "@type": "City", "name": "Dallas" },
+          { "@type": "City", "name": "Round Rock" },
+          { "@type": "State", "name": "Texas" }
+        ],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
         }
       })}
     </script>
@@ -93,6 +200,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
   </head>
   <body class="min-h-screen">
     <slot />
+    <WhatsAppButton lang={lang} />
     <script>
       // Intersection Observer for scroll animations
       const observer = new IntersectionObserver(

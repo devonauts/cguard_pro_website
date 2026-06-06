@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const city = 'Austin';
+const state = 'Texas';
+const description = `Security guard management software in ${city}, ${state}. CGuardPro helps security companies in ${city} manage guards, schedules, GPS patrols, and incidents from one platform. Headquartered in ${city}.`;
+---
+
+<Layout
+  title={`Security Guard Software in ${city}, TX — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, {state} — Headquarters</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Security Guard Management<br />
+          <span class="text-brand">Software in {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          CGuardPro is headquartered in {city}, TX — built by security professionals who understand the Texas market. Manage your guards, verify patrols with GPS, report incidents, and provide real-time client portals from one powerful platform.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+          <a href="/en/pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Why {city} Security Companies Choose CGuardPro
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Built for Texas Scale', desc: `From downtown ${city} high-rises to suburban developments in Lakeway, Westlake, and Bee Cave — manage all your sites from one dashboard. Scale from 10 to 1,000+ guards.` },
+            { title: 'TDLR Compliance Ready', desc: `Stay compliant with Texas Department of Licensing and Regulation requirements. Digital guard records, training logs, and incident documentation all in one system.` },
+            { title: 'Local Support Team', desc: `Our headquarters is right here in ${city}. Get same-day support, onsite training, and a team that understands the Central Texas security landscape.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Key Features for {city} Security Operations
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'GPS Guard Tracking', desc: 'Real-time location verification. Know exactly where your guards are across Austin metro — from The Domain to South Congress.' },
+            { feature: 'Smart Scheduling', desc: 'Drag-and-drop shift scheduling with overtime alerts, break compliance, and automatic conflict detection for Texas labor law.' },
+            { feature: 'Digital Incident Reports', desc: 'Geo-tagged photos, severity classification, instant client notifications. Replace paper logs with professional digital reports.' },
+            { feature: 'Guard Tour Verification', desc: 'NFC/QR checkpoint scanning with timestamp proof. Ensure patrol routes are completed on time, every time.' },
+            { feature: 'Client Portal', desc: 'Give your Austin clients 24/7 access to reports, activity logs, and real-time metrics. Professional transparency that wins contracts.' },
+            { feature: 'Mobile App for Guards', desc: 'Works on any Android or iPhone. Offline mode for parking garages and basements. Low data usage — under 10 MB/day.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Industries Served -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Industries We Serve in {city}
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Commercial Real Estate', 'Tech Campuses', 'Residential HOAs', 'Retail & Shopping Centers', 'Construction Sites', 'Healthcare Facilities', 'Event Venues', 'Government Buildings'].map((industry) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{industry}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          Ready to Modernize Your {city} Security Operation?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Join security companies across Central Texas that trust CGuardPro to run their operations. Get started with a free demo — no credit card required.
+        </p>
+        <a href="/en/contact" class="btn-primary text-lg px-8 py-4">
+          Schedule Your Free Demo
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

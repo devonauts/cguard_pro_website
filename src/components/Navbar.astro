@@ -13,6 +13,7 @@ const navLinks = [
   { href: p('/#how-it-works'), label: t.nav.howItWorks },
   { href: p('/pricing'), label: t.nav.pricing },
   { href: p('/about'), label: t.nav.about },
+  { href: lang === 'es' ? '/blog' : '/en/blog', label: t.nav.blog },
 ];
 
 const pathname = Astro.url.pathname;

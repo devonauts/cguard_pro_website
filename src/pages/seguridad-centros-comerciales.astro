@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Centros Comerciales';
+const description = `Software de seguridad para centros comerciales en Ecuador. CGuardPro gestiona guardias, rondas, incidentes y control de acceso para malls y plazas comerciales.`;
+---
+
+<Layout
+  title={`Seguridad para ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad Integral para<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Los centros comerciales son entornos complejos con miles de visitantes diarios, múltiples locales y áreas de alto riesgo. CGuardPro te da el control total para ofrecer seguridad profesional en malls y plazas comerciales.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Desafíos de Seguridad en {sector}
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Alto Flujo de Personas', desc: 'Miles de visitantes diarios en múltiples niveles. Control de accesos, estacionamientos, food courts y áreas de carga simultáneamente.' },
+            { title: 'Prevención de Pérdidas', desc: 'Hurtos en tiendas, robos en estacionamientos, vandalismo en baños y áreas comunes. Documentación rápida es clave para recuperación.' },
+            { title: 'Coordinación Multi-Zona', desc: 'Guardias en pisos, estacionamientos, perímetro, accesos de servicio y cámaras. Todos deben trabajar como un equipo coordinado.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Cómo CGuardPro Protege Centros Comerciales
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Rondas por Zonas', desc: 'Define rutas de patrullaje para cada zona: pisos comerciales, estacionamiento, área de carga, perímetro. Verifica cumplimiento con NFC.' },
+            { feature: 'Reporte Inmediato de Incidentes', desc: 'Hurtos, accidentes, personas sospechosas — el guardia reporta con fotos en menos de 3 minutos. El jefe de seguridad recibe alerta instantánea.' },
+            { feature: 'Control de Estacionamientos', desc: 'Rondas verificadas en cada nivel del estacionamiento. Documentación de vehículos sospechosos y condiciones del área.' },
+            { feature: 'Comunicación en Tiempo Real', desc: 'Mensajería instantánea entre guardias, supervisores y central. Coordinación rápida ante situaciones de emergencia.' },
+            { feature: 'Dashboard para Administración', desc: 'El mall ve métricas en tiempo real: guardias activos, rondas completadas, incidentes del día, y cobertura por zona.' },
+            { feature: 'Gestión de Eventos Especiales', desc: 'Temporadas altas, conciertos, Black Friday — programa guardias extra con facilidad y verifica su presencia.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Métricas -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Impacto Medible
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {[
+            { metric: '60%', label: 'Menos incidentes sin documentar' },
+            { metric: '3 min', label: 'Tiempo promedio de reporte' },
+            { metric: '98%', label: 'Rondas completadas a tiempo' },
+            { metric: '24/7', label: 'Visibilidad para el cliente' },
+          ].map(({ metric, label }) => (
+            <div class="text-center animate-on-scroll">
+              <div class="text-3xl font-display font-bold text-brand mb-1">{metric}</div>
+              <div class="text-white/50 text-sm">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Proteges centros comerciales?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Gana y retén contratos de malls con tecnología que demuestra tu profesionalismo. Demo gratuita sin compromiso.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

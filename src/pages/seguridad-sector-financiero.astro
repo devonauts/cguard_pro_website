@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Sector Financiero';
+const description = `Software de seguridad para bancos, cooperativas y entidades financieras en Ecuador. CGuardPro gestiona guardias, control de acceso bancario, rondas y documentación de seguridad financiera.`;
+---
+
+<Layout
+  title={`Seguridad para el ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad de Alto Nivel para el<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Bancos, cooperativas, casas de valores y entidades financieras requieren seguridad armada, protocolos estrictos y documentación impecable. CGuardPro permite a tu empresa cumplir con los estándares más exigentes del sector.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Desafíos del {sector}
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Riesgo de Asalto', desc: 'El sector financiero es blanco prioritario. Los guardias deben estar posicionados correctamente y los protocolos deben ejecutarse sin vacilación.' },
+            { title: 'Regulaciones de la Superintendencia', desc: 'Entidades financieras en Ecuador deben cumplir normativas de seguridad específicas con documentación auditable y guardias certificados.' },
+            { title: 'Múltiples Sucursales', desc: 'Bancos y cooperativas operan decenas de agencias. Coordinar seguridad uniforme en todas las sucursales es un desafío logístico mayor.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          CGuardPro para Seguridad Financiera
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Verificación de Presencia Continua', desc: 'GPS confirma que el guardia armado está en posición durante todo el horario bancario. Alerta inmediata si abandona el puesto.' },
+            { feature: 'Protocolos de Apertura y Cierre', desc: 'Checklist digital para apertura y cierre de agencias. Verificación de bóvedas, cajeros ATM, perímetro y sistemas de alarma.' },
+            { feature: 'Gestión Multi-Sucursal', desc: 'Administra la seguridad de 50+ agencias desde un solo panel. Vista por región, por guardia, o por estado de cobertura.' },
+            { feature: 'Documentación para Auditorías', desc: 'Registros con marca de tiempo y geolocalización. Genera reportes listos para auditorías de la Superintendencia de Bancos.' },
+            { feature: 'Reporte de Eventos de Seguridad', desc: 'Personas sospechosas, intentos de fraude, bolsas abandonadas. Documentación inmediata con fotos y notificación a la central.' },
+            { feature: 'Custodia de Valores', desc: 'Registra movimientos de valores, acompañamiento de blindados, y apertura/cierre de bóvedas con evidencia fotográfica.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Entidades -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Entidades Financieras que Protegemos
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Bancos comerciales', 'Cooperativas de ahorro', 'Casas de valores', 'Cajeros ATM', 'Agencias de cambio', 'Aseguradoras', 'Microfinancieras', 'Centros de pago'].map((tipo) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{tipo}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Brindas seguridad al sector financiero?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Cumple con las normativas más estrictas y demuestra profesionalismo a entidades bancarias. Demo gratuita personalizada.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

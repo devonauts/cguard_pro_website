@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Embajadas y Organismos';
+const description = `Software de seguridad para embajadas, consulados y organismos internacionales en Ecuador. CGuardPro gestiona protocolos de seguridad, control de acceso y documentación de alto nivel.`;
+---
+
+<Layout
+  title={`Seguridad para ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad de Alto Nivel para<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Embajadas, consulados, sedes de Naciones Unidas y organismos internacionales requieren protocolos de seguridad rigurosos. CGuardPro ofrece la documentación y trazabilidad que estas instituciones exigen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Requisitos de Seguridad Diplomática
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Protocolos Estrictos', desc: 'Procedimientos de acceso multinivel, verificación de identidad, registro detallado de cada persona que ingresa. Cero margen de error.' },
+            { title: 'Documentación Auditable', desc: 'Organismos internacionales requieren registros completos y auditables de toda actividad de seguridad. La documentación debe ser impecable.' },
+            { title: 'Confidencialidad Absoluta', desc: 'Información sensible sobre visitantes, horarios y protocolos. El sistema de gestión debe garantizar seguridad de datos de primer nivel.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          CGuardPro para Seguridad Diplomática
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Registro de Acceso Detallado', desc: 'Cada visitante registrado con foto, documento, hora exacta, persona visitada y motivo. Historial completo e inalterable.' },
+            { feature: 'Rondas con Verificación Estricta', desc: 'Checkpoints en perímetro, accesos, áreas sensibles y zonas restringidas. Sin ronda verificada, se activa alerta inmediata.' },
+            { feature: 'Reportes para Auditorías', desc: 'Genera documentación lista para auditorías internacionales. Registros con marca de tiempo, geolocalización y evidencia fotográfica.' },
+            { feature: 'Control de Niveles de Acceso', desc: 'Define zonas con diferentes niveles de autorización. Registra quién accede a qué área y cuándo.' },
+            { feature: 'Comunicación Cifrada', desc: 'Mensajería segura entre guardias y supervisores. La información de seguridad no viaja por WhatsApp ni canales no seguros.' },
+            { feature: 'Protocolos de Emergencia', desc: 'Procedimientos digitales para diferentes tipos de amenaza. El guardia sigue pasos predefinidos y documenta cada acción.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Credenciales -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Estándares que Cumplimos
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Trazabilidad completa', 'Datos cifrados', 'Acceso por roles', 'Registros inalterables', 'Auditoría en tiempo real', 'Backup automático', 'SLA garantizado', 'Soporte prioritario'].map((item) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{item}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Proteges sedes diplomáticas u organismos?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Cumple con los estándares más exigentes de documentación y trazabilidad. Solicita una demostración personalizada.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

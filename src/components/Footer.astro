@@ -18,15 +18,23 @@ const links = {
   ],
   [t.footer.sections.company]: [
     { href: p('/about'), label: t.footer.links.about },
+    { href: lang === 'es' ? '/blog' : '/en/blog', label: 'Blog' },
     { href: p('/contact'), label: t.footer.links.contact },
     { href: p('/privacy'), label: t.footer.links.privacy },
     { href: p('/terms'), label: t.footer.links.terms },
   ],
-  [t.footer.sections.industry]: [
-    { href: p('/security-guard-management'), label: t.footer.links.guardManagement },
-    { href: p('/client-management'), label: t.footer.links.clientManagement },
-    { href: p('/incident-reporting'), label: t.footer.links.incidentReporting },
-    { href: p('/mobile-app'), label: t.footer.links.mobileApp },
+  [t.footer.sections.industry]: lang === 'es' ? [
+    { href: '/seguridad-edificios-corporativos', label: 'Edificios Corporativos' },
+    { href: '/seguridad-centros-comerciales', label: 'Centros Comerciales' },
+    { href: '/seguridad-urbanizaciones-residenciales', label: 'Urbanizaciones' },
+    { href: '/seguridad-hospitales-clinicas', label: 'Hospitales y Clínicas' },
+    { href: '/seguridad-sector-financiero', label: 'Sector Financiero' },
+  ] : [
+    { href: '/en/austin', label: 'Security in Austin' },
+    { href: '/en/san-antonio', label: 'Security in San Antonio' },
+    { href: '/en/houston', label: 'Security in Houston' },
+    { href: '/en/dallas', label: 'Security in Dallas' },
+    { href: '/en/round-rock', label: 'Security in Round Rock' },
   ],
 };
 ---

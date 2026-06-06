@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const city = 'Cuenca';
+const description = `Software de gestión de seguridad privada en ${city}. CGuardPro ayuda a empresas de seguridad en ${city} a gestionar guardias, turnos, rondas GPS e incidentes desde una sola plataforma.`;
+---
+
+<Layout
+  title={`Software de Seguridad Privada en ${city} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, Ecuador</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Gestión de Seguridad Privada<br />
+          <span class="text-brand">en {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          CGuardPro ofrece a las empresas de seguridad en {city} una plataforma moderna para gestionar operaciones, guardias y clientes con la calidad que el mercado cuencano exige.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          ¿Por qué empresas de seguridad en {city} eligen CGuardPro?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Servicio Premium', desc: `El mercado de ${city} valora la calidad. CGuardPro te permite ofrecer un servicio de primer nivel con reportes profesionales y portal para el cliente.` },
+            { title: 'Ideal para Comunidades', desc: `Condominios, urbanizaciones y edificios residenciales de ${city} reciben informes automáticos y acceso 24/7 a la actividad de seguridad.` },
+            { title: 'Soporte Local', desc: `Atención en español, horario Ecuador, y una plataforma diseñada entendiendo las necesidades del mercado local.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Funcionalidades clave para operar en {city}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Control de asistencia GPS', desc: 'Verificación automática de presencia en el sitio. Sin hojas de papel ni controles manuales.' },
+            { feature: 'Rondas verificables', desc: 'Puntos de control configurables para patrimonios históricos, residenciales y comercios.' },
+            { feature: 'Reportes profesionales', desc: 'Informes automáticos con la calidad que tus clientes en Cuenca esperan.' },
+            { feature: 'Gestión de personal', desc: 'Turnos, capacitaciones y documentación de todo tu equipo en un solo lugar.' },
+            { feature: 'Portal para clientes', desc: 'Acceso exclusivo para que tus clientes vean la actividad sin necesidad de llamarte.' },
+            { feature: 'App intuitiva', desc: 'Diseñada para ser más fácil que WhatsApp. Tus guardias la dominan en 30 minutos.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Sectors -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Sectores que servimos en {city}
+        </h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {['Condominios residenciales', 'Patrimonio cultural', 'Universidades', 'Centros comerciales', 'Clínicas y hospitales', 'Edificios corporativos', 'Comunidades expatriadas', 'Sector hotelero'].map(sector => (
+            <div class="card-glass px-4 py-3 text-center text-sm text-white/70 animate-on-scroll">
+              {sector}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Listo para elevar tu servicio en {city}?
+        </h2>
+        <p class="text-white/50 text-lg mb-8 max-w-xl mx-auto">
+          Las empresas de seguridad más profesionales de {city} ya usan CGuardPro. Prueba gratis por 14 días.
+        </p>
+        <a href="/contact" class="btn-primary">Comenzar Prueba Gratis</a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

@@ -2,13 +2,14 @@
 import type { Translations } from './es';
 
 export const en: Translations = {
-  siteDescription: 'CGuardPro — The intelligent security management platform built for modern security companies. Manage guards, clients, shifts, and incidents from a single command center.',
+  siteDescription: 'CGuardPro — Security guard management software headquartered in Austin, TX. The #1 platform for security companies in Texas: manage guards, schedules, GPS patrols, incidents, and clients from one command center.',
 
   nav: {
     features: 'Features',
     howItWorks: 'How It Works',
     pricing: 'Pricing',
     about: 'About',
+    blog: 'Blog',
     signIn: 'Sign In',
     requestDemo: 'Request Demo',
   },

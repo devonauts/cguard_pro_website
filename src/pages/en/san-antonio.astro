@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const city = 'San Antonio';
+const state = 'Texas';
+const description = `Security guard management software in ${city}, ${state}. CGuardPro helps security companies in ${city} manage guards, schedules, GPS patrols, and incidents from one powerful platform.`;
+---
+
+<Layout
+  title={`Security Guard Software in ${city}, TX — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, {state}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Security Guard Management<br />
+          <span class="text-brand">Software in {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          {city} is the 7th largest city in the US with a massive demand for private security. CGuardPro gives your {city} security company the tools to manage guards, track patrols, and impress clients — all from one platform.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+          <a href="/en/pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Why {city} Security Companies Choose CGuardPro
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Military City Coverage', desc: `From Fort Sam Houston to Lackland AFB perimeters, downtown River Walk properties to Stone Oak developments — manage every post across the ${city} metro area.` },
+            { title: 'Handle the Heat', desc: `${city}'s climate demands mobile tools that work. Our app uses minimal battery and data, with offline mode for areas with spotty coverage.` },
+            { title: 'Bilingual Operations', desc: `Manage a bilingual workforce effortlessly. CGuardPro supports English and Spanish interfaces for guards, supervisors, and client portals.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Key Features for {city} Security Operations
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'GPS Guard Tracking', desc: `Real-time location verification across the ${city} metro — from The Pearl to the Medical Center to Alamo Ranch.` },
+            { feature: 'Smart Scheduling', desc: 'Drag-and-drop shift management. Handle large guard rosters with overtime alerts and Texas labor compliance built in.' },
+            { feature: 'Digital Incident Reports', desc: 'Photo evidence with GPS coordinates, severity levels, and instant notifications to supervisors and clients.' },
+            { feature: 'Guard Tour Verification', desc: 'QR/NFC checkpoint scanning proves patrol completion. Timestamped evidence for every round.' },
+            { feature: 'Client Portal', desc: 'Give property managers and corporate clients 24/7 access to activity reports and real-time guard status.' },
+            { feature: 'Multi-Site Dashboard', desc: `Manage 50+ sites across ${city} from one screen. Filter by zone, client, or guard status instantly.` },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Industries Served -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Industries We Serve in {city}
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Military Installations', 'Healthcare & Hospitals', 'Hospitality & Hotels', 'Retail Centers', 'Residential Communities', 'Industrial Parks', 'Event Venues', 'Government & Municipal'].map((industry) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{industry}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          Ready to Modernize Your {city} Security Operation?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Join security companies across South Texas that trust CGuardPro. Start with a free demo today — based just 80 miles up I-35 in Austin.
+        </p>
+        <a href="/en/contact" class="btn-primary text-lg px-8 py-4">
+          Schedule Your Free Demo
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

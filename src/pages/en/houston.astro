@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const city = 'Houston';
+const state = 'Texas';
+const description = `Security guard management software for ${city}, ${state}. CGuardPro helps security companies in ${city} manage large guard forces, GPS patrols, scheduling, and client reporting from one platform.`;
+---
+
+<Layout
+  title={`Security Guard Software in ${city}, TX — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, {state}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Security Guard Management<br />
+          <span class="text-brand">Software in {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          {city} is the 4th largest city in America with one of the highest demands for private security. CGuardPro gives your security company enterprise-grade tools to manage hundreds of guards, track patrols across the sprawling metro, and deliver professional reports to clients.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+          <a href="/en/pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Why {city} Security Companies Choose CGuardPro
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Built for Metro Scale', desc: `${city}'s 10,000+ square miles demand powerful multi-site management. Track guards from Katy to Pasadena, The Woodlands to Sugar Land — all from one dashboard.` },
+            { title: 'Energy Sector Ready', desc: `Secure refineries, petrochemical plants, and energy campuses with specialized checkpoint systems, access control logs, and compliance documentation.` },
+            { title: 'Hurricane & Weather Response', desc: `When severe weather hits, coordinate rapid guard deployments. Real-time communication, emergency check-ins, and coverage gap alerts keep operations running.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Key Features for {city} Security Operations
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'GPS Fleet Tracking', desc: `Real-time location for every guard across the ${city} metro. Geofencing alerts when guards leave designated zones.` },
+            { feature: 'Enterprise Scheduling', desc: 'Manage 500+ guards across dozens of sites. Automatic overtime calculations, break compliance, and shift swap management.' },
+            { feature: 'Industrial Site Security', desc: 'Checkpoint scanning for refineries and plant perimeters. TWIC-compatible access logging and detailed patrol documentation.' },
+            { feature: 'Incident Management', desc: 'Photo/video evidence capture, chain-of-custody documentation, automated police report formatting, and client escalation workflows.' },
+            { feature: 'Client Analytics Dashboard', desc: 'Executive-level reporting for corporate clients. Incident trends, response times, coverage analytics, and SLA compliance tracking.' },
+            { feature: 'Bilingual Interface', desc: `Support ${city}'s diverse workforce with full English/Spanish app interfaces for guards, supervisors, and dispatchers.` },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Industries Served -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Industries We Serve in {city}
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Oil & Gas / Energy', 'Healthcare / TMC', 'Commercial Real Estate', 'Port & Logistics', 'Retail & Malls', 'Residential HOAs', 'Construction', 'Hospitality & Events'].map((industry) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{industry}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          Ready to Scale Your {city} Security Operation?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Join {city}'s leading security companies on CGuardPro. From our Austin headquarters, we provide dedicated support for the Greater {city} area.
+        </p>
+        <a href="/en/contact" class="btn-primary text-lg px-8 py-4">
+          Schedule Your Free Demo
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

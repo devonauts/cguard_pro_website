@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const city = 'Dallas';
+const state = 'Texas';
+const description = `Security guard management software for ${city}-Fort Worth, ${state}. CGuardPro helps DFW security companies manage guards, GPS patrols, scheduling, and client reporting from one platform.`;
+---
+
+<Layout
+  title={`Security Guard Software in ${city}-Fort Worth, TX — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}-Fort Worth, {state}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Security Guard Management<br />
+          <span class="text-brand">Software in {city}-Fort Worth</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          The DFW metroplex is the largest metro in Texas with enormous demand for professional security services. CGuardPro helps {city}-Fort Worth security companies manage operations at scale — from Frisco to Arlington, Plano to Fort Worth.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+          <a href="/en/pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Why DFW Security Companies Choose CGuardPro
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Metroplex-Wide Coverage', desc: `Manage sites across Dallas, Fort Worth, Arlington, Plano, Frisco, McKinney, and Irving from one unified dashboard. No more spreadsheet chaos.` },
+            { title: 'Corporate Campus Security', desc: `DFW's corporate corridor demands professional-grade reporting. Deliver executive dashboards, SLA metrics, and real-time guard tracking to Fortune 500 clients.` },
+            { title: 'Rapid Deployment', desc: `Event security at AT&T Stadium, Cowboys games, or corporate events? Deploy guards quickly with instant scheduling, GPS check-in, and real-time communication.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Key Features for DFW Security Operations
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'GPS Guard Tracking', desc: `Real-time guard locations across the entire DFW metroplex. Geofencing for specific properties with instant alerts.` },
+            { feature: 'Enterprise Scheduling', desc: 'Handle large workforces across multiple DFW locations. Overtime management, shift bidding, and automatic coverage gap detection.' },
+            { feature: 'Guard Tour Verification', desc: 'NFC/QR checkpoint scanning for office parks, shopping centers, and corporate campuses. Timestamped proof of every patrol.' },
+            { feature: 'Incident Reporting', desc: 'Professional incident documentation with photos, GPS coordinates, witness info, and automated client notifications.' },
+            { feature: 'Client Portal', desc: 'Give DFW property managers and corporate security directors 24/7 access to guard activity, incidents, and performance metrics.' },
+            { feature: 'Multi-Branch Management', desc: 'Run Dallas and Fort Worth offices from one platform. Branch-level permissions, reporting, and resource allocation.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Industries Served -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Industries We Serve in DFW
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Corporate Campuses', 'Logistics & Warehouses', 'Retail & Shopping', 'Healthcare Systems', 'Residential Communities', 'Construction Sites', 'Sports & Events', 'Education & Universities'].map((industry) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{industry}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          Ready to Dominate DFW Security?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          From our Austin headquarters, CGuardPro supports security companies across the entire Dallas-Fort Worth metroplex. Get a free demo and see why Texas companies are switching.
+        </p>
+        <a href="/en/contact" class="btn-primary text-lg px-8 py-4">
+          Schedule Your Free Demo
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

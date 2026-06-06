@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Edificios Corporativos';
+const description = `Software de seguridad para edificios corporativos en Ecuador. CGuardPro gestiona guardias, control de acceso, rondas y reportes para torres de oficinas y complejos empresariales.`;
+---
+
+<Layout
+  title={`Seguridad para ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad Profesional para<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Torres de oficinas, parques empresariales y complejos corporativos requieren seguridad de alto nivel. CGuardPro le da a tu empresa de seguridad las herramientas para ofrecer un servicio de primer nivel a clientes corporativos exigentes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos del Sector -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Desafíos de Seguridad en {sector}
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Control de Acceso Multinivel', desc: 'Múltiples inquilinos, visitantes, proveedores y personal de limpieza. Cada uno con diferentes niveles de acceso a pisos y áreas restringidas.' },
+            { title: 'Rotación de Personal 24/7', desc: 'Turnos diurnos, nocturnos y fines de semana. Coordinación de guardias en lobbies, estacionamientos, perímetros y pisos ejecutivos.' },
+            { title: 'Clientes Corporativos Exigentes', desc: 'Empresas multinacionales esperan reportes profesionales, métricas de desempeño y respuesta inmediata ante incidentes.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Cómo CGuardPro Resuelve Estos Desafíos
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Control de Rondas por Piso', desc: 'Define puntos de control NFC en cada piso, estacionamiento y área común. Verifica que el guardia recorre todo el edificio.' },
+            { feature: 'Registro Digital de Visitantes', desc: 'Documenta entradas y salidas de visitantes con foto, hora exacta y persona visitada. Historial completo accesible para el administrador.' },
+            { feature: 'Portal para Administradores', desc: 'El administrador del edificio ve en tiempo real: presencia del guardia, reportes de incidentes, y estadísticas de cobertura.' },
+            { feature: 'Reportes Ejecutivos Automáticos', desc: 'Genera informes mensuales profesionales con métricas de patrullaje, incidentes resueltos y cumplimiento de horarios.' },
+            { feature: 'Gestión de Turnos Complejos', desc: 'Programa guardias de lobby, estacionamiento, pisos y perímetro con un solo sistema. Alertas automáticas de huecos de cobertura.' },
+            { feature: 'Reporte de Incidentes Inmediato', desc: 'Fotos geoetiquetadas, clasificación por gravedad y notificación instantánea al supervisor y al cliente corporativo.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Beneficios -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Resultados para tu Empresa de Seguridad
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {[
+            { metric: '99%', label: 'Cobertura de turnos' },
+            { metric: '5 min', label: 'Tiempo de reporte' },
+            { metric: '40%', label: 'Menos tiempo administrativo' },
+            { metric: '95%', label: 'Retención de clientes' },
+          ].map(({ metric, label }) => (
+            <div class="text-center animate-on-scroll">
+              <div class="text-3xl font-display font-bold text-brand mb-1">{metric}</div>
+              <div class="text-white/50 text-sm">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Brindas seguridad a edificios corporativos?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Demuestra profesionalismo a tus clientes corporativos con tecnología de punta. Solicita una demo gratuita y descubre cómo CGuardPro diferencia tu servicio.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

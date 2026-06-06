@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const city = 'Quito';
+const description = `Software de gestión de seguridad privada en ${city}. CGuardPro ayuda a empresas de seguridad en ${city} a gestionar guardias, turnos, rondas GPS e incidentes desde una sola plataforma.`;
+---
+
+<Layout
+  title={`Software de Seguridad Privada en ${city} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, Ecuador</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Gestión de Seguridad Privada<br />
+          <span class="text-brand">en {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          CGuardPro es la plataforma #1 para empresas de seguridad en {city}. Controla guardias, verifica rondas con GPS, reporta incidentes y ofrece un portal profesional a tus clientes — todo desde un solo sistema.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          ¿Por qué empresas de seguridad en {city} eligen CGuardPro?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Cobertura Multi-Zona', desc: `Gestiona sitios en el norte, centro, sur y valles de ${city} desde un solo panel. Sin importar si tu guardia está en La Carolina o en Cumbayá.` },
+            { title: 'GPS que Funciona', desc: `Verificación de presencia y rondas GPS optimizada para la geografía de ${city}. Funciona en sótanos, edificios altos y zonas con señal variable.` },
+            { title: 'Reportes para Clientes Exigentes', desc: `Los clientes corporativos de ${city} esperan reportes profesionales. CGuardPro genera informes automáticos con portal de acceso exclusivo.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features for this city -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Funcionalidades clave para operar en {city}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Control de asistencia GPS', desc: 'Fichaje automático cuando el guardia llega al sitio. Elimina hojas de papel y buddy punching.' },
+            { feature: 'Rondas con puntos de control', desc: 'Define rutas de ronda con checkpoints. Verificación automática de cumplimiento.' },
+            { feature: 'Reporte de incidentes digital', desc: 'Fotos geoetiquetadas, clasificación por gravedad, notificación instantánea.' },
+            { feature: 'Programación inteligente de turnos', desc: 'Horarios que cumplen la normativa laboral ecuatoriana. Rotación justa y transparente.' },
+            { feature: 'Portal exclusivo para clientes', desc: 'Tus clientes ven reportes, actividad y métricas en tiempo real. Sin llamadas ni correos.' },
+            { feature: 'App móvil para guardias', desc: 'Funciona en Android básico. Modo offline. Consume menos de 10 MB/día de datos.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Sectors -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Sectores que servimos en {city}
+        </h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {['Edificios corporativos', 'Centros comerciales', 'Urbanizaciones residenciales', 'Embajadas y organismos', 'Parques industriales', 'Instituciones educativas', 'Hospitales y clínicas', 'Sector financiero'].map(sector => (
+            <div class="card-glass px-4 py-3 text-center text-sm text-white/70 animate-on-scroll">
+              {sector}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Listo para modernizar tu operación en {city}?
+        </h2>
+        <p class="text-white/50 text-lg mb-8 max-w-xl mx-auto">
+          Únete a las empresas de seguridad en {city} que ya usan CGuardPro. Prueba gratis por 14 días.
+        </p>
+        <a href="/contact" class="btn-primary">Comenzar Prueba Gratis</a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

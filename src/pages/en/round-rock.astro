@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const city = 'Round Rock';
+const state = 'Texas';
+const description = `Security guard management software in ${city}, ${state}. CGuardPro helps security companies in ${city}, Cedar Park, Georgetown, and the I-35 corridor manage guards and operations from one platform.`;
+---
+
+<Layout
+  title={`Security Guard Software in ${city}, TX — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{city}, {state}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Security Guard Management<br />
+          <span class="text-brand">Software in {city}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          {city} is one of the fastest-growing cities in Texas — and growing communities need professional security. CGuardPro gives your security company the edge with modern guard management, GPS tracking, and client portals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/en/contact" class="btn-primary">Request Free Demo</a>
+          <a href="/en/pricing" class="btn-outline">See Pricing</a>
+        </div>
+      </div>
+
+      <!-- Local Context -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Why {city} Security Companies Choose CGuardPro
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'I-35 Corridor Coverage', desc: `Manage sites from Georgetown to Pflugerville, Cedar Park to Hutto. One platform covers the entire Williamson County corridor and beyond.` },
+            { title: 'Tech-Forward Community', desc: `${city}'s tech-savvy clients expect digital-first security services. CGuardPro's client portal gives them real-time access to guard activity and reports.` },
+            { title: 'Rapid Growth Support', desc: `As ${city} grows, so does demand. Scale from 5 guards to 500+ without changing systems. Our platform grows with your business.` },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Key Features for Williamson County Security
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'GPS Guard Tracking', desc: `Track guards across ${city}, Cedar Park, Georgetown, Leander, and Pflugerville in real time with location verification.` },
+            { feature: 'HOA & Community Security', desc: 'Purpose-built for residential communities. Visitor logs, patrol verification, and homeowner communication tools.' },
+            { feature: 'Construction Site Monitoring', desc: 'Track guards at active construction sites with geofencing, checkpoint scanning, and photo documentation.' },
+            { feature: 'Smart Scheduling', desc: 'Automatic shift assignment across multiple suburban sites. Minimize drive time between posts with intelligent routing.' },
+            { feature: 'Client Self-Service Portal', desc: 'Property managers access reports, request extra coverage, and review incidents — without calling your office.' },
+            { feature: 'Guard Mobile App', desc: 'Simple, reliable app that works everywhere — even in new construction zones with limited cell coverage.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Areas Covered -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Areas We Cover
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Round Rock', 'Cedar Park', 'Georgetown', 'Pflugerville', 'Leander', 'Hutto', 'Taylor', 'Liberty Hill'].map((area) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{area}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          Ready to Grow Your Security Business in {city}?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          We're your neighbors — CGuardPro is headquartered right down I-35 in Austin. Get local support and a platform built for Texas security companies.
+        </p>
+        <a href="/en/contact" class="btn-primary text-lg px-8 py-4">
+          Schedule Your Free Demo
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

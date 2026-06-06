@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Urbanizaciones Residenciales';
+const description = `Software de seguridad para urbanizaciones y conjuntos residenciales en Ecuador. CGuardPro gestiona guardias, rondas perimetrales, control de acceso vehicular y reportes para condominios.`;
+---
+
+<Layout
+  title={`Seguridad para ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad Profesional para<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Conjuntos residenciales, urbanizaciones cerradas y condominios necesitan seguridad confiable las 24 horas. CGuardPro permite a tu empresa demostrar presencia, verificar rondas y comunicarse con la administración en tiempo real.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Desafíos de Seguridad Residencial
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Rondas Perimetrales Extensas', desc: 'Urbanizaciones con amplios perímetros, múltiples accesos vehiculares y peatonales, y áreas verdes que requieren vigilancia constante.' },
+            { title: 'Control de Acceso de Visitantes', desc: 'Registro de visitantes, proveedores, personal de entregas y trabajadores. Los residentes esperan seguridad sin complicaciones.' },
+            { title: 'Residentes Como Clientes', desc: 'La directiva y los residentes evalúan constantemente al servicio de seguridad. La percepción de presencia es tan importante como la presencia misma.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Cómo CGuardPro Asegura Urbanizaciones
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Rondas Perimetrales Verificadas', desc: 'Puntos de control NFC en todo el perímetro, garitas y áreas comunes. El administrador ve exactamente cuándo el guardia pasó por cada punto.' },
+            { feature: 'Registro Digital de Visitantes', desc: 'Registra visitantes con foto, placa del vehículo, hora de entrada/salida y residente autorizado. Historial consultable en cualquier momento.' },
+            { feature: 'Portal para la Directiva', desc: 'La administración del conjunto accede a reportes de actividad, incidentes, y cumplimiento de rondas sin llamar a tu oficina.' },
+            { feature: 'Alertas de Seguridad', desc: 'Notificación inmediata ante personas sospechosas, vehículos desconocidos, o intentos de ingreso no autorizado. Evidencia fotográfica incluida.' },
+            { feature: 'Bitácora Digital', desc: 'Elimina la libreta de papel. Todos los registros quedan en digital: novedades, cambios de turno, observaciones y reportes de mantenimiento.' },
+            { feature: 'App que Funciona de Noche', desc: 'Interfaz clara para uso nocturno, modo offline para áreas con mala señal, y bajo consumo de batería para turnos de 12 horas.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Beneficio clave -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          ¿Por Qué las Directivas Prefieren Empresas con CGuardPro?
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {[
+            { metric: '100%', label: 'Rondas documentadas' },
+            { metric: '0', label: 'Papel y libretas' },
+            { metric: '24/7', label: 'Portal de consulta' },
+            { metric: '90%', label: 'Renovación de contratos' },
+          ].map(({ metric, label }) => (
+            <div class="text-center animate-on-scroll">
+              <div class="text-3xl font-display font-bold text-brand mb-1">{metric}</div>
+              <div class="text-white/50 text-sm">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Brindas seguridad a urbanizaciones?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Gana la confianza de las directivas con reportes profesionales y visibilidad total. Demo gratuita disponible.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

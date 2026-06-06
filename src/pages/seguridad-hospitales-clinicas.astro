@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const sector = 'Hospitales y Clínicas';
+const description = `Software de seguridad para hospitales, clínicas y centros de salud en Ecuador. CGuardPro gestiona guardias, control de acceso hospitalario, rondas y documentación de incidentes médicos.`;
+---
+
+<Layout
+  title={`Seguridad para ${sector} — CGuardPro`}
+  lang={lang}
+  description={description}
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Hero -->
+      <div class="text-center mb-20">
+        <span class="section-label mb-4 inline-flex">{sector}</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 animate-on-scroll leading-tight">
+          Seguridad Especializada para<br />
+          <span class="text-brand">{sector}</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          Hospitales y clínicas operan 24/7 con pacientes vulnerables, medicamentos controlados y áreas de alto riesgo. CGuardPro proporciona las herramientas para gestionar seguridad hospitalaria con el rigor que este sector exige.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <a href="/contact" class="btn-primary">Solicitar Demo Gratis</a>
+          <a href="/pricing" class="btn-outline">Ver Precios</a>
+        </div>
+      </div>
+
+      <!-- Desafíos -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Desafíos de Seguridad Hospitalaria
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: 'Áreas Restringidas Críticas', desc: 'Farmacia, quirófanos, neonatología, laboratorios, morgue. Cada área con protocolos de acceso específicos que no admiten error.' },
+            { title: 'Pacientes y Familiares', desc: 'Alto flujo emocional: familiares angustiados, pacientes desorientados, situaciones de agresión. El guardia debe documentar todo profesionalmente.' },
+            { title: 'Operación Continua 24/7', desc: 'No hay horario de cierre. Emergencias a cualquier hora, cambios de turno del personal médico, ambulancias, proveedores. Seguridad nunca descansa.' },
+          ].map(({ title, desc }) => (
+            <div class="card-glass p-6 animate-on-scroll">
+              <h3 class="font-display font-semibold text-lg text-white mb-2">{title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          CGuardPro para Seguridad Hospitalaria
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { feature: 'Rondas por Áreas Críticas', desc: 'Checkpoints en farmacia, emergencias, estacionamiento, perímetro y pisos de hospitalización. Verificación NFC con horario estricto.' },
+            { feature: 'Control de Acceso por Zona', desc: 'Registro de quién accede a áreas restringidas. Documentación con hora, identidad y autorización. Alertas ante accesos no autorizados.' },
+            { feature: 'Reporte de Incidentes Hospitalarios', desc: 'Agresiones a personal, robos, pacientes fugados, daños. Documentación inmediata con fotos para el expediente del hospital.' },
+            { feature: 'Gestión de Emergencias', desc: 'Protocolos digitales para código azul, incendio, amenaza de bomba, desastre natural. El guardia sigue pasos predefinidos y documenta.' },
+            { feature: 'Portal para Administración', desc: 'El director de seguridad del hospital ve en tiempo real: guardias activos, rondas completadas, incidentes abiertos y métricas de cumplimiento.' },
+            { feature: 'Coordinación Multi-Turno', desc: 'Pase de novedades digital entre turnos. El guardia entrante ve pendientes, alertas activas y situaciones en curso sin depender de comunicación verbal.' },
+          ].map(({ feature, desc }) => (
+            <div class="flex gap-4 animate-on-scroll">
+              <div class="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-white mb-1">{feature}</h3>
+                <p class="text-white/50 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Tipos de institución -->
+      <section class="mb-20">
+        <h2 class="font-display font-bold text-3xl text-center mb-12 animate-on-scroll">
+          Instituciones de Salud que Protegemos
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {['Hospitales generales', 'Clínicas privadas', 'Centros médicos', 'Laboratorios', 'Centros de diálisis', 'Hospitales pediátricos', 'Clínicas dentales', 'Centros de rehabilitación'].map((tipo) => (
+            <div class="card-glass p-4 text-center animate-on-scroll">
+              <span class="text-white/70 text-sm">{tipo}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center card-glass p-12 rounded-2xl animate-on-scroll">
+        <h2 class="font-display font-bold text-3xl mb-4">
+          ¿Brindas seguridad a hospitales o clínicas?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-xl mx-auto">
+          Ofrece a las instituciones de salud la trazabilidad y profesionalismo que exigen. Demo gratuita personalizada.
+        </p>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          Solicitar Demo Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

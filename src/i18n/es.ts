@@ -1,7 +1,7 @@
 // Spanish translations (default language)
 export const es = {
   // Meta
-  siteDescription: 'CGuardPro — La plataforma inteligente de gestión de seguridad diseñada para empresas de seguridad modernas. Gestiona guardias, clientes, turnos e incidentes desde un único centro de comando.',
+  siteDescription: 'CGuardPro — La plataforma #1 de gestión de seguridad privada en Ecuador. Software para empresas de seguridad: gestiona guardias, turnos, rondas GPS, incidentes y clientes desde un solo centro de comando.',
 
   // Nav
   nav: {
@@ -9,6 +9,7 @@ export const es = {
     howItWorks: 'Cómo Funciona',
     pricing: 'Precios',
     about: 'Nosotros',
+    blog: 'Blog',
     signIn: 'Iniciar Sesión',
     requestDemo: 'Solicitar Demo',
   },

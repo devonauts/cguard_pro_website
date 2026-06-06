@@ -16,6 +16,17 @@ const p = (path: string) => localePath(lang, path);
 >
   <Navbar lang={lang} />
 
+  <!-- FAQ Structured Data for Rich Snippets -->
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.pricing.faqs.map(({ q, a }) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": { "@type": "Answer", "text": a }
+    }))
+  })}</script>`} />
+
   <main class="pt-32 pb-24">
     <div class="max-w-7xl mx-auto px-6">
 
