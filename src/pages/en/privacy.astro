@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const lastUpdated = 'May 19, 2026';
+---
+
+<Layout
+  title="Privacy Policy — CGuardPro"
+  lang={lang}
+  description="CGuardPro's privacy policy. Learn how we collect, use, and protect your personal information."
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <header class="mb-12">
+        <span class="section-label mb-4 inline-flex">Legal</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl mb-4">Privacy Policy</h1>
+        <p class="text-white/50 text-sm">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="prose max-w-none">
+
+        <p>At CGuardPro ("we", "us", or "our"), we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website (cguardpro.com) and our security management platform.</p>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Information You Provide Directly</h3>
+        <ul>
+          <li><strong>Contact details:</strong> first name, last name, email address, phone number, and your company name when you request a demo or contact us.</li>
+          <li><strong>Account data:</strong> login credentials, your role within the organization, and configuration preferences.</li>
+          <li><strong>Billing information:</strong> the data needed to process payments (handled by PCI-DSS-certified payment providers; we do not store full card numbers).</li>
+          <li><strong>User content:</strong> information you enter into the platform, including guard records, incident reports, visitor logs, and schedules.</li>
+        </ul>
+
+        <h3>1.2 Information Collected Automatically</h3>
+        <ul>
+          <li><strong>Usage data:</strong> pages visited, features used, time spent on the platform, and navigation patterns.</li>
+          <li><strong>Device data:</strong> browser type, operating system, screen resolution, and device identifiers.</li>
+          <li><strong>Location data:</strong> GPS coordinates collected exclusively through the guard mobile app, with explicit consent, for presence verification and patrol rounds.</li>
+          <li><strong>Cookies and similar technologies:</strong> we use essential cookies for the site to function and analytics cookies to improve our service.</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, maintain, and improve our services</li>
+          <li>Process demo requests and communicate with you</li>
+          <li>Verify guard presence and document patrol rounds</li>
+          <li>Generate reports for your company's clients</li>
+          <li>Send service-related communications (updates, security alerts)</li>
+          <li>Comply with legal and regulatory obligations</li>
+          <li>Detect and prevent fraud or unauthorized use</li>
+          <li>Analyze usage trends to improve the platform</li>
+        </ul>
+
+        <h2>3. Legal Basis for Processing</h2>
+
+        <p>We process personal data under the following legal bases:</p>
+        <ul>
+          <li><strong>Performance of a contract:</strong> to provide the services you have engaged.</li>
+          <li><strong>Consent:</strong> for GPS location data and marketing communications.</li>
+          <li><strong>Legitimate interest:</strong> to improve our services and ensure the security of the platform.</li>
+          <li><strong>Legal obligation:</strong> to comply with applicable laws and regulatory requirements.</li>
+        </ul>
+
+        <h2>4. Data Sharing</h2>
+
+        <p>We do not sell your personal information. We share data only in the following cases:</p>
+        <ul>
+          <li><strong>Within your organization:</strong> operational data is visible to authorized users of your company according to their roles and permissions.</li>
+          <li><strong>With your company's clients:</strong> only the information you choose to share through the client portal.</li>
+          <li><strong>Service providers:</strong> third parties that help us operate (hosting, payment processing, email delivery), under strict confidentiality agreements.</li>
+          <li><strong>Legal requirement:</strong> when required by law, court order, or competent authority.</li>
+          <li><strong>Protection of rights:</strong> to protect the rights, property, or safety of CGuardPro, our users, or the public.</li>
+        </ul>
+
+        <h2>5. Data Security</h2>
+
+        <p>We implement technical and organizational security measures to protect your information:</p>
+        <ul>
+          <li>Encryption in transit (TLS 1.3) and at rest (AES-256)</li>
+          <li>Role-based access with secure authentication</li>
+          <li>Continuous infrastructure monitoring</li>
+          <li>Automated, encrypted backups</li>
+          <li>Periodic security assessments</li>
+          <li>Security training for our team</li>
+        </ul>
+
+        <h2>6. Data Retention</h2>
+
+        <p>We retain your personal information for as long as necessary to:</p>
+        <ul>
+          <li>Fulfill the purpose for which it was collected</li>
+          <li>Keep the service active while you have an account</li>
+          <li>Comply with legal and regulatory obligations</li>
+          <li>Resolve disputes and enforce our agreements</li>
+        </ul>
+        <p>After account termination, operational data is deleted within 90 days, unless the law requires a longer retention period.</p>
+
+        <h2>7. Your Rights</h2>
+
+        <p>Subject to applicable laws, you have the right to:</p>
+        <ul>
+          <li><strong>Access:</strong> request a copy of your personal data.</li>
+          <li><strong>Rectification:</strong> correct inaccurate or incomplete data.</li>
+          <li><strong>Erasure:</strong> request the deletion of your personal data.</li>
+          <li><strong>Portability:</strong> receive your data in a structured, machine-readable format.</li>
+          <li><strong>Objection:</strong> object to the processing of your data in certain cases.</li>
+          <li><strong>Restriction:</strong> limit the processing of your data under certain circumstances.</li>
+          <li><strong>Withdraw consent:</strong> withdraw your consent at any time without affecting the lawfulness of prior processing.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:privacy@cguardpro.com">privacy@cguardpro.com</a>.</p>
+
+        <h2>8. Cookies</h2>
+
+        <p>We use the following types of cookies:</p>
+        <ul>
+          <li><strong>Essential:</strong> required for the basic operation of the site (session, authentication, security).</li>
+          <li><strong>Analytics:</strong> help us understand how the site is used so we can improve the experience (Google Analytics or similar, with anonymized IP).</li>
+          <li><strong>Functional:</strong> remember your preferences (language, settings).</li>
+        </ul>
+        <p>You can manage your cookie preferences from your browser settings.</p>
+
+        <h2>9. International Transfers</h2>
+
+        <p>Your data may be processed on servers located outside your country of residence. In such cases, we implement appropriate safeguards, including standard contractual clauses and technical security measures, to ensure an adequate level of protection.</p>
+
+        <h2>10. Children's Privacy</h2>
+
+        <p>Our services are not directed to anyone under 18 years of age. We do not knowingly collect information from minors. If we discover that we have collected data from a minor, we will delete it immediately.</p>
+
+        <h2>11. Changes to This Policy</h2>
+
+        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through a notice on our platform or by email. We encourage you to review this page regularly.</p>
+
+        <h2>12. Contact</h2>
+
+        <p>If you have questions about this Privacy Policy or how we handle your data, contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:privacy@cguardpro.com">privacy@cguardpro.com</a></li>
+          <li><strong>General email:</strong> <a href="mailto:sales@cguardpro.com">sales@cguardpro.com</a></li>
+          <li><strong>Address:</strong> 289 Centuryplant Rd, Leander, TX 78641, United States</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
