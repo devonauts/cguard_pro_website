@@ -65,89 +65,22 @@ const featureIcons = [
           </div>
         </div>
 
-        <!-- RIGHT: product mockup -->
-        <div class="relative animate-fade-up lg:pl-4" style="animation-delay:.35s">
-          <div class="card-glass p-1.5 rounded-2xl shadow-2xl shadow-black/50">
-            <div class="bg-navy-lighter rounded-xl overflow-hidden">
-              <div class="flex items-center gap-2 px-3.5 py-2.5 border-b border-white/5">
-                <div class="flex gap-1.5">
-                  <span class="w-2.5 h-2.5 rounded-full bg-white/10"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-white/10"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-white/10"></span>
-                </div>
-                <div class="flex-1 bg-navy/60 rounded-md px-3 py-1 text-[11px] text-white/30 font-mono mx-2 truncate">{t.hero.dashboardUrl}</div>
+        <!-- RIGHT: real product screenshot -->
+        <div class="relative animate-fade-up lg:pl-2" style="animation-delay:.35s">
+          <div class="rounded-2xl overflow-hidden" style="border:1px solid var(--border);box-shadow:0 34px 64px -22px rgba(16,24,40,0.30), 0 12px 24px -14px rgba(16,24,40,0.16)">
+            <div class="flex items-center gap-2 px-3.5 py-2.5" style="background:#0F1923;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full" style="background:#ff5f56"></span>
+                <span class="w-2.5 h-2.5 rounded-full" style="background:#ffbd2e"></span>
+                <span class="w-2.5 h-2.5 rounded-full" style="background:#27c93f"></span>
               </div>
-              <div class="grid grid-cols-[1.55fr_1fr] gap-2.5 p-2.5">
-                <div class="relative rounded-lg overflow-hidden border border-white/5 min-h-[210px]">
-                  <svg viewBox="0 0 340 240" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 w-full h-full">
-                    <rect width="340" height="240" fill="#0b141e"></rect>
-                    <g stroke="rgba(255,255,255,0.05)" stroke-width="7" fill="none" stroke-linecap="round">
-                      <path d="M-10 70 H 350"></path><path d="M-10 168 H 350"></path>
-                      <path d="M96 -10 V 250"></path><path d="M244 -10 V 250"></path>
-                    </g>
-                    <g stroke="rgba(255,255,255,0.035)" stroke-width="2.5" fill="none">
-                      <path d="M-10 118 H 350"></path><path d="M170 -10 V 250"></path><path d="M40 -10 L 120 250"></path>
-                    </g>
-                    <path d="M64 190 L118 128 L206 150 L280 66" fill="none" stroke="#E9A832" stroke-width="2.5" stroke-dasharray="1 6" stroke-linecap="round" opacity="0.9"></path>
-                    {[[64,190,'1'],[118,128,'2'],[206,150,'3'],[280,66,'4']].map(([x,y,n]) => (
-                      <g>
-                        <circle cx={x} cy={y} r="10" fill="#C8860A"></circle>
-                        <circle cx={x} cy={y} r="10" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.85"></circle>
-                        <text x={x} y={Number(y)+3.5} text-anchor="middle" font-size="10" font-weight="700" fill="#0b141e" font-family="sans-serif">{n}</text>
-                      </g>
-                    ))}
-                    <circle cx="150" cy="200" r="14" fill="#2ecc71" opacity="0.18"></circle>
-                    <circle cx="150" cy="200" r="5" fill="#2ecc71"></circle>
-                  </svg>
-                  <div class="absolute top-2 left-2.5 flex items-center gap-1.5 text-[10px] font-medium text-white/70 bg-navy/70 backdrop-blur px-2 py-1 rounded-full">
-                    <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#2ecc71"></span>{t.hero.mockMap}
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2.5">
-                  <div class="grid grid-cols-2 gap-2">
-                    <div class="bg-navy/60 rounded-lg p-2.5 border border-white/5">
-                      <div class="text-[10px] text-white/40">{t.hero.mockStats[0]}</div>
-                      <div class="text-xl font-bold text-white leading-tight">{t.hero.mockValues[0]}</div>
-                    </div>
-                    <div class="bg-navy/60 rounded-lg p-2.5 border border-white/5">
-                      <div class="text-[10px] text-white/40">{t.hero.mockStats[1]}</div>
-                      <div class="text-xl font-bold text-white leading-tight">{t.hero.mockValues[1]}</div>
-                    </div>
-                  </div>
-                  <div class="bg-navy/60 rounded-lg p-2.5 border border-white/5 flex-1">
-                    <div class="text-[10px] text-white/40 mb-2">{t.hero.mockOnDuty}</div>
-                    {[t.hero.mockGuard1, t.hero.mockGuard2, t.hero.mockGuard3].map((g) => (
-                      <div class="flex items-center gap-2 py-1">
-                        <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background:#2ecc71"></span>
-                        <span class="text-[11px] text-white/60 truncate">{g}</span>
-                      </div>
-                    ))}
-                    <div class="flex items-center gap-2 py-1 mt-1 border-t border-white/5 pt-2">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-                      <span class="text-[11px] text-brand truncate">{t.hero.mockRoute}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="flex-1 rounded-md px-3 py-1 text-[11px] font-mono mx-2 truncate" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4)">{t.hero.dashboardUrl}</div>
             </div>
+            <img src="/screenshots/dashboard.png" alt="Centro de operaciones CGuardPro — mapa en vivo, indicadores y actividad" class="w-full block" width="1600" height="1003" loading="eager" />
           </div>
-
-          <div class="hidden sm:block absolute -bottom-10 -left-6 lg:-left-10 w-36 rounded-[1.4rem] border-[6px] border-navy-900 bg-navy-lighter shadow-2xl shadow-black/60 overflow-hidden -rotate-[4deg]">
-            <div class="bg-navy px-3 pt-3 pb-3">
-              <div class="text-[9px] text-white/40">{t.hero.phoneTitle}</div>
-              <div class="text-xs font-bold text-white">CGuardPro</div>
-              <div class="mt-2 rounded-lg px-2 py-1.5" style="background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.35)">
-                <div class="text-[8px]" style="color:#2ecc71">● {t.hero.phoneStatus}</div>
-              </div>
-              <div class="mt-2 h-14 rounded-lg overflow-hidden">
-                <svg viewBox="0 0 120 70" class="w-full h-full"><rect width="120" height="70" fill="#0b141e"></rect><g stroke="rgba(255,255,255,.06)" stroke-width="3"><path d="M0 30 H120"></path><path d="M50 0 V70"></path></g><path d="M15 55 L45 30 L90 20" fill="none" stroke="#E9A832" stroke-width="2" stroke-dasharray="1 4"></path><circle cx="90" cy="20" r="5" fill="#C8860A"></circle></svg>
-              </div>
-              <div class="mt-2 rounded-lg bg-brand text-center text-[8px] font-bold py-1.5" style="color:#0b141e">{t.hero.phoneCta}</div>
-            </div>
-          </div>
-
-          <div class="absolute inset-x-12 -bottom-8 h-16 bg-brand/15 blur-2xl rounded-full pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute inset-x-12 -bottom-6 h-16 rounded-full blur-2xl pointer-events-none" style="background:rgba(200,134,10,0.16)" aria-hidden="true"></div>
         </div>
+
       </div>
     </div>
   </section>
