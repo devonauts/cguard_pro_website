@@ -74,28 +74,28 @@ export const en: Translations = {
     subheadline: 'Stop juggling spreadsheets, WhatsApp chats, and paper forms. CGuardPro brings it all together.',
     items: [
       {
-        title: 'Guard Management',
-        desc: 'Assign, track, and manage all your security personnel in real time. Monitor attendance, certifications, and performance from one dashboard.',
+        title: 'An app for your guards',
+        desc: 'The whole shift in one app: GPS + geofenced clock-in, QR-and-photo patrols, visitor control, incidents with evidence, and a panic button. Simple enough for your least tech-savvy guard.',
       },
       {
-        title: 'Client Portal',
-        desc: 'Give clients transparent access to their coverage, incident reports, and service history. Professional-grade portals that build trust.',
+        title: 'Supervision & vehicle patrol',
+        desc: 'Your supervisors run their route stop by stop —guards, alarms, properties, and clients—, verify each point with photos, and navigate with one tap. Finally, proof the check actually happened.',
       },
       {
-        title: 'Incident Reporting',
-        desc: 'Guards submit detailed incident reports from the mobile app instantly. Auto-stamped, geo-tagged, and delivered to the right people.',
+        title: 'Live command center',
+        desc: 'Real-time map, alarm & SOS queue, incidents, and your team’s location. Everything happening across the operation, the moment it happens.',
       },
       {
-        title: 'Shift Scheduling',
-        desc: 'Build and publish schedules in minutes. Guards get instant notifications. No more spreadsheets, no more missed shifts.',
+        title: 'Client portal & app',
+        desc: 'Clients see their coverage, report with an SOS, track guards live, and receive professional reports. The transparency that keeps contracts.',
       },
       {
-        title: 'GPS Patrol Tracking',
-        desc: 'Real-time location tracking ensures guards are where they need to be. Automated patrol checkpoints with QR or NFC scanning.',
+        title: 'Scheduling, attendance & payroll',
+        desc: 'Build shifts in minutes, track hours and shift handovers, and run payroll for your country’s labor rules. Less paperwork, zero missed shifts.',
       },
       {
-        title: 'Analytics & Reports',
-        desc: 'Actionable insights on coverage, incidents, and performance. Export professional PDF reports for any stakeholder.',
+        title: 'Reports & analytics',
+        desc: 'Decisions backed by data: incidents, patrol compliance, hours, and per-guard performance. PDF reports ready to hand to every client.',
       },
     ],
   },

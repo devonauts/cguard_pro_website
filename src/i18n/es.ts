@@ -78,28 +78,28 @@ export const es = {
     subheadline: 'Olvídate de las hojas de cálculo, grupos de WhatsApp y formularios en papel. CGuardPro lo centraliza todo.',
     items: [
       {
-        title: 'Gestión de Guardias',
-        desc: 'Asigna, rastrea y gestiona a todo tu personal de seguridad en tiempo real. Monitorea asistencia, certificaciones y desempeño desde un solo panel.',
+        title: 'La app de tus guardias',
+        desc: 'Todo el turno en una sola app: marcaje con GPS y geocerca, rondas con QR y foto, control de visitas, incidentes con evidencia y botón de pánico. Fácil de usar, incluso para el guardia menos técnico.',
       },
       {
-        title: 'Portal del Cliente',
-        desc: 'Ofrece a tus clientes acceso transparente a su cobertura, reportes de incidentes e historial de servicio. Portales profesionales que generan confianza.',
+        title: 'Supervisión y patrullaje vehicular',
+        desc: 'Tus supervisores recorren su ruta parada por parada —guardias, alarmas, propiedades y clientes—, verifican cada punto con fotos y navegan con un toque. Por fin sabes que la supervisión sí se hizo.',
       },
       {
-        title: 'Reportes de Incidentes',
-        desc: 'Los guardias envían informes detallados desde la app móvil al instante. Con sello de tiempo automático, geolocalización y entrega al equipo correcto.',
+        title: 'Centro de mando en vivo',
+        desc: 'Mapa en tiempo real, cola de alarmas y SOS, incidentes y la ubicación de tu personal. Todo lo que pasa en la operación, en el momento en que pasa.',
       },
       {
-        title: 'Programación de Turnos',
-        desc: 'Crea y publica horarios en minutos. Los guardias reciben notificaciones instantáneas. Sin hojas de cálculo, sin turnos olvidados.',
+        title: 'Portal y app para tus clientes',
+        desc: 'Tus clientes ven su cobertura, reportan con un SOS, siguen a los guardias en vivo y reciben reportes profesionales. La transparencia que retiene contratos.',
       },
       {
-        title: 'Rastreo GPS de Rondas',
-        desc: 'Seguimiento de ubicación en tiempo real para garantizar que los guardias estén donde deben estar. Puntos de control con escaneo QR o NFC.',
+        title: 'Turnos, asistencia y nómina',
+        desc: 'Programa turnos en minutos, controla horas y pases de turno, y calcula la nómina según la ley de tu país. Menos papeleo, cero turnos olvidados.',
       },
       {
-        title: 'Análisis y Reportes',
-        desc: 'Información accionable sobre cobertura, incidentes y desempeño. Exporta reportes PDF profesionales para cualquier parte interesada.',
+        title: 'Reportes y analítica',
+        desc: 'Decide con datos: incidentes, cumplimiento de rondas, horas y desempeño de cada guardia. Reportes en PDF listos para presentar a cada cliente.',
       },
     ],
   },
