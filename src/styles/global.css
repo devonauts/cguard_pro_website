@@ -40,23 +40,24 @@
   /* Semantic theme tokens — DARK is the default. `html.light` flips them. The whole
      site was hardcoded dark (bg-navy / text-white), so a compatibility layer below
      remaps those utilities to these tokens in light mode without touching every page. */
+  /* Matte-black, SpaceX-style dark theme (default). Neutral grays, high contrast. */
   :root {
     --brand: #C8860A;
     --brand-light: #E9A832;
     --navy: #0F1923;
     --navy-light: #162030;
 
-    --bg: #0F1923;
-    --bg-glow: rgba(200,134,10,0.08);
-    --surface: #162030;
-    --surface-2: #1E2D3E;
+    --bg: #0A0A0A;                /* matte black */
+    --bg-glow: rgba(200,134,10,0.05);
+    --surface: #171717;          /* dark-gray cards */
+    --surface-2: #1C1C1C;        /* slightly raised panels / alternating bands */
     --text: #ffffff;
-    --text-muted: rgba(255,255,255,0.62);
-    --text-faint: rgba(255,255,255,0.45);
-    --border: rgba(255,255,255,0.08);
-    --border-strong: rgba(255,255,255,0.14);
-    --scrollbar-track: #0F1923;
-    --card-shadow: none;
+    --text-muted: rgba(255,255,255,0.60);
+    --text-faint: rgba(255,255,255,0.42);
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --scrollbar-track: #0A0A0A;
+    --card-shadow: 0 8px 24px -12px rgba(0,0,0,0.7);
   }
 
   /* Minimalist light theme (Linear/Apple): pure white, near-black text, hairline
