@@ -7,11 +7,12 @@
   --color-brand: #C8860A;
   --color-brand-light: #E9A832;
   --color-brand-dark: #9B6508;
-  --color-navy: #0F1923;
-  --color-navy-light: #162030;
-  --color-navy-lighter: #1E2D3E;
-  --color-navy-900: #0A1119;
-  --color-gunmetal: #1C2B3A;
+  /* "navy" kept as the token name but neutralized to matte black / dark gray (SpaceX look) */
+  --color-navy: #0A0A0A;
+  --color-navy-light: #171717;
+  --color-navy-lighter: #1C1C1C;
+  --color-navy-900: #070707;
+  --color-gunmetal: #171717;
   --color-steel: #2E4057;
 
   --font-family-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
