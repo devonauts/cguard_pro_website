@@ -171,17 +171,35 @@ const featureIcons = [
   <!-- ─── How it works ─────────────────────────────────────────────── -->
   <section id="how-it-works" class="py-20 lg:py-28" style="background:var(--surface-2)">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl mb-12 lg:mb-16">
+      <div class="max-w-2xl mb-14 lg:mb-20">
         <div class="text-xs font-semibold tracking-[0.15em] uppercase mb-3 animate-on-scroll" style="color:var(--brand)">{t.howItWorks.badge}</div>
-        <h2 class="font-display font-bold text-[2rem] lg:text-[2.75rem] leading-[1.1] tracking-tight animate-on-scroll" style="color:var(--text)">
+        <h2 class="font-display font-bold text-[2rem] lg:text-[2.75rem] leading-[1.1] tracking-tight mb-4 animate-on-scroll" style="color:var(--text)">
           {t.howItWorks.headline1} <span style="color:var(--brand)">{t.howItWorks.headline2}</span>
         </h2>
+        <p class="text-lg leading-relaxed animate-on-scroll" style="color:var(--text-muted)">
+          {lang === 'es' ? 'De la configuración al control total: sin instaladores, sin fricción, en cuatro pasos.' : 'From setup to full command: no installers, no friction, in four steps.'}
+        </p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+
+      <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- connector line (desktop) -->
+        <div class="hidden lg:block absolute top-[3.35rem] left-[13%] right-[13%] h-px pointer-events-none" style="background:linear-gradient(90deg, transparent, var(--border-strong) 12%, var(--border-strong) 88%, transparent)" aria-hidden="true"></div>
+
         {t.howItWorks.steps.map(({ step, title, desc }, i) => (
-          <div class="animate-on-scroll" style={`transition-delay:${i * 80}ms`}>
-            <div class="w-11 h-11 rounded-xl flex items-center justify-center font-display font-bold text-base mb-4"
-                 style="background:var(--surface);border:1px solid var(--border);color:var(--brand);box-shadow:var(--card-shadow)">{step}</div>
+          <div class="relative rounded-2xl p-6 lg:p-7 animate-on-scroll" style={`background:var(--bg);border:1px solid var(--border-strong);transition-delay:${i * 90}ms`}>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center relative z-10" style="background:rgba(200,134,10,0.10);border:1px solid rgba(200,134,10,0.28)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <Fragment set:html={[
+                    '<path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/>',
+                    '<path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M17 3.13a4 4 0 0 1 0 7.75"/>',
+                    '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/><path d="M9.5 6.5l2 2 3.5-3.5"/>',
+                    '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M6 10l3 3 3-4 3 2 3-4"/>'
+                  ][i]} />
+                </svg>
+              </div>
+              <span class="font-display font-extrabold text-[2.6rem] leading-none select-none" style="color:rgba(200,134,10,0.20)">{step}</span>
+            </div>
             <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text)">{title}</h3>
             <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{desc}</p>
           </div>
