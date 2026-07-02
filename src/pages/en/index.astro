@@ -127,6 +127,47 @@ const featureIcons = [
     </div>
   </section>
 
+  <!-- ─── Spotlight: incidents (real screenshot) ───────────────────── -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="animate-on-scroll order-2 lg:order-1">
+          <div class="rounded-2xl overflow-hidden" style="border:1px solid var(--border);box-shadow:0 34px 64px -24px rgba(16,24,40,0.30),0 12px 24px -14px rgba(16,24,40,0.14)">
+            <div class="flex items-center gap-2 px-3.5 py-2.5" style="background:#0F1923;border-bottom:1px solid rgba(255,255,255,0.06)">
+              <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background:#ff5f56"></span><span class="w-2.5 h-2.5 rounded-full" style="background:#ffbd2e"></span><span class="w-2.5 h-2.5 rounded-full" style="background:#27c93f"></span></div>
+              <div class="flex-1 rounded-md px-3 py-1 text-[11px] font-mono mx-2 truncate" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4)">app.cguardpro.com/incidentes</div>
+            </div>
+            <img src="/screenshots/incidents.png" alt="Gestión de incidentes en CGuardPro" class="w-full block" loading="lazy" width="1500" height="940" />
+          </div>
+        </div>
+        <div class="animate-on-scroll order-1 lg:order-2">
+          <div class="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style="color:var(--brand)">{lang === 'es' ? 'Operación en vivo' : 'Live operations'}</div>
+          <h2 class="font-display font-bold text-[2rem] lg:text-[2.6rem] leading-[1.1] tracking-tight mb-5" style="color:var(--text)">
+            {lang === 'es' ? 'Cada incidente, con evidencia y trazabilidad' : 'Every incident, with evidence and a full trail'}
+          </h2>
+          <p class="text-lg leading-relaxed mb-7" style="color:var(--text-muted)">
+            {lang === 'es'
+              ? 'Del botón de pánico al cierre del caso: tus guardias reportan con foto, hora y ubicación, y tú lo ves en vivo en el centro de mando. Nada se pierde en un chat.'
+              : 'From the panic button to case closure: guards report with photo, time and location, and you see it live in the command center. Nothing gets lost in a chat.'}
+          </p>
+          <ul class="space-y-3.5">
+            {(lang === 'es'
+              ? ['Reporte con foto, hora y geolocalización automática', 'Cola de alarmas y SOS con despacho y seguimiento', 'Estado en tiempo real: abierto, en curso, resuelto', 'Reportes en PDF listos para cada cliente']
+              : ['Report with photo, time and automatic geolocation', 'Alarm & SOS queue with dispatch and follow-up', 'Real-time status: open, in progress, resolved', 'PDF reports ready for every client']
+            ).map((it) => (
+              <li class="flex items-start gap-3 text-[15px]" style="color:var(--text-muted)">
+                <span class="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:rgba(200,134,10,0.12)">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                {it}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── How it works ─────────────────────────────────────────────── -->
   <section id="how-it-works" class="py-20 lg:py-28" style="background:var(--surface-2)">
     <div class="max-w-6xl mx-auto px-6">
