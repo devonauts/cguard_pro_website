@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import TechBackdrop from '../components/TechBackdrop.astro';
 import { useTranslations, localePath } from '../i18n/index';
 
 const lang = 'es';
@@ -36,6 +37,8 @@ const resultIcons = [
 
   <!-- ─── Hero ─────────────────────────────────────────────────────── -->
   <section class="relative overflow-hidden pt-28 lg:pt-36 pb-20 lg:pb-28">
+    <TechBackdrop />
+
     <div class="relative max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-[1.02fr_1.1fr] gap-14 lg:gap-8 items-center">
 

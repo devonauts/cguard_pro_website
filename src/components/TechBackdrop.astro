@@ -1,0 +1,70 @@
+---
+// Decorative hero backdrop: command-center radar rings + network traces in
+// faint metallic gold. Purely visual — sits behind the hero content.
+---
+<div class="tech-backdrop absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+  <!-- Radar, top-right (peeks around the product screenshot) -->
+  <svg class="absolute -top-28 -right-36 w-[720px] h-[720px]" viewBox="0 0 720 720" fill="none">
+    <g stroke="rgba(212,175,55,0.10)">
+      <circle cx="360" cy="360" r="110"/>
+      <circle cx="360" cy="360" r="195"/>
+      <circle cx="360" cy="360" r="280"/>
+    </g>
+    <circle cx="360" cy="360" r="356" stroke="rgba(212,175,55,0.06)"/>
+    <g stroke="rgba(212,175,55,0.18)" stroke-width="1.5">
+      <path d="M360 44v18M360 658v18M44 360h18M658 360h18"/>
+    </g>
+    <g class="radar-sweep" style="transform-origin:360px 360px">
+      <path d="M360 360 L360 76" stroke="url(#sweepGrad)" stroke-width="1.5"/>
+    </g>
+    <circle cx="452" cy="284" r="3" fill="rgba(212,175,55,0.55)" class="blip"/>
+    <circle cx="300" cy="452" r="2.5" fill="rgba(212,175,55,0.4)" class="blip" style="animation-delay:1.3s"/>
+    <circle cx="242" cy="248" r="2" fill="rgba(212,175,55,0.35)" class="blip" style="animation-delay:2.4s"/>
+    <defs>
+      <linearGradient id="sweepGrad" x1="360" y1="360" x2="360" y2="76" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="rgba(212,175,55,0)"/>
+        <stop offset="1" stop-color="rgba(212,175,55,0.45)"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Network traces, bottom-left -->
+  <svg class="absolute -left-20 bottom-[-60px] w-[440px] h-[420px]" viewBox="0 0 440 420" fill="none">
+    <g stroke="rgba(212,175,55,0.12)">
+      <path d="M24 84 L148 152 L96 284 L236 344"/>
+      <path d="M148 152 L308 112 L368 232"/>
+      <path d="M96 284 L24 364"/>
+      <path d="M308 112 L236 344"/>
+      <path d="M368 232 L236 344"/>
+    </g>
+    <g fill="rgba(212,175,55,0.32)">
+      <circle cx="24" cy="84" r="2.5"/>
+      <circle cx="148" cy="152" r="3"/>
+      <circle cx="96" cy="284" r="2.5"/>
+      <circle cx="308" cy="112" r="2.5"/>
+      <circle cx="368" cy="232" r="2"/>
+      <circle cx="236" cy="344" r="3"/>
+      <circle cx="24" cy="364" r="2"/>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .radar-sweep {
+    animation: radar-rotate 16s linear infinite;
+  }
+  @keyframes radar-rotate {
+    to { transform: rotate(360deg); }
+  }
+  .blip {
+    animation: blip-pulse 3.6s ease-in-out infinite;
+  }
+  @keyframes blip-pulse {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.9; }
+  }
+  :global(html.light) .tech-backdrop { opacity: 0.55; }
+  @media (prefers-reduced-motion: reduce) {
+    .radar-sweep, .blip { animation: none; }
+  }
+</style>
