@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import TechBackdrop from '../components/TechBackdrop.astro';
 import LatamFlags from '../components/LatamFlags.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
 import { useTranslations, localePath } from '../i18n/index';
 
 const lang = 'es';
@@ -306,25 +307,14 @@ const resultIcons = [
           </div>
         </div>
         <div class="flex justify-center animate-on-scroll">
-          <div class="w-60 rounded-[2.4rem] p-2 shadow-2xl" style="background:#141414;border:1px solid var(--border-strong)">
-            <div class="rounded-[1.9rem] overflow-hidden" style="background:#0b141e">
-              <div class="px-4 pt-4 pb-5">
-                <div class="w-14 h-1 rounded-full mx-auto mb-5" style="background:rgba(255,255,255,0.14)"></div>
-                <div class="rounded-2xl p-3.5 mb-3" style="background:rgba(46,204,113,0.12);border:1px solid rgba(46,204,113,0.3)">
-                  <div class="text-[11px] font-mono mb-1" style="color:#2ecc71">● {t.mobile.phoneOnDuty}</div>
-                  <div class="font-semibold text-white text-[15px]">{t.mobile.phoneSite}</div>
-                  <div class="text-white/40 text-xs mt-0.5">{t.mobile.phoneShift}</div>
-                </div>
-                {t.mobile.phoneCheckpoints.map((c, i) => (
-                  <div class="flex items-center gap-2.5 py-2 border-b" style="border-color:rgba(255,255,255,0.06)">
-                    <span class={`w-2 h-2 rounded-full shrink-0`} style={i < 2 ? 'background:#C8860A' : 'background:rgba(255,255,255,0.2)'}></span>
-                    <span class="text-[13px] text-white/70">{c}</span>
-                  </div>
-                ))}
-                <button class="w-full mt-4 py-3 rounded-xl text-[13px] font-bold" style="background:#C8860A;color:#0b141e">{t.mobile.phoneReportBtn}</button>
-              </div>
-            </div>
-          </div>
+          <!-- Real capture of the worker app (same frame as /app-movil) — links to the full tour. -->
+          <a
+            href={p('/app-movil')}
+            class="block w-64 sm:w-72 transition-transform duration-300 hover:-translate-y-1.5 hover:scale-[1.015]"
+            aria-label={t.mobile.ctaLearn}
+          >
+            <PhoneFrame src={`/screenshots/worker-app/${lang}-dashboard.png`} alt={t.workerApp.hero.phoneAlt} />
+          </a>
         </div>
       </div>
     </div>
