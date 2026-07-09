@@ -1,7 +1,7 @@
 // Spanish translations (default language)
 export const es = {
   // Meta
-  siteDescription: 'CGuardPro — La plataforma #1 de gestión de seguridad privada en Ecuador. Software para empresas de seguridad: gestiona guardias, turnos, rondas GPS, incidentes y clientes desde un solo centro de comando.',
+  siteDescription: 'CGuardPro es la plataforma de operaciones de seguridad para empresas de seguridad privada. Gestiona guardias, rondas, turnos, despacho, incidentes, clientes, rastreo GPS y reportes en un solo sistema.',
 
   // Nav
   nav: {
@@ -43,70 +43,149 @@ export const es = {
 
   // Home - Hero
   hero: {
-    badge: 'El sistema operativo de tu empresa de seguridad',
-    headline1: 'Comanda toda tu',
-    headline2: 'operación de seguridad',
-    subheadline: 'Guardias, supervisores, rondas y clientes en una sola plataforma — con apps móviles y monitoreo en vivo. Deja el WhatsApp y el Excel; toma el control.',
-    ctaPrimary: 'Solicitar demo gratuita',
-    ctaSecondary: 'Ver cómo funciona',
+    badge: 'Plataforma de operaciones de seguridad',
+    headline1: 'Dirige toda tu empresa de seguridad',
+    headline2: 'desde una sola plataforma',
+    subheadline: 'CGuardPro es una plataforma moderna de operaciones de seguridad que ayuda a las empresas de seguridad privada a gestionar guardias, clientes, rondas, despacho, incidentes, turnos, nómina y la operación en tiempo real desde un solo centro de mando conectado.',
+    supporting: 'Creada para empresas de seguridad que necesitan más visibilidad, respuesta más rápida, mayor responsabilidad de sus guardias y mejor comunicación con sus clientes.',
+    ctaPrimary: 'Agendar una demo en vivo',
+    ctaSecondary: 'Explorar la plataforma',
     trust1: 'Web + iOS + Android',
     trust2: 'Español e inglés',
     trust3: 'Listo para operar en 1 día',
     dashboardUrl: 'app.cguardpro.com/centro-de-mando',
-    mockStats: ['En servicio', 'Rondas hoy', 'Incidentes', 'Puntos OK'],
-    mockValues: ['24', '18', '2', '96%'],
-    mockTrends: ['▲ 3 vs ayer', 'en curso', '↓ 1 resuelto', '▲ +4%'],
-    mockMap: 'Guardias y rutas en vivo',
-    mockOnDuty: 'En servicio',
-    mockRoute: 'Ronda vehicular · 3/5',
-    mockGuard1: 'Garita Principal',
-    mockGuard2: 'Puerta Norte',
-    mockGuard3: 'Bodega Sur',
-    phoneTitle: 'App del guardia',
-    phoneStatus: 'En servicio · 06:24 h',
-    phoneCta: 'Escanear punto de ronda',
+    dashboardAlt: 'Panel del software de gestión de guardias de seguridad CGuardPro — mapa GPS de guardias en vivo, indicadores de la operación y actividad en tiempo real',
   },
 
-  // Stats
+  // Stats (product facts — no invented customer numbers)
   stats: [
-    { value: '500+', label: 'Empresas de Seguridad', sub: 'confían en CGuardPro' },
-    { value: '12K+', label: 'Guardias Gestionados', sub: 'en la plataforma' },
-    { value: '99.9%', label: 'SLA de Disponibilidad', sub: 'garantizado' },
-    { value: '4.8★', label: 'Calificación Promedio', sub: 'de profesionales de seguridad' },
+    { value: '1', label: 'Plataforma Conectada', sub: 'operaciones, guardias, supervisores y clientes' },
+    { value: '3', label: 'Apps Móviles', sub: 'para guardias, supervisores y clientes' },
+    { value: '24/7', label: 'Visibilidad en Tiempo Real', sub: 'GPS en vivo, alertas y despacho' },
+    { value: '100%', label: 'Reportes Digitales', sub: 'adiós al papel y a las hojas de cálculo' },
   ],
 
-  // Features
+  // Problem
+  problem: {
+    badge: 'El Problema',
+    headline: 'Operar seguridad no debería sentirse como apagar incendios',
+    body: 'Turnos perdidos, faltas de último minuto, reportes en papel, quejas de clientes, disputas de nómina y herramientas desconectadas hacen más difícil dirigir una empresa de seguridad rentable. CGuardPro unifica tu operación para que tu equipo vea lo que está pasando, responda más rápido y mantenga cada sitio bajo control.',
+    bullets: [
+      'Reduce rondas incumplidas y llegadas tarde',
+      'Rastrea guardias y vehículos en tiempo real',
+      'Reemplaza el papel con reportes de incidentes digitales',
+      'Da a tus clientes visibilidad real de la actividad del servicio',
+      'Simplifica turnos, despacho y gestión del personal',
+      'Mantén rondas, reportes, GPS y comunicación conectados',
+    ],
+  },
+
+  // Command center (features)
   features: {
-    badge: 'Funcionalidades',
-    headline1: 'Todo lo que tu empresa de seguridad necesita',
-    headline2: 'en un solo centro de control',
-    subheadline: 'Olvídate de las hojas de cálculo, grupos de WhatsApp y formularios en papel. CGuardPro lo centraliza todo.',
+    badge: 'Centro de Mando',
+    headline1: 'Toda tu operación de seguridad.',
+    headline2: 'Un solo centro de mando.',
+    subheadline: 'CGuardPro conecta las herramientas que tu equipo de operaciones usa todos los días. Del rastreo de guardias en vivo a los reportes de incidentes y el portal del cliente, todo funciona junto en una sola plataforma de gestión de personal de seguridad.',
     items: [
       {
-        title: 'La app de tus guardias',
-        desc: 'Todo el turno en una sola app: marcaje con GPS y geocerca, rondas con QR y foto, control de visitas, incidentes con evidencia y botón de pánico. Fácil de usar, incluso para el guardia menos técnico.',
+        title: 'Rastreo GPS en Vivo',
+        desc: 'Sabe dónde están tus guardias, supervisores y vehículos en tiempo real.',
       },
       {
-        title: 'Supervisión y patrullaje vehicular',
-        desc: 'Tus supervisores recorren su ruta parada por parada —guardias, alarmas, propiedades y clientes—, verifican cada punto con fotos y navegan con un toque. Por fin sabes que la supervisión sí se hizo.',
+        title: 'Control de Rondas',
+        desc: 'Verifica cada ronda con códigos QR, puntos de control GPS, fotos y marcas de tiempo.',
       },
       {
-        title: 'Centro de mando en vivo',
-        desc: 'Mapa en tiempo real, cola de alarmas y SOS, incidentes y la ubicación de tu personal. Todo lo que pasa en la operación, en el momento en que pasa.',
+        title: 'Turnos y Horarios',
+        desc: 'Crea turnos, asigna guardias, gestiona faltas y evita huecos de cobertura.',
       },
       {
-        title: 'Portal y app para tus clientes',
-        desc: 'Tus clientes ven su cobertura, reportan con un SOS, siguen a los guardias en vivo y reciben reportes profesionales. La transparencia que retiene contratos.',
+        title: 'Despacho y Comunicación',
+        desc: 'Envía novedades, instrucciones, alertas y mensajes de emergencia desde un solo lugar.',
       },
       {
-        title: 'Turnos, asistencia y nómina',
-        desc: 'Programa turnos en minutos, controla horas y pases de turno, y calcula la nómina según la ley de tu país. Menos papeleo, cero turnos olvidados.',
+        title: 'Reportes de Incidentes',
+        desc: 'Crea reportes de incidentes profesionales con fotos, notas, hora exacta y resúmenes listos para el cliente.',
       },
       {
-        title: 'Reportes y analítica',
-        desc: 'Decide con datos: incidentes, cumplimiento de rondas, horas y desempeño de cada guardia. Reportes en PDF listos para presentar a cada cliente.',
+        title: 'Portal del Cliente',
+        desc: 'Da a tus clientes acceso a reportes, historial de rondas, control de visitas y actividad del sitio.',
       },
     ],
+    linksHtml: 'Profundiza en cómo funciona: por qué el <a href="/blog/software-vs-excel-empresas-seguridad" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">software para empresas de seguridad</a> reemplaza al Excel, cómo el <a href="/blog/gps-tracking-rondas-vigilancia" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">rastreo GPS de rondas de vigilancia</a> verifica cada recorrido y cómo <a href="/blog/documentar-incidentes-seguridad-correctamente" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">documentar incidentes de seguridad</a> de forma profesional.',
+  },
+
+  // AI
+  ai: {
+    badge: 'Inteligencia Artificial',
+    headline: 'IA hecha para operaciones de seguridad modernas',
+    body: 'CGuardPro ayuda a tu equipo a moverse más rápido convirtiendo la actividad diaria de seguridad en inteligencia operativa clara.',
+    bullets: [
+      'Genera resúmenes de incidentes en segundos',
+      'Encuentra reportes y actividad histórica más rápido',
+      'Detecta rondas incumplidas, atrasos y actividad inusual',
+      'Ayuda a los despachadores a tomar decisiones más rápido',
+      'Convierte la actividad de tus guardias en información lista para el cliente',
+    ],
+  },
+
+  // Live operations
+  liveOps: {
+    badge: 'Operación en Vivo',
+    headline: 'Sabe lo que está pasando ahora mismo',
+    body: 'En el momento en que algo cambia, tu equipo lo sabe. CGuardPro da a tus jefes de operaciones visibilidad en tiempo real sobre guardias, rondas, incidentes, alertas, visitas y la actividad de cada sitio.',
+    alerts: [
+      'Guardia llegó tarde',
+      'Punto de ronda incumplido',
+      'Botón de pánico activado',
+      'Reporte de incidente enviado',
+      'Vehículo salió de su zona asignada',
+      'Visitante registrado',
+      'Supervisión completada',
+    ],
+    screenshotUrl: 'app.cguardpro.com/incidentes',
+    screenshotAlt: 'Software de reportes de incidentes de seguridad en CGuardPro — cola de incidentes en vivo con fotos, marcas de tiempo y estado de cada caso',
+  },
+
+  // Client experience
+  clientXp: {
+    badge: 'Experiencia del Cliente',
+    headline: 'Da a tus clientes la transparencia que esperan',
+    body: 'Los clientes de seguridad quieren pruebas de que el servicio se está cumpliendo. CGuardPro te ayuda a generar confianza con reportes profesionales, historial de rondas completadas, verificación GPS, fotos y registros de actividad en tiempo real.',
+    bullets: [
+      'Comparte las rondas completadas',
+      'Entrega reportes de incidentes profesionales',
+      'Muestra evidencia fotográfica y marcas de tiempo',
+      'Provee registros de visitas y actividad del sitio',
+      'Mejora la retención de clientes con mejor comunicación',
+    ],
+  },
+
+  // Mobile callout
+  mobile: {
+    badge: 'App Móvil',
+    headline1: 'Una app para guardias',
+    headline2: 'hecha para el campo',
+    body: 'Tus guardias necesitan herramientas simples que funcionen mientras están de turno. La app móvil de CGuardPro les permite marcar asistencia, seguir consignas, escanear puntos de ronda, enviar reportes, subir fotos y mandar alertas de emergencia desde su celular.',
+    features: [
+      'Marcaje de entrada y salida',
+      'Rastreo GPS',
+      'Puntos de ronda con QR',
+      'Reportes de incidentes',
+      'Evidencia fotográfica',
+      'Notificaciones push',
+      'Consignas digitales',
+      'Alertas de emergencia',
+      'Soporte offline donde es posible',
+    ],
+    ctaDemo: 'Agendar una Demo',
+    ctaLearn: 'Ver la app del guardia',
+    ctaLearnHref: '/blog/app-movil-guardias-seguridad-funcionalidades',
+    phoneOnDuty: 'EN TURNO',
+    phoneSite: 'Sitio A — Portón Norte',
+    phoneShift: 'Turno: 22:00 – 06:00',
+    phoneCheckpoints: ['Punto 1 ✓', 'Punto 2 ✓', 'Punto 3 ⏳'],
+    phoneReportBtn: 'Reportar Incidente',
   },
 
   // How it works
@@ -122,59 +201,43 @@ export const es = {
     ],
   },
 
-  // Mobile callout
-  mobile: {
-    badge: 'Primero el Móvil',
-    headline1: 'Tus guardias trabajan en el campo.',
-    headline2: 'Dales las herramientas adecuadas.',
-    features: [
-      'Fichaje con un toque y verificación GPS',
-      'Escaneo de puntos de control QR / NFC en ronda',
-      'Envío de reportes de incidentes con fotos desde el campo',
-      'Briefings y anuncios de turno en tiempo real',
-      'Funciona sin conexión, sincroniza al conectarse',
+  // Why switch
+  whySwitch: {
+    badge: 'Por Qué CGuardPro',
+    headline: 'Por qué las empresas de seguridad se cambian a CGuardPro',
+    body: 'La mayoría de empresas de seguridad termina superando las hojas de cálculo, los reportes en papel, los mensajes de texto y los sistemas de rondas desconectados. CGuardPro le da a tu negocio una sola plataforma conectada, construida específicamente para operaciones de seguridad privada.',
+    bullets: [
+      'Una plataforma en lugar de varias herramientas desconectadas',
+      'Interfaz moderna para oficina, supervisores, guardias y clientes',
+      'Mayor responsabilidad en cada sitio',
+      'Despacho y respuesta a incidentes más rápidos',
+      'Turnos y preparación de nómina más fáciles',
+      'Reportes más sólidos para tus clientes',
+      'Escala de equipos pequeños a grandes operaciones',
     ],
-    ctaDemo: 'Ver Demo',
-    ctaLearn: 'Saber Más',
-    phoneOnDuty: 'EN TURNO',
-    phoneSite: 'Sitio A — Portón Norte',
-    phoneShift: 'Turno: 22:00 – 06:00',
-    phoneCheckpoints: ['Punto 1 ✓', 'Punto 2 ✓', 'Punto 3 ⏳'],
-    phoneReportBtn: 'Reportar Incidente',
   },
 
-  // Testimonials
-  testimonials: {
-    badge: 'Testimonios',
-    headline: 'La confianza de los profesionales de seguridad',
-    items: [
-      {
-        quote: 'CGuardPro transformó la manera en que operamos. Lo que antes tomaba horas de papeleo ahora sucede automáticamente.',
-        name: 'Carlos M.',
-        role: 'Director de Operaciones',
-        company: 'Secure Shield Corp.',
-      },
-      {
-        quote: 'A nuestros clientes les encanta el portal. La transparencia y los reportes en tiempo real nos han diferenciado de la competencia.',
-        name: 'Jennifer R.',
-        role: 'CEO',
-        company: 'Guardian Force LLC',
-      },
-      {
-        quote: 'La app móvil para guardias es intuitiva. El tiempo de reporte de incidentes bajó un 70% en el primer mes.',
-        name: 'David L.',
-        role: 'Gerente de Operaciones',
-        company: 'ProWatch Security',
-      },
+  // Results
+  results: {
+    badge: 'Resultados',
+    headline: 'Más control. Menos administración.',
+    body: 'CGuardPro ayuda a las empresas de seguridad a reducir el trabajo manual, mejorar la responsabilidad en campo y entregar una mejor experiencia al cliente.',
+    cards: [
+      'Reduce errores de programación',
+      'Mejora la responsabilidad de tus guardias',
+      'Responde a incidentes más rápido',
+      'Elimina papeleo y reportes manuales',
+      'Fortalece la confianza de tus clientes',
+      'Escala tu operación sin más carga administrativa',
     ],
   },
 
   // CTA section
   cta: {
-    headline: '¿Listo para tomar el control?',
-    subheadline: 'Únete a cientos de empresas de seguridad que ya usan CGuardPro para operar de forma más inteligente y rápida.',
-    primary: 'Solicitar Demo Gratuita',
-    secondary: 'Ver Precios',
+    headline: '¿Listo para modernizar tu operación de seguridad?',
+    subheadline: 'Deja de administrar tu empresa de seguridad con hojas de cálculo, reportes en papel, mensajes de texto y software desconectado. CGuardPro le da a tu equipo la plataforma para gestionar guardias, clientes, rondas, reportes, turnos, despacho y toda la operación en un solo lugar.',
+    primary: 'Agendar una Demo en Vivo',
+    secondary: 'Ver Cómo Funciona',
   },
 
   // Pricing page

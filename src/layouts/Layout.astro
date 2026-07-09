@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 
 const siteName = 'CGuardPro';
-const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const pathname = Astro.url.pathname;
 const esURL = new URL(pathname.replace(/^\/en/, '') || '/', Astro.site).href;
 const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, '')}`, Astro.site).href;
@@ -104,7 +104,9 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
       "name": "CGuardPro",
       "url": "https://cguardpro.com",
       "logo": "https://cguardpro.com/logo.png",
-      "description": "Plataforma de gestión de seguridad para empresas de seguridad privada: app para guardias y supervisores, patrullaje vehicular, monitoreo en vivo, portal del cliente y nómina.",
+      "description": lang === 'es'
+        ? "Plataforma de operaciones de seguridad para empresas de seguridad privada: gestión de guardias, rondas GPS, turnos, despacho, incidentes, portal del cliente y nómina."
+        : "Security operations platform for private security companies: guard management, GPS patrol tracking, scheduling, dispatch, incident reporting, client portal, and payroll.",
       "sameAs": [
         "https://www.instagram.com/cguardpro",
         "https://www.linkedin.com/company/cguardpro"
@@ -112,8 +114,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     })} />
 
     <!-- Structured Data: SoftwareApplication -->
-    <script type="application/ld+json">
-      {JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "CGuardPro",
@@ -127,11 +128,6 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
           "price": "5.00",
           "priceValidUntil": "2027-12-31"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "127"
-        },
         "provider": {
           "@type": "Organization",
           "name": "CGuardPro",
@@ -144,12 +140,10 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
           { "@type": "State", "name": "Texas" },
           { "@type": "Country", "name": "United States" }
         ]
-      })}
-    </script>
+      })} />
 
     <!-- Structured Data: LocalBusiness -->
-    <script type="application/ld+json">
-      {JSON.stringify(lang === 'es' ? {
+    <script type="application/ld+json" set:html={JSON.stringify(lang === 'es' ? {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "CGuardPro",
@@ -218,8 +212,7 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
           "opens": "08:00",
           "closes": "18:00"
         }
-      })}
-    </script>
+      })} />
 
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

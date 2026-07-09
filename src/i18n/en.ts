@@ -2,20 +2,20 @@
 import type { Translations } from './es';
 
 export const en: Translations = {
-  siteDescription: 'CGuardPro — Security guard management software headquartered in Austin, TX. The #1 platform for security companies in Texas: manage guards, schedules, GPS patrols, incidents, and clients from one command center.',
+  siteDescription: 'CGuardPro is a security operations platform for private security companies. Manage guards, patrols, scheduling, dispatch, incidents, clients, GPS tracking, and reports in one system.',
 
   nav: {
-    features: 'Features',
+    features: 'Platform',
     howItWorks: 'How It Works',
     pricing: 'Pricing',
     about: 'About',
     blog: 'Blog',
     signIn: 'Sign In',
-    requestDemo: 'Request Demo',
+    requestDemo: 'Book a Demo',
   },
 
   footer: {
-    tagline: 'The intelligent security management platform built for modern companies. One platform. Total command.',
+    tagline: 'The security operations platform built for modern private security companies. One platform. Total command.',
     getStarted: 'Get Started Free',
     sections: {
       product: 'Product',
@@ -41,68 +41,143 @@ export const en: Translations = {
   },
 
   hero: {
-    badge: 'The operating system for your security company',
-    headline1: 'Command your entire',
-    headline2: 'security operation',
-    subheadline: 'Guards, supervisors, patrols, and clients in one platform — with mobile apps and live monitoring. Ditch the WhatsApp and spreadsheets; take control.',
-    ctaPrimary: 'Request a free demo',
-    ctaSecondary: 'See how it works',
+    badge: 'Security Operations Platform',
+    headline1: 'Run Your Entire Security Company',
+    headline2: 'From One Platform',
+    subheadline: 'CGuardPro is a modern security operations platform that helps private security companies manage guards, clients, patrols, dispatch, incidents, scheduling, payroll, and real-time operations from one connected command center.',
+    supporting: 'Built for security companies that need more visibility, faster response times, stronger guard accountability, and better client communication.',
+    ctaPrimary: 'Book a Live Demo',
+    ctaSecondary: 'Explore Platform',
     trust1: 'Web + iOS + Android',
     trust2: 'English & Spanish',
     trust3: 'Live in one day',
     dashboardUrl: 'app.cguardpro.com/command-center',
-    mockStats: ['On duty', 'Patrols today', 'Incidents', 'Points OK'],
-    mockValues: ['24', '18', '2', '96%'],
-    mockTrends: ['▲ 3 vs yesterday', 'in progress', '↓ 1 resolved', '▲ +4%'],
-    mockMap: 'Live guards & routes',
-    mockOnDuty: 'On duty',
-    mockRoute: 'Vehicle patrol · 3/5',
-    mockGuard1: 'Main Gate',
-    mockGuard2: 'North Entrance',
-    mockGuard3: 'South Warehouse',
-    phoneTitle: 'Guard app',
-    phoneStatus: 'On duty · 06:24 h',
-    phoneCta: 'Scan patrol point',
+    dashboardAlt: 'CGuardPro security guard management software dashboard — live GPS guard tracking map, operations metrics, and real-time activity',
   },
 
+  // Stats (product facts — no invented customer numbers)
   stats: [
-    { value: '500+', label: 'Security Companies', sub: 'trust CGuardPro' },
-    { value: '12K+', label: 'Guards Managed', sub: 'across the platform' },
-    { value: '99.9%', label: 'Uptime SLA', sub: 'guaranteed' },
-    { value: '4.8★', label: 'Avg Rating', sub: 'from security professionals' },
+    { value: '1', label: 'Connected Platform', sub: 'operations, guards, supervisors & clients' },
+    { value: '3', label: 'Mobile Apps', sub: 'for guards, supervisors & clients' },
+    { value: '24/7', label: 'Real-Time Visibility', sub: 'live GPS, alerts & dispatch' },
+    { value: '100%', label: 'Digital Reporting', sub: 'no more paper or spreadsheets' },
   ],
 
+  problem: {
+    badge: 'The Problem',
+    headline: 'Security Operations Shouldn’t Feel Like Firefighting',
+    body: 'Missed shifts, last-minute call offs, paper reports, client complaints, payroll disputes, and disconnected tools make it harder to run a profitable security company. CGuardPro brings your operations together so your team can see what is happening, respond faster, and keep every site accountable.',
+    bullets: [
+      'Reduce missed patrols and late arrivals',
+      'Track guards and vehicles in real time',
+      'Replace paper reports with digital incident reporting',
+      'Give clients better visibility into service activity',
+      'Simplify scheduling, dispatch, and workforce management',
+      'Keep patrols, reports, GPS, and communication connected',
+    ],
+  },
+
   features: {
-    badge: 'Platform Features',
-    headline1: 'Everything your security company needs',
-    headline2: 'in one control center',
-    subheadline: 'Stop juggling spreadsheets, WhatsApp chats, and paper forms. CGuardPro brings it all together.',
+    badge: 'The Command Center',
+    headline1: 'Your Entire Security Operation.',
+    headline2: 'One Command Center.',
+    subheadline: 'CGuardPro connects the tools your operations team depends on every day. From live guard tracking to incident reports and client portals, everything works together in one security workforce management platform.',
     items: [
       {
-        title: 'An app for your guards',
-        desc: 'The whole shift in one app: GPS + geofenced clock-in, QR-and-photo patrols, visitor control, incidents with evidence, and a panic button. Simple enough for your least tech-savvy guard.',
+        title: 'Live GPS Tracking',
+        desc: 'Know where guards, supervisors, and vehicles are in real time.',
       },
       {
-        title: 'Supervision & vehicle patrol',
-        desc: 'Your supervisors run their route stop by stop —guards, alarms, properties, and clients—, verify each point with photos, and navigate with one tap. Finally, proof the check actually happened.',
+        title: 'Guard Patrol Tracking',
+        desc: 'Use QR codes, GPS checkpoints, photos, and timestamps to verify every patrol.',
       },
       {
-        title: 'Live command center',
-        desc: 'Real-time map, alarm & SOS queue, incidents, and your team’s location. Everything happening across the operation, the moment it happens.',
+        title: 'Security Scheduling',
+        desc: 'Build shifts, assign guards, manage call offs, and prevent coverage gaps.',
       },
       {
-        title: 'Client portal & app',
-        desc: 'Clients see their coverage, report with an SOS, track guards live, and receive professional reports. The transparency that keeps contracts.',
+        title: 'Dispatch & Communication',
+        desc: 'Send updates, instructions, alerts, and emergency messages from one place.',
       },
       {
-        title: 'Scheduling, attendance & payroll',
-        desc: 'Build shifts in minutes, track hours and shift handovers, and run payroll for your country’s labor rules. Less paperwork, zero missed shifts.',
+        title: 'Incident Reporting',
+        desc: 'Create professional incident reports with photos, notes, time stamps, and client-ready summaries.',
       },
       {
-        title: 'Reports & analytics',
-        desc: 'Decisions backed by data: incidents, patrol compliance, hours, and per-guard performance. PDF reports ready to hand to every client.',
+        title: 'Client Portal',
+        desc: 'Give clients access to reports, patrol history, visitor logs, and site activity.',
       },
     ],
+    linksHtml: 'Go deeper: see why <a href="/en/blog/security-guard-scheduling-software-vs-spreadsheets" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">security guard scheduling software</a> beats spreadsheets, how <a href="/en/blog/gps-guard-tour-systems-complete-guide" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">guard patrol tracking</a> verifies every tour, and how <a href="/en/blog/digital-vs-paper-incident-reporting-security" class="text-brand underline decoration-brand/40 underline-offset-4 hover:decoration-brand transition-colors">digital incident reporting</a> protects your contracts.',
+  },
+
+  ai: {
+    badge: 'AI & Intelligence',
+    headline: 'AI Built for Modern Security Operations',
+    body: 'CGuardPro helps your team move faster by turning daily security activity into clear operational intelligence.',
+    bullets: [
+      'Generate incident summaries in seconds',
+      'Search reports and activity history faster',
+      'Identify missed patrols, late arrivals, and unusual activity',
+      'Help dispatchers make faster decisions',
+      'Turn guard activity into client-ready insights',
+    ],
+  },
+
+  liveOps: {
+    badge: 'Live Operations',
+    headline: 'Know What’s Happening Right Now',
+    body: 'The moment something changes, your team knows. CGuardPro gives operations managers real-time visibility into guards, patrols, incidents, alerts, visitors, and site activity.',
+    alerts: [
+      'Guard arrived late',
+      'Patrol checkpoint missed',
+      'Panic alert activated',
+      'Incident report submitted',
+      'Vehicle left assigned area',
+      'Visitor checked in',
+      'Supervisor inspection completed',
+    ],
+    screenshotUrl: 'app.cguardpro.com/incidents',
+    screenshotAlt: 'Security incident reporting software in CGuardPro — live incident queue with photos, timestamps, and case status',
+  },
+
+  clientXp: {
+    badge: 'Client Experience',
+    headline: 'Give Clients the Transparency They Expect',
+    body: 'Security clients want proof that service is being delivered. CGuardPro helps you build trust with professional reports, completed patrol history, GPS verification, photos, and real-time activity records.',
+    bullets: [
+      'Share completed patrols',
+      'Deliver professional incident reports',
+      'Show photo evidence and timestamps',
+      'Provide visitor and site activity logs',
+      'Improve client retention with better communication',
+    ],
+  },
+
+  mobile: {
+    badge: 'Mobile App',
+    headline1: 'A Guard App',
+    headline2: 'Built for the Field',
+    body: 'Your guards need simple tools that work while they are on duty. The CGuardPro mobile app helps officers clock in, follow post orders, scan patrol checkpoints, submit reports, upload photos, and send emergency alerts from their phone.',
+    features: [
+      'Clock in and out',
+      'GPS tracking',
+      'QR patrol checkpoints',
+      'Incident reports',
+      'Photo evidence',
+      'Push notifications',
+      'Digital post orders',
+      'Emergency alerts',
+      'Offline support where possible',
+    ],
+    ctaDemo: 'Book a Live Demo',
+    ctaLearn: 'See the guard app features',
+    ctaLearnHref: '/en/blog/security-guard-mobile-app-essential-features',
+    phoneOnDuty: 'ON DUTY',
+    phoneSite: 'Site A — North Gate',
+    phoneShift: 'Shift: 22:00 – 06:00',
+    phoneCheckpoints: ['Checkpoint 1 ✓', 'Checkpoint 2 ✓', 'Checkpoint 3 ⏳'],
+    phoneReportBtn: 'File Incident Report',
   },
 
   howItWorks: {
@@ -117,56 +192,40 @@ export const en: Translations = {
     ],
   },
 
-  mobile: {
-    badge: 'Mobile First',
-    headline1: 'Your guards work in the field.',
-    headline2: 'Give them the right tools.',
-    features: [
-      'One-tap clock-in with GPS verification',
-      'QR / NFC checkpoint scanning on patrol',
-      'Submit incident reports with photos from the field',
-      'Real-time shift briefings and announcements',
-      'Works offline, syncs when connected',
+  whySwitch: {
+    badge: 'Why CGuardPro',
+    headline: 'Why Security Companies Switch to CGuardPro',
+    body: 'Most security companies outgrow spreadsheets, paper reports, text messages, and disconnected guard tour systems. CGuardPro gives your business one connected platform built specifically for private security operations.',
+    bullets: [
+      'One platform instead of multiple disconnected tools',
+      'Modern interface for office teams, supervisors, guards, and clients',
+      'Better accountability across every site',
+      'Faster dispatch and incident response',
+      'Easier scheduling and payroll preparation',
+      'Stronger client reporting',
+      'Scales from small teams to large security operations',
     ],
-    ctaDemo: 'Get Demo',
-    ctaLearn: 'Learn More',
-    phoneOnDuty: 'ON DUTY',
-    phoneSite: 'Site A — North Gate',
-    phoneShift: 'Shift: 22:00 – 06:00',
-    phoneCheckpoints: ['Checkpoint 1 ✓', 'Checkpoint 2 ✓', 'Checkpoint 3 ⏳'],
-    phoneReportBtn: 'File Incident Report',
   },
 
-  testimonials: {
-    badge: 'Testimonials',
-    headline: 'Trusted by security professionals',
-    items: [
-      {
-        quote: 'CGuardPro transformed how we run operations. What used to take hours of paperwork now happens automatically.',
-        name: 'Carlos M.',
-        role: 'Director of Operations',
-        company: 'Secure Shield Corp.',
-      },
-      {
-        quote: 'Our clients love the portal. Transparency and real-time reporting have made us stand out from the competition.',
-        name: 'Jennifer R.',
-        role: 'CEO',
-        company: 'Guardian Force LLC',
-      },
-      {
-        quote: 'The mobile app for guards is intuitive. Incident reporting time dropped by 70% in the first month.',
-        name: 'David L.',
-        role: 'Operations Manager',
-        company: 'ProWatch Security',
-      },
+  results: {
+    badge: 'Outcomes',
+    headline: 'More Control. Less Administration.',
+    body: 'CGuardPro helps security companies reduce manual work, improve field accountability, and deliver a better client experience.',
+    cards: [
+      'Reduce scheduling errors',
+      'Improve guard accountability',
+      'Respond to incidents faster',
+      'Cut paperwork and manual reporting',
+      'Strengthen client trust',
+      'Scale operations without adding unnecessary admin work',
     ],
   },
 
   cta: {
-    headline: 'Ready to take command?',
-    subheadline: 'Join hundreds of security companies already using CGuardPro to run smarter, faster operations.',
-    primary: 'Request Your Free Demo',
-    secondary: 'View Pricing',
+    headline: 'Ready to Modernize Your Security Operations?',
+    subheadline: 'Stop managing your security company with spreadsheets, paper reports, text messages, and disconnected software. CGuardPro gives your team the platform to manage guards, clients, patrols, reports, scheduling, dispatch, and operations in one place.',
+    primary: 'Book a Live Demo',
+    secondary: 'See How It Works',
   },
 
   pricing: {

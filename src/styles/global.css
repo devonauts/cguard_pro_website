@@ -153,8 +153,6 @@ html.light .site-logo {
 /* Minimalist light: clean solid headings (no glow), softer grid, crisp white cards.
    .card-glass bakes bg-navy-light/60 via @apply, so the utility override can't reach it —
    override the component class directly here so cards are white, not gray. */
-html.light .glow-text { text-shadow: none; }
-html.light .grid-bg { opacity: 0.5; }
 html.light .card-glass {
   background-color: var(--surface) !important;
   border-color: var(--border) !important;
@@ -189,15 +187,18 @@ html.light .card-glass:hover {
            px-3 py-1 rounded-full border border-brand/20 bg-brand/5;
   }
 
-  .glow-text {
-    text-shadow: 0 0 40px rgba(200, 134, 10, 0.6);
+  /* Real metallic-gold gradient for headline accents — no glow */
+  .gold-gradient-text {
+    background-image: linear-gradient(100deg, #a97c2f 0%, #d4af37 28%, #f5e08e 50%, #d4af37 72%, #a97c2f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  .grid-bg {
-    background-image: 
-      linear-gradient(rgba(200,134,10,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,134,10,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
+  /* Thin metallic-gold hairline, fading at the edges */
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(169,124,47,0.55) 18%, #d4af37 42%, #f5e08e 50%, #d4af37 58%, rgba(169,124,47,0.55) 82%, transparent 100%);
   }
 
   .animate-on-scroll {
