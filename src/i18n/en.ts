@@ -7,6 +7,7 @@ export const en: Translations = {
   nav: {
     features: 'Platform',
     howItWorks: 'How It Works',
+    app: 'The App',
     pricing: 'Pricing',
     about: 'About',
     blog: 'Blog',
@@ -141,6 +142,18 @@ export const en: Translations = {
     screenshotAlt: 'Security incident reporting software in CGuardPro — live incident queue with photos, timestamps, and case status',
   },
 
+  emergency: {
+    badge: 'Emergency Response',
+    headline: 'When Seconds Count, Everyone Knows',
+    body: 'A panic alert from a guard or an SOS from a client triggers the full response: an audible alarm in the command center, a priority case in the alarm queue, and instant notifications to your team — and it stays active until someone acknowledges, dispatches, and resolves it.',
+    bullets: [
+      'Panic button on every guard’s phone',
+      'Client SOS from the resident app',
+      'Priority alarm queue: acknowledge, dispatch, resolve',
+      'Instant push notifications to nearby guards and supervisors',
+    ],
+  },
+
   clientXp: {
     badge: 'Client Experience',
     headline: 'Give Clients the Transparency They Expect',
@@ -171,13 +184,90 @@ export const en: Translations = {
       'Offline support where possible',
     ],
     ctaDemo: 'Book a Live Demo',
-    ctaLearn: 'See the guard app features',
-    ctaLearnHref: '/en/blog/security-guard-mobile-app-essential-features',
+    ctaLearn: 'See the guard app',
+    ctaLearnHref: '/en/app-movil',
     phoneOnDuty: 'ON DUTY',
     phoneSite: 'Site A — North Gate',
     phoneShift: 'Shift: 22:00 – 06:00',
     phoneCheckpoints: ['Checkpoint 1 ✓', 'Checkpoint 2 ✓', 'Checkpoint 3 ⏳'],
     phoneReportBtn: 'File Incident Report',
+  },
+
+  // Worker-app showcase page (/en/app-movil) — screenshots are real captures of
+  // the shipping app running against the demo tenant. No invented numbers.
+  workerApp: {
+    metaTitle: 'The Guard App — The Whole Operation in Their Pocket',
+    metaDescription:
+      'The C-Guard Pro mobile app for security officers: live shift with selfie + GPS clock-in, built-in PTT radio, QR patrols, incident reports with evidence, client tasks, and scheduling. Real app screenshots.',
+    hero: {
+      badge: 'The Guard App',
+      h1a: 'The whole operation,',
+      h1b: 'in your officer’s pocket',
+      sub: 'Selfie + GPS clock-in, live voice radio, QR patrol rounds, incidents with evidence, and client post orders — one app built for the field.',
+      ctaDemo: 'Book a demo',
+      ctaTour: 'Tour the app',
+      hint: 'Real screenshots of the app in operation',
+      phoneAlt: 'On-duty guard dashboard in the C-Guard Pro app',
+    },
+    tour: {
+      label: 'The Tour',
+      title: 'What a real shift looks like',
+      sub: 'Scroll — or tap a feature — and the phone follows along.',
+      stops: [
+        {
+          key: 'dashboard',
+          chip: 'Shift',
+          title: 'A live shift, zero paperwork',
+          body: 'Officers clock in with a selfie and location, and their dashboard shows the shift timer, active patrol, tasks, and post activity in real time.',
+          bullets: ['Selfie + GPS clock-in', 'Live timer and ON DUTY status', 'Post activity and on-duty team'],
+        },
+        {
+          key: 'radio',
+          chip: 'Radio',
+          title: 'Built-in PTT radio',
+          body: 'An open voice channel with push-to-talk right inside the app: dispatch, supervisors, and officers on the same channel, with encrypted audio that keeps working in the background.',
+          bullets: ['Push-to-talk (PTT)', 'Live view of who’s on the channel', 'Keeps receiving with the screen locked'],
+        },
+        {
+          key: 'incidents',
+          chip: 'Incidents',
+          title: 'Incidents with evidence',
+          body: 'File a report in seconds with photo, priority, and location. Dispatch sees it instantly and the client gets the follow-up.',
+          bullets: ['Photo and location attached', 'Clear priorities and statuses', 'Instantly visible to dispatch'],
+        },
+        {
+          key: 'tasks',
+          chip: 'Tasks',
+          title: 'Client post orders, as tasks',
+          body: 'Client requests reach the shift as a clear checklist: what to do, where, and at what priority. Nothing falls through the cracks.',
+          bullets: ['Client requests approved by dispatch', 'Priority and status per task', 'Completion tracking'],
+        },
+        {
+          key: 'schedule',
+          chip: 'Schedule',
+          title: 'The schedule, always at hand',
+          body: 'Every officer sees their shifts for the month — including overnight shifts — and gets notified about changes on their phone.',
+          bullets: ['Day / week / month views', 'Overnight shifts handled right', 'Changes pushed to their phone'],
+        },
+      ],
+    },
+    more: {
+      label: 'And More',
+      title: 'Built for field work',
+      items: [
+        { title: 'Panic button', body: 'An SOS that triggers the full response: dispatch alarm, team alert, and a priority case until resolved.' },
+        { title: 'QR patrol rounds', body: 'Checkpoints scanned with the phone, with configurable rules verified server-side.' },
+        { title: 'Shift handover', body: 'Pass-down notes and instructions are delivered automatically to the incoming officer at relief.' },
+        { title: 'Messaging & groups', body: 'Per-post chats with voice notes — inside the operation, not on personal apps.' },
+        { title: 'Offline mode', body: 'Reports queue without signal and send themselves when the connection returns.' },
+        { title: 'Training', body: 'Courses, quizzes, and C-Guard Pro certificates right on the officer’s phone.' },
+      ],
+    },
+    cta: {
+      title: 'Want to see it in action?',
+      sub: 'Book a demo and walk through the app with real operational data.',
+      button: 'Book a demo',
+    },
   },
 
   howItWorks: {

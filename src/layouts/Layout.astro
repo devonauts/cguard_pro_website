@@ -76,6 +76,9 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={fullTitle} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content={lang === 'es' ? 'es_EC' : 'en_US'} />
 

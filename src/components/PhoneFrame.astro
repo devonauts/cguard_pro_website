@@ -1,0 +1,83 @@
+---
+/**
+ * Realistic phone mockup around a real app screenshot (780×1688 captures).
+ * Pure CSS frame — bezel, dynamic island, side buttons — so it stays crisp at
+ * any size and inherits the site's light/dark theming for its shadow.
+ */
+interface Props {
+  src: string;
+  alt: string;
+  eager?: boolean;
+  class?: string;
+}
+const { src, alt, eager = false, class: className = '' } = Astro.props;
+---
+
+<div class={`phone-frame relative ${className}`}>
+  <div class="phone-body">
+    <span class="phone-btn phone-btn-power" aria-hidden="true"></span>
+    <span class="phone-btn phone-btn-vol1" aria-hidden="true"></span>
+    <span class="phone-btn phone-btn-vol2" aria-hidden="true"></span>
+    <div class="phone-screen">
+      <div class="phone-statusbar" aria-hidden="true">
+        <span class="phone-island"></span>
+      </div>
+      <img
+        src={src}
+        alt={alt}
+        width="390"
+        height="844"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .phone-body {
+    position: relative;
+    border-radius: 3rem;
+    padding: 0.55rem;
+    background: linear-gradient(160deg, #3a3a3e 0%, #17171a 30%, #0c0c0e 70%, #2c2c30 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 24px 60px -18px rgba(0, 0, 0, 0.65),
+      0 8px 22px -10px rgba(0, 0, 0, 0.5);
+  }
+  .phone-screen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.5rem;
+    background: #0a0e16;
+  }
+  .phone-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  /* Dedicated status-bar strip so the island never covers app content. It
+     matches the app's dark header, so it reads as part of the phone. */
+  .phone-statusbar {
+    display: grid;
+    place-items: center;
+    height: 2rem;
+    background: #16161c;
+  }
+  .phone-island {
+    width: 30%;
+    height: 1.15rem;
+    border-radius: 9999px;
+    background: #000;
+  }
+  .phone-btn {
+    position: absolute;
+    right: -2px;
+    width: 3px;
+    border-radius: 2px;
+    background: #454549;
+  }
+  .phone-btn-power { top: 26%; height: 3.4rem; }
+  .phone-btn-vol1 { left: -2px; right: auto; top: 22%; height: 2.2rem; }
+  .phone-btn-vol2 { left: -2px; right: auto; top: 31%; height: 2.2rem; }
+</style>

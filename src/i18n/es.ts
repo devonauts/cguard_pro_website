@@ -7,6 +7,7 @@ export const es = {
   nav: {
     features: 'Funcionalidades',
     howItWorks: 'Cómo Funciona',
+    app: 'La App',
     pricing: 'Precios',
     about: 'Nosotros',
     blog: 'Blog',
@@ -147,6 +148,19 @@ export const es = {
     screenshotAlt: 'Software de reportes de incidentes de seguridad en CGuardPro — cola de incidentes en vivo con fotos, marcas de tiempo y estado de cada caso',
   },
 
+  // Emergency response (video band)
+  emergency: {
+    badge: 'Respuesta a Emergencias',
+    headline: 'Cuando cada segundo cuenta, todos lo saben',
+    body: 'Una alerta de pánico de un guardia o un SOS de un cliente activa la respuesta completa: alarma sonora en el centro de mando, un caso prioritario en la cola de alarmas y notificaciones instantáneas a tu equipo — y sigue activa hasta que alguien la atiende, despacha y resuelve.',
+    bullets: [
+      'Botón de pánico en el teléfono de cada guardia',
+      'SOS del cliente desde la app de residentes',
+      'Cola de alarmas prioritaria: atender, despachar, resolver',
+      'Notificaciones push inmediatas a guardias cercanos y supervisores',
+    ],
+  },
+
   // Client experience
   clientXp: {
     badge: 'Experiencia del Cliente',
@@ -179,13 +193,90 @@ export const es = {
       'Soporte offline donde es posible',
     ],
     ctaDemo: 'Agendar una Demo',
-    ctaLearn: 'Ver la app del guardia',
-    ctaLearnHref: '/blog/app-movil-guardias-seguridad-funcionalidades',
+    ctaLearn: 'Ver la app del vigilante',
+    ctaLearnHref: '/app-movil',
     phoneOnDuty: 'EN TURNO',
     phoneSite: 'Sitio A — Portón Norte',
     phoneShift: 'Turno: 22:00 – 06:00',
     phoneCheckpoints: ['Punto 1 ✓', 'Punto 2 ✓', 'Punto 3 ⏳'],
     phoneReportBtn: 'Reportar Incidente',
+  },
+
+  // Worker-app showcase page (/app-movil) — screenshots are real captures of
+  // the shipping app running against the demo tenant. No invented numbers.
+  workerApp: {
+    metaTitle: 'App del Vigilante — La operación completa en el celular',
+    metaDescription:
+      'La app móvil de C-Guard Pro para vigilantes: turno en vivo con selfie y GPS, radio PTT integrada, rondas con QR, incidentes con evidencia, tareas del cliente y horario. Capturas reales de la app.',
+    hero: {
+      badge: 'App del Vigilante',
+      h1a: 'Toda la operación,',
+      h1b: 'en el bolsillo del vigilante',
+      sub: 'Marcaje con selfie y GPS, radio de voz en vivo, rondas con QR, incidentes con evidencia y las consignas del cliente — una sola app pensada para el trabajo de campo.',
+      ctaDemo: 'Solicitar demo',
+      ctaTour: 'Recorrer la app',
+      hint: 'Capturas reales de la app en operación',
+      phoneAlt: 'Panel del vigilante en servicio en la app C-Guard Pro',
+    },
+    tour: {
+      label: 'Recorrido',
+      title: 'Así se ve un turno real',
+      sub: 'Desplázate — o toca una función — y el teléfono te sigue.',
+      stops: [
+        {
+          key: 'dashboard',
+          chip: 'Turno',
+          title: 'Turno en vivo, sin papeles',
+          body: 'El vigilante marca entrada con selfie y ubicación, y su panel muestra el cronómetro del turno, la ronda activa, las tareas y las novedades del puesto en tiempo real.',
+          bullets: ['Marcaje con selfie + GPS', 'Cronómetro y estado EN SERVICIO', 'Novedades y equipo en servicio'],
+        },
+        {
+          key: 'radio',
+          chip: 'Radio',
+          title: 'Radio PTT integrada',
+          body: 'Canal abierto de voz con pulsar-para-hablar dentro de la app: central, supervisores y vigilantes en el mismo canal, con audio cifrado que sigue activo en segundo plano.',
+          bullets: ['Pulsar para hablar (PTT)', 'Quién está en el canal, en vivo', 'Sigue sonando con la pantalla bloqueada'],
+        },
+        {
+          key: 'incidents',
+          chip: 'Incidentes',
+          title: 'Incidentes con evidencia',
+          body: 'Reporte en segundos con foto, prioridad y ubicación. La central lo ve al instante y el cliente recibe el seguimiento.',
+          bullets: ['Foto y ubicación adjuntas', 'Prioridades y estados claros', 'Visible al instante en la central'],
+        },
+        {
+          key: 'tasks',
+          chip: 'Tareas',
+          title: 'Las consignas del cliente, como tareas',
+          body: 'Lo que el cliente solicita llega al turno como una lista clara: qué hacer, dónde y con qué prioridad. Nada queda en el aire.',
+          bullets: ['Solicitudes del cliente aprobadas por la central', 'Prioridad y estado por tarea', 'Seguimiento de cumplimiento'],
+        },
+        {
+          key: 'schedule',
+          chip: 'Horario',
+          title: 'Horario siempre a mano',
+          body: 'Cada vigilante ve sus turnos del mes — incluso los que cruzan la medianoche — y recibe avisos de cambios en su celular.',
+          bullets: ['Vista día / semana / mes', 'Turnos nocturnos bien resueltos', 'Cambios notificados al celular'],
+        },
+      ],
+    },
+    more: {
+      label: 'Y además',
+      title: 'Hecha para el trabajo de campo',
+      items: [
+        { title: 'Botón de pánico', body: 'SOS que dispara la respuesta completa: alarma en la central, alerta al equipo y caso prioritario hasta resolverse.' },
+        { title: 'Rondas con QR', body: 'Puntos de control escaneados con el celular, con reglas configurables y verificación en el servidor.' },
+        { title: 'Pase de turno', body: 'Novedades e instrucciones se entregan automáticamente al vigilante entrante en cada relevo.' },
+        { title: 'Mensajería y grupos', body: 'Chats por puesto con notas de voz, dentro de la operación y no en apps personales.' },
+        { title: 'Modo offline', body: 'Los reportes se guardan sin señal y se envían solos al recuperar la conexión.' },
+        { title: 'Capacitación', body: 'Cursos, evaluaciones y certificados C-Guard Pro directamente en el celular del vigilante.' },
+      ],
+    },
+    cta: {
+      title: '¿Quieres verla en acción?',
+      sub: 'Agenda una demo y recorre la app con datos reales de operación.',
+      button: 'Agendar una demo',
+    },
   },
 
   // How it works

@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+import { useTranslations, localePath } from '../i18n/index';
+
+const lang = 'es';
+const t = useTranslations(lang);
+const p = (path: string) => localePath(lang, path);
+
+const w = t.workerApp;
+const shot = (key: string) => `/screenshots/worker-app/${lang}-${key}.png`;
+
+// Inline SVG icon paths for the "more" grid (24×24, stroke).
+const moreIcons = [
+  '<path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/>', // panic / SOS pin
+  '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM19 19h2M14 21h2M21 14v2"/>', // QR
+  '<path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7.5 7.5"/><path d="M3 21l7.5-7.5"/>', // handover
+  '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', // chat
+  '<path d="M1 9a11 11 0 0 1 22 0"/><path d="M5 13a7 7 0 0 1 14 0"/><circle cx="12" cy="17" r="2"/>', // offline / signal
+  '<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/>', // training cap
+];
+---
+
+<Layout title={w.metaTitle} lang={lang} description={w.metaDescription}>
+  <Navbar lang={lang} />
+
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'C-Guard Pro',
+    operatingSystem: 'Android, iOS',
+    applicationCategory: 'BusinessApplication',
+    description: w.metaDescription,
+    publisher: { '@type': 'Organization', name: 'CGuardPro' },
+  })}</script>`} />
+
+  <main class="pt-28 lg:pt-32 overflow-x-clip">
+    <!-- ============================== HERO ============================== -->
+    <section class="relative pb-16 lg:pb-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <div>
+            <span class="section-label mb-5 inline-flex animate-fade-up">{w.hero.badge}</span>
+            <h1 class="font-display font-bold text-[2.5rem] lg:text-[3.4rem] leading-[1.05] tracking-tight animate-fade-up" style="animation-delay:.08s">
+              {w.hero.h1a}<br />
+              <span class="gold-gradient-text">{w.hero.h1b}</span>
+            </h1>
+            <p class="mt-6 text-lg max-w-xl animate-fade-up" style="color:var(--text-muted);animation-delay:.16s">
+              {w.hero.sub}
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4 animate-fade-up" style="animation-delay:.24s">
+              <a href={p('/contact')} class="btn-primary">{w.hero.ctaDemo}</a>
+              <a href="#tour" class="btn-outline">{w.hero.ctaTour}</a>
+            </div>
+            <p class="mt-6 text-xs font-mono uppercase tracking-[0.15em] animate-fade-up" style="color:var(--text-faint);animation-delay:.32s">
+              {w.hero.hint}
+            </p>
+          </div>
+
+          <div class="flex justify-center lg:justify-end animate-fade-in" style="animation-delay:.2s">
+            <div id="hero-tilt" class="hero-tilt w-[16.5rem] sm:w-[18.5rem]">
+              <PhoneFrame src={shot('dashboard')} alt={w.hero.phoneAlt} eager />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <!-- ============================== TOUR ============================== -->
+    <section id="tour" class="py-20 lg:py-28" style="background:var(--surface-2)">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mb-10 lg:mb-4">
+          <span class="section-label mb-4 inline-flex">{w.tour.label}</span>
+          <h2 class="font-display font-bold text-[2rem] lg:text-[2.75rem] leading-[1.1] tracking-tight animate-on-scroll">
+            {w.tour.title}
+          </h2>
+          <p class="mt-4 text-lg animate-on-scroll" style="color:var(--text-muted)">{w.tour.sub}</p>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+          <!-- Feature stops (left / stacked on mobile) -->
+          <div>
+            {w.tour.stops.map((stop, i) => (
+              <article
+                data-stop={stop.key}
+                class="tour-stop py-12 lg:py-0 lg:min-h-[78vh] lg:flex lg:flex-col lg:justify-center"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-full border" style="color:var(--brand);border-color:var(--border-strong)">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span class="text-xs font-semibold tracking-[0.15em] uppercase" style="color:var(--brand)">{stop.chip}</span>
+                </div>
+                <h3 class="mt-4 font-display font-bold text-2xl lg:text-[1.9rem] leading-tight">{stop.title}</h3>
+                <p class="mt-3 leading-relaxed" style="color:var(--text-muted)">{stop.body}</p>
+                <ul class="mt-5 space-y-2.5">
+                  {stop.bullets.map((b) => (
+                    <li class="flex items-start gap-3 text-sm" style="color:var(--text-muted)">
+                      <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full" style="background:color-mix(in srgb, var(--brand) 15%, transparent);color:var(--brand)">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <!-- Inline screenshot (mobile only — the sticky phone covers lg+) -->
+                <div class="mt-8 flex justify-center lg:hidden">
+                  <div class="w-56">
+                    <PhoneFrame src={shot(stop.key)} alt={stop.title} />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <!-- Sticky phone (desktop) -->
+          <div class="hidden lg:block">
+            <div class="sticky top-24 flex flex-col items-center pt-6">
+              <div class="flex flex-wrap justify-center gap-2 mb-7" role="tablist" aria-label={w.tour.label}>
+                {w.tour.stops.map((stop, i) => (
+                  <button
+                    type="button"
+                    data-chip={stop.key}
+                    role="tab"
+                    aria-selected={i === 0 ? 'true' : 'false'}
+                    class="tour-chip font-mono text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
+                  >
+                    {stop.chip}
+                  </button>
+                ))}
+              </div>
+              <div class="relative w-[17rem] xl:w-[19rem]">
+                {w.tour.stops.map((stop, i) => (
+                  <div
+                    data-shot={stop.key}
+                    class={`tour-shot ${i === 0 ? 'is-active' : ''} ${i === 0 ? '' : 'absolute inset-0'}`}
+                  >
+                    <PhoneFrame src={shot(stop.key)} alt={stop.title} eager={i === 0} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <!-- ============================== MORE ============================== -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mb-12">
+          <span class="section-label mb-4 inline-flex">{w.more.label}</span>
+          <h2 class="font-display font-bold text-[2rem] lg:text-[2.75rem] leading-[1.1] tracking-tight animate-on-scroll">
+            {w.more.title}
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {w.more.items.map((item, i) => (
+            <div
+              class="animate-on-scroll rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
+              style={`background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow);transition-delay:${i * 60}ms`}
+            >
+              <span class="grid h-11 w-11 place-items-center rounded-xl mb-4" style="background:color-mix(in srgb, var(--brand) 14%, transparent);color:var(--brand)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <Fragment set:html={moreIcons[i]} />
+                </svg>
+              </span>
+              <h3 class="font-display font-semibold text-lg">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed" style="color:var(--text-muted)">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CTA ============================== -->
+    <section class="pb-24 px-6">
+      <div class="max-w-4xl mx-auto rounded-3xl px-8 py-14 text-center relative overflow-hidden" style="background:#141414">
+        <div class="gold-line absolute top-0 left-0 right-0"></div>
+        <h2 class="font-display font-bold text-3xl lg:text-4xl text-white animate-on-scroll">{w.cta.title}</h2>
+        <p class="mt-4 text-white/60 max-w-xl mx-auto animate-on-scroll">{w.cta.sub}</p>
+        <div class="mt-8 animate-on-scroll">
+          <a href={p('/contact')} class="btn-primary">{w.cta.button}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  /* Sticky-phone crossfade */
+  .tour-shot {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
+  }
+  .tour-shot.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* Chips */
+  .tour-chip {
+    color: var(--text-faint);
+    border-color: var(--border);
+    background: transparent;
+    cursor: pointer;
+  }
+  .tour-chip:hover {
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+  .tour-chip.is-active {
+    color: var(--brand);
+    border-color: color-mix(in srgb, var(--brand) 55%, transparent);
+    background: color-mix(in srgb, var(--brand) 10%, transparent);
+  }
+  /* Hero tilt (JS drives the custom properties; falls back to static) */
+  .hero-tilt {
+    transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform 0.25s ease-out;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tour-shot { transition: none; }
+    .hero-tilt { transform: none !important; transition: none; }
+  }
+</style>
+
+<script>
+  // ---- Tour: sync the sticky phone with scroll position + chip clicks ----
+  const stops = Array.from(document.querySelectorAll<HTMLElement>('[data-stop]'));
+  const shots = Array.from(document.querySelectorAll<HTMLElement>('[data-shot]'));
+  const chips = Array.from(document.querySelectorAll<HTMLElement>('[data-chip]'));
+
+  function activate(key: string | null) {
+    if (!key) return;
+    shots.forEach((s) => s.classList.toggle('is-active', s.dataset.shot === key));
+    chips.forEach((c) => {
+      const on = c.dataset.chip === key;
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+  activate(stops[0]?.dataset.stop ?? null);
+
+  if (stops.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) activate((e.target as HTMLElement).dataset.stop ?? null);
+        }
+      },
+      // A slim horizontal band at the middle of the viewport: whichever stop
+      // crosses it owns the phone.
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 },
+    );
+    stops.forEach((s) => io.observe(s));
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.chip;
+      activate(key ?? null);
+      const target = stops.find((s) => s.dataset.stop === key);
+      target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  // ---- Hero: subtle pointer tilt (desktop pointers only) ----
+  const tilt = document.getElementById('hero-tilt');
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (tilt && finePointer && !reducedMotion) {
+    const zone = tilt.closest('section') ?? tilt;
+    zone.addEventListener('pointermove', (ev) => {
+      const r = tilt.getBoundingClientRect();
+      const dx = (ev.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (ev.clientY - (r.top + r.height / 2)) / r.height;
+      tilt.style.setProperty('--tilt-y', `${Math.max(-1, Math.min(1, dx)) * 7}deg`);
+      tilt.style.setProperty('--tilt-x', `${Math.max(-1, Math.min(1, -dy)) * 5}deg`);
+    });
+    zone.addEventListener('pointerleave', () => {
+      tilt.style.setProperty('--tilt-y', '0deg');
+      tilt.style.setProperty('--tilt-x', '0deg');
+    });
+  }
+</script>
