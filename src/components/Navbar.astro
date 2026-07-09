@@ -3,8 +3,8 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import { useTranslations, localePath } from '../i18n/index';
 import type { Lang } from '../i18n/index';
 
-interface Props { lang?: Lang }
-const { lang = 'es' } = Astro.props;
+interface Props { lang?: Lang; overVideo?: boolean }
+const { lang = 'es', overVideo = false } = Astro.props;
 const t = useTranslations(lang);
 const p = (path: string) => localePath(lang, path);
 
@@ -19,7 +19,7 @@ const navLinks = [
 const pathname = Astro.url.pathname;
 ---
 
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<header id="navbar" data-over-video={overVideo ? 'true' : undefined} class:list={["fixed top-0 left-0 right-0 z-50 transition-all duration-300", overVideo && 'on-video']}>
   <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <a href={p('/')} class="flex items-center group" aria-label="CGuardPro Home">
@@ -105,14 +105,21 @@ const pathname = Astro.url.pathname;
   const iconOpen  = document.getElementById('icon-open')!;
   const iconClose = document.getElementById('icon-close')!;
 
-  // Scroll-based navbar background
-  window.addEventListener('scroll', () => {
+  // Scroll-based navbar background. On pages with a video hero the navbar
+  // starts transparent over dark footage (keep light text via .on-video),
+  // then switches to the themed solid bar once scrolled.
+  const overVideo = navbar.dataset.overVideo === 'true';
+  const onScroll = () => {
     if (window.scrollY > 20) {
       navbar.classList.add('bg-navy/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-xl');
+      if (overVideo) navbar.classList.remove('on-video');
     } else {
       navbar.classList.remove('bg-navy/90', 'backdrop-blur-lg', 'border-b', 'border-white/5', 'shadow-xl');
+      if (overVideo) navbar.classList.add('on-video');
     }
-  }, { passive: true });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   // Mobile menu toggle
   toggle.addEventListener('click', () => {

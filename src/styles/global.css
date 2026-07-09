@@ -141,6 +141,21 @@
 html.light .theme-icon-light { display: inline-block; }
 html.light .theme-icon-dark { display: none; }
 
+/* Content overlaying the hero video is always on a dark backdrop, so it keeps
+   light text even in light mode. Scoped to .on-video (hero section + navbar
+   while un-scrolled on pages with a video hero). */
+html.light .on-video { color: #ECEDEE; }
+html.light .on-video .text-white { color: #fff !important; }
+html.light .on-video .text-white\/70,
+html.light .on-video .text-white\/65,
+html.light .on-video .text-white\/60 { color: rgba(255,255,255,0.65) !important; }
+html.light .on-video .text-white\/50,
+html.light .on-video .text-white\/45,
+html.light .on-video .text-white\/40 { color: rgba(255,255,255,0.5) !important; }
+html.light .on-video .hover\:text-white:hover { color: #fff !important; }
+html.light .on-video .hover\:bg-white\/5:hover { background-color: rgba(255,255,255,0.08) !important; }
+html.light .on-video .site-logo { background: transparent; padding: 0; border-radius: 0; }
+
 /* Light-mode logo fallback: the current logo has white text, so on a light
    background wrap it in a subtle dark chip so it stays legible. Replace with a
    dedicated dark-text /logo-light.png and delete this rule when available. */
