@@ -350,7 +350,7 @@ export const es = {
       },
       {
         name: 'Implementación',
-        price: '250',
+        price: '299.99',
         period: ' único pago',
         desc: 'Configuramos tu cuenta, importamos tus datos y dejamos a tu equipo listo.',
         features: ['Especialista de incorporación dedicado', 'Configuración de cuenta y sitios', 'Importación y migración de datos', 'Sesión de capacitación del equipo', 'Configuración de marca personalizada', 'Soporte en puesta en marcha'],

@@ -336,7 +336,7 @@ export const en: Translations = {
       },
       {
         name: 'Implementation',
-        price: '250',
+        price: '299.99',
         period: ' one-time',
         desc: 'We set up your account, import your data, and get your team running.',
         features: ['Dedicated onboarding specialist', 'Account & site configuration', 'Data import & migration', 'Team training session', 'Custom branding setup', 'Go-live support'],
