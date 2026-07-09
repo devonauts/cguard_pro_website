@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import TechBackdrop from '../../components/TechBackdrop.astro';
+import LatamFlags from '../../components/LatamFlags.astro';
 import { useTranslations, localePath } from '../../i18n/index';
 
 const lang = 'en';
@@ -95,6 +96,8 @@ const resultIcons = [
         </div>
 
       </div>
+
+      <LatamFlags lang={lang} />
     </div>
   </section>
 

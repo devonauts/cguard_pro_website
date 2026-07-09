@@ -1,0 +1,83 @@
+---
+// Latin America presence strip: infinite flag marquee for the hero bottom.
+// Flags self-hosted in /public/flags (80px PNGs) — emoji flags don't render on Windows.
+import type { Lang } from '../i18n/index';
+
+export interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const countries: Array<[code: string, es: string, en: string]> = [
+  ['ec', 'Ecuador', 'Ecuador'],
+  ['mx', 'México', 'Mexico'],
+  ['co', 'Colombia', 'Colombia'],
+  ['pe', 'Perú', 'Peru'],
+  ['cl', 'Chile', 'Chile'],
+  ['ar', 'Argentina', 'Argentina'],
+  ['br', 'Brasil', 'Brazil'],
+  ['uy', 'Uruguay', 'Uruguay'],
+  ['py', 'Paraguay', 'Paraguay'],
+  ['bo', 'Bolivia', 'Bolivia'],
+  ['ve', 'Venezuela', 'Venezuela'],
+  ['pa', 'Panamá', 'Panama'],
+  ['cr', 'Costa Rica', 'Costa Rica'],
+  ['gt', 'Guatemala', 'Guatemala'],
+  ['hn', 'Honduras', 'Honduras'],
+  ['sv', 'El Salvador', 'El Salvador'],
+  ['ni', 'Nicaragua', 'Nicaragua'],
+  ['do', 'Rep. Dominicana', 'Dominican Republic'],
+  ['cu', 'Cuba', 'Cuba'],
+];
+const flags = countries.map(([code, es, en]) => ({ code, name: lang === 'es' ? es : en }));
+const caption = lang === 'es' ? 'Hecho para empresas de seguridad en toda Latinoamérica' : 'Built for security companies across Latin America';
+---
+
+<div class="relative mt-14 lg:mt-20">
+  <div class="gold-line mb-7" aria-hidden="true"></div>
+  <p class="text-center text-[11px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-6">{caption}</p>
+  <div class="flag-marquee" role="list" aria-label={caption}>
+    <div class="flag-track">
+      {[0, 1].map((dup) => (
+        <div class="flex items-center gap-9 pr-9" aria-hidden={dup === 1 ? 'true' : undefined}>
+          {flags.map(({ code, name }) => (
+            <span class="inline-flex items-center gap-2.5 shrink-0" role={dup === 0 ? 'listitem' : undefined}>
+              <img
+                src={`/flags/${code}.png`}
+                alt=""
+                width="27"
+                height="18"
+                loading="lazy"
+                class="w-[27px] h-[18px] object-cover rounded-[3px]"
+                style="box-shadow:0 0 0 1px rgba(255,255,255,0.18)"
+              />
+              <span class="text-sm text-white/55 whitespace-nowrap">{name}</span>
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .flag-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  .flag-track {
+    display: flex;
+    width: max-content;
+    animation: flag-scroll 55s linear infinite;
+  }
+  @keyframes flag-scroll {
+    to { transform: translateX(-50%); }
+  }
+  .flag-marquee:hover .flag-track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flag-track { animation: none; }
+  }
+</style>
