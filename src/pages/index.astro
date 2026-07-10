@@ -232,19 +232,19 @@ const resultIcons = [
   <!-- ─── Emergency response (video band) ──────────────────────────── -->
   <section class="on-video relative overflow-hidden py-24 lg:py-32">
     <video class="absolute inset-0 w-full h-full object-cover" src="/videos/emergency-vehicle.mp4" poster="/videos/emergency-vehicle.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
-    <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(8,8,8,0.93) 0%, rgba(8,8,8,0.8) 45%, rgba(8,8,8,0.45) 100%)" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(8,8,8,0.96) 0%, rgba(8,8,8,0.88) 48%, rgba(8,8,8,0.55) 100%)" aria-hidden="true"></div>
     <div class="relative max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl animate-on-scroll">
-        <div class="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style="color:var(--brand)">{t.emergency.badge}</div>
-        <h2 class="font-display font-bold text-[2rem] lg:text-[2.6rem] leading-[1.1] tracking-tight mb-5 text-white">
+      <div class="max-w-2xl animate-on-scroll rounded-2xl p-8 lg:p-10 -m-2 lg:m-0" style="background:rgba(8,8,8,0.58);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08)">
+        <div class="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style="color:#D4AF37">{t.emergency.badge}</div>
+        <h2 class="font-display font-bold text-[2rem] lg:text-[2.6rem] leading-[1.1] tracking-tight mb-5" style="color:#fff">
           {t.emergency.headline}
         </h2>
-        <p class="text-white/60 text-lg leading-relaxed mb-8">{t.emergency.body}</p>
+        <p class="text-lg leading-relaxed mb-8" style="color:rgba(255,255,255,0.78)">{t.emergency.body}</p>
         <ul class="space-y-3.5">
           {t.emergency.bullets.map((item) => (
-            <li class="flex items-start gap-3 text-[15px] text-white/70">
-              <span class="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:rgba(200,134,10,0.2)">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <li class="flex items-start gap-3 text-[15px]" style="color:rgba(255,255,255,0.88)">
+              <span class="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:rgba(212,175,55,0.22)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               {item}
             </li>
