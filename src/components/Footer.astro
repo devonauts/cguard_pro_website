@@ -36,12 +36,22 @@ const links = {
   [t.footer.sections.company]: [
     { href: p('/about'), label: t.footer.links.about },
     { href: lang === 'es' ? '/blog' : '/en/blog', label: 'Blog' },
+    ...(lang === 'es'
+      ? [
+          { href: '/cuanto-cuesta-software-seguridad', label: 'Guía de Precios 2026' },
+          { href: '/alternativas-tracktik', label: 'Alternativa a TrackTik' },
+        ]
+      : []),
     { href: p('/contact'), label: t.footer.links.contact },
     { href: p('/privacy'), label: t.footer.links.privacy },
     { href: p('/terms'), label: t.footer.links.terms },
   ],
   [t.footer.sections.industry]: lang === 'es' ? [
     { href: '/ecuador', label: 'Software en Ecuador' },
+    { href: '/colombia', label: 'Software en Colombia' },
+    { href: '/mexico', label: 'Software en México' },
+    { href: '/peru', label: 'Software en Perú' },
+    { href: '/chile', label: 'Software en Chile' },
     { href: '/quito', label: 'Seguridad en Quito' },
     { href: '/guayaquil', label: 'Seguridad en Guayaquil' },
     { href: '/cuenca', label: 'Seguridad en Cuenca' },

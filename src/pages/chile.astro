@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CountryLanding from '../components/CountryLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Software para Empresas de Seguridad Privada en Chile"
+  lang={lang}
+  description="Plataforma para empresas de seguridad privada en Chile: control de guardias OS-10, rondas con QR, libro de novedades digital, turnos, botón de pánico, supervisión GPS y portal del cliente. Evidencia del servicio en tiempo real."
+>
+  <Navbar lang={lang} />
+  <CountryLanding
+    flag="🇨🇱"
+    country="Chile"
+    h1a="Software para empresas de"
+    h1b="seguridad privada en Chile"
+    intro="CGuardPro es la plataforma de operaciones para empresas de seguridad: guardias, turnos, rondas, novedades, emergencias y clientes en un solo sistema — con la evidencia operativa que piden las inspecciones y los mandantes exigentes."
+    localTitle="Hecho para cómo se opera la seguridad en Chile"
+    localCards={[
+      { t: 'Guardias acreditados, operación ordenada', d: 'En un sector donde la acreditación OS-10 es la base, CGuardPro ordena lo que sigue: asistencia comprobable, rondas verificadas y novedades documentadas por guardia y por instalación.' },
+      { t: 'Libro de novedades digital', d: 'Las novedades del servicio quedan con foto, autor, hora y GPS; el relevo recibe automáticamente los pendientes del turno anterior.' },
+      { t: 'Evidencia ante mandantes e inspecciones', d: 'Historial completo por instalación exportable por periodo: rondas, asistencia, incidentes y tiempos de respuesta — listo para el informe mensual.' },
+      { t: 'Supervisión sin llamadas', d: 'Mapa en vivo de guardias y patrullaje de supervisores, alertas de puesto descubierto y radio PTT en el celular — de Arica a Punta Arenas.' },
+    ]}
+    faqs={[
+      { q: '¿CGuardPro sirve para empresas con guardias acreditados OS-10?', a: 'Sí. La plataforma gestiona la operación diaria de tus guardias — turnos, asistencia, rondas, novedades y emergencias — y genera la evidencia documental que respaldan tus contratos y fiscalizaciones.' },
+      { q: '¿Cómo ayuda con los informes al mandante?', a: 'Cada instalación acumula su historial verificable: rondas con hora y GPS, novedades con foto e incidentes con tiempos de respuesta. Se exporta por periodo, y el mandante puede además ver su servicio en tiempo real desde el portal del cliente.' },
+      { q: '¿Funciona para turnos de noche y rotaciones largas?', a: 'Sí: el programador maneja rotaciones 24x24 y 12x12 con coberturas de descanso automáticas, y los turnos que cruzan la medianoche se muestran correctamente en la app del guardia.' },
+      { q: '¿Qué equipos se necesitan?', a: 'Solo celulares Android o iPhone. Los puntos de ronda son códigos QR impresos y la radio PTT usa el mismo teléfono — sin bastones, radios ni hardware propietario.' },
+      { q: '¿En qué ciudades de Chile funciona?', a: 'En todo el país: Santiago, Valparaíso, Concepción, Antofagasta y cualquier zona con cobertura celular. Plataforma en la nube y soporte en español.' },
+    ]}
+    ctaTitle="Ordena tu operación de seguridad"
+    ctaBody="Agenda una demo con tu operación real: tus instalaciones, tus turnos y tus novedades, funcionando en la plataforma."
+  />
+  <Footer lang={lang} />
+</Layout>

@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CountryLanding from '../components/CountryLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Software para Empresas de Seguridad Privada en Perú"
+  lang={lang}
+  description="Plataforma para empresas de seguridad privada en Perú: control de agentes de vigilancia, rondas con QR, cuaderno de ocurrencias digital, turnos, botón de pánico, supervisión GPS y portal del cliente. Evidencia operativa para un sector regulado."
+>
+  <Navbar lang={lang} />
+  <CountryLanding
+    flag="🇵🇪"
+    country="Perú"
+    h1a="Software para empresas de"
+    h1b="seguridad privada en Perú"
+    intro="CGuardPro es la plataforma de operaciones para empresas de vigilancia privada: agentes, turnos, rondas, ocurrencias, emergencias y clientes en un solo sistema — con la evidencia verificable que exige un sector regulado y competitivo."
+    localTitle="Hecho para cómo se opera la vigilancia en el Perú"
+    localCards={[
+      { t: 'Agentes con herramientas reales', d: 'La app del agente de seguridad marca asistencia con selfie y GPS, escanea puntos de ronda, registra ocurrencias con foto y lleva el botón de pánico — en su propio celular.' },
+      { t: 'Cuaderno de ocurrencias digital', d: 'Las ocurrencias del servicio quedan digitales con hora, autor y ubicación, y el relevo de turno recibe automáticamente las novedades pendientes.' },
+      { t: 'Evidencia para un sector regulado', d: 'En un mercado supervisado (SUCAMEC), demostrar el servicio importa: rondas verificadas, asistencia comprobable y reportes exportables por cliente y periodo.' },
+      { t: 'Del puesto a la central', d: 'Supervisión GPS en mapa en vivo, radio PTT en el celular y alertas de puesto descubierto — la central ve toda la operación, de Lima a provincias.' },
+    ]}
+    faqs={[
+      { q: '¿CGuardPro sirve para una empresa de vigilancia privada regulada en el Perú?', a: 'Sí. La plataforma genera la evidencia operativa que las empresas del sector necesitan para clientes y auditorías: cuaderno de ocurrencias digital con hora y GPS, historial de rondas verificadas, asistencia con selfie y reportes exportables.' },
+      { q: '¿Reemplaza el cuaderno de ocurrencias físico?', a: 'Operativamente sí — y con más valor probatorio: cada ocurrencia lleva foto, autor identificado, hora de servidor y ubicación, y se puede exportar por periodo para entregar al cliente o al supervisor que lo requiera.' },
+      { q: '¿Funciona fuera de Lima?', a: 'Sí, en todo el país: la plataforma es en la nube y la app del agente funciona donde haya datos móviles; sin señal, los registros se guardan y sincronizan al reconectar.' },
+      { q: '¿Qué necesitan los agentes para empezar?', a: 'Solo su celular (Android o iPhone). Los puntos de ronda son códigos QR impresos y la radio PTT funciona en el mismo teléfono — cero hardware propietario.' },
+      { q: '¿Cuánto tarda la implementación?', a: 'Días: alta de puestos, agentes y turnos, impresión de códigos QR y app instalada. Soporte en español, en tu zona horaria.' },
+    ]}
+    ctaTitle="Moderniza tu empresa de vigilancia"
+    ctaBody="Agenda una demo con tu operación real: tus puestos, tus turnos y tus ocurrencias, funcionando en la plataforma."
+  />
+  <Footer lang={lang} />
+</Layout>

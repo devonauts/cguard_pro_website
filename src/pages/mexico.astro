@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CountryLanding from '../components/CountryLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Software para Empresas de Seguridad Privada en México — Control de Rondines y Guardias"
+  lang={lang}
+  description="Plataforma para empresas de seguridad privada en México: control de rondines con QR, asistencia de guardias con selfie y GPS, bitácora digital, roles de turnos, botón de pánico, radio PTT y portal del cliente."
+>
+  <Navbar lang={lang} />
+  <CountryLanding
+    flag="🇲🇽"
+    country="México"
+    h1a="Software para empresas de"
+    h1b="seguridad privada en México"
+    intro="CGuardPro es la plataforma de operaciones para empresas de seguridad privada: guardias, rondines, bitácora, turnos, emergencias y clientes en un solo sistema — del control del rondín a la evidencia que tu cliente corporativo exige."
+    localTitle="Hecho para cómo se opera la seguridad en México"
+    localCards={[
+      { t: 'Control de rondines real', d: 'Rondines con puntos QR escaneados desde el celular del guardia, verificados con GPS y hora de servidor — sin bastones ni descargas manuales.' },
+      { t: 'Bitácora que sí es evidencia', d: 'La bitácora de vigilancia y el parte de novedades quedan digitales: foto, autor, hora y ubicación en cada registro, exportables para tu cliente.' },
+      { t: 'Guardias supervisados, no perseguidos', d: 'Asistencia con selfie y GPS, supervisión en mapa en vivo y alertas de puesto descubierto — supervisión que se demuestra sin llamar puesto por puesto.' },
+      { t: 'Clientes corporativos tranquilos', d: 'Portal del cliente con rondines verificados, novedades e incidentes de sus instalaciones en tiempo real — el diferenciador en licitaciones.' },
+    ]}
+    faqs={[
+      { q: '¿CGuardPro maneja el control de rondines?', a: 'Sí — es una de sus funciones centrales: rondines con puntos de control QR (o NFC), reglas de frecuencia por instalación, verificación de ubicación en el servidor y alertas inmediatas por rondines omitidos o atrasados.' },
+      { q: '¿Sirve para operaciones con muchos servicios distribuidos?', a: 'Sí. Cada instalación tiene sus puestos, turnos, rondines y bitácora; la central ve todo el país en un solo panel con alertas en tiempo real, y cada cliente ve solo lo suyo en su portal.' },
+      { q: '¿Los guardias necesitan teléfonos de la empresa?', a: 'No necesariamente: la app funciona en el celular del guardia (Android o iPhone), consume pocos datos y opera sin señal, sincronizando al reconectar. Muchos clientes inician así y luego equipan solo los puestos críticos.' },
+      { q: '¿En qué ciudades de México funciona?', a: 'En todas: CDMX, Estado de México, Monterrey, Guadalajara, Querétaro y cualquier plaza con cobertura celular. La plataforma es en la nube y el soporte es en español.' },
+      { q: '¿Qué tan rápido se implementa?', a: 'Una operación típica arranca en días: alta de instalaciones y guardias, impresión de códigos QR de rondines y app instalada. Sin hardware propietario ni consultores de implementación.' },
+    ]}
+    ctaTitle="Controla tus rondines esta misma semana"
+    ctaBody="Agenda una demo con tu operación real: tus instalaciones, tus rondines y tu bitácora, funcionando en la plataforma."
+  />
+  <Footer lang={lang} />
+</Layout>

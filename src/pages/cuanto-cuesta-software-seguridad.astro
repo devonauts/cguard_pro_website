@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+const lang = 'es';
+
+const faqs = [
+  { q: '¿Cuánto cuesta un software para una empresa de seguridad privada?', a: 'Depende del modelo de cobro. En el mercado internacional los rangos publicados por directorios como Capterra o TrustRadius van desde ~US$10 por guardia/mes en productos básicos hasta US$29–89 por usuario/mes en plataformas enterprise, muchas veces más cargos de implementación de miles de dólares. CGuardPro publica sus precios por puesto — puedes verlos sin hablar con ventas.' },
+  { q: '¿Qué es mejor: cobro por guardia o por puesto?', a: 'Para vigilancia física, por puesto suele ser más justo: un puesto 24x24 lo cubren varios guardias rotando, y pagar por cada cédula registrada encarece la rotación natural del sector. Verifica siempre qué cuenta como “usuario” en cada propuesta.' },
+  { q: '¿Qué costos ocultos debo revisar antes de firmar?', a: 'Los cinco clásicos: (1) cargos de implementación u onboarding, (2) hardware propietario (bastones de ronda, lectores), (3) módulos que parecen incluidos pero son add-ons (portal del cliente, reportes), (4) mínimos de contrato anual, y (5) soporte en otro idioma u horario. Pide el costo total del primer año, no la mensualidad.' },
+  { q: '¿El software se paga solo?', a: 'Los ahorros típicos vienen de tres lados: horas de supervisión y digitación que desaparecen (asistencia y reportes manuales), disputas de horas y multas contractuales evitadas con evidencia verificable, y contratos retenidos porque el cliente ve el servicio en su portal. Con pocos puestos suele superar la mensualidad.' },
+  { q: '¿Puedo probar antes de pagar?', a: 'Sí — agenda una demo con tu operación real y evalúa el flujo completo (marcación, rondas, novedades, central) antes de decidir.' },
+];
+---
+
+<Layout
+  hasAlternate={false}
+  title="¿Cuánto Cuesta un Software para Empresas de Seguridad? Guía de Precios 2026"
+  lang={lang}
+  description="Guía honesta de precios de software para empresas de seguridad privada: modelos de cobro (por guardia vs por puesto), rangos del mercado según directorios públicos, los 5 costos ocultos y cómo calcular el retorno."
+>
+  <Navbar lang={lang} />
+
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  })}</script>`} />
+
+  <main class="pt-28 lg:pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <span class="section-label mb-5 inline-flex">Guía de Precios</span>
+      <h1 class="font-display font-bold text-[2.3rem] lg:text-[2.9rem] leading-[1.08] tracking-tight">
+        ¿Cuánto cuesta un software para<br /><span class="gold-gradient-text">empresas de seguridad privada?</span>
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed" style="color:var(--text-muted)">
+        La respuesta corta: entre “sorprendentemente poco” y “una llamada de ventas que
+        termina en cotización personalizada”. Esta guía explica los modelos de cobro, los
+        rangos reales del mercado y los costos ocultos que debes revisar antes de firmar.
+      </p>
+
+      <div class="prose max-w-none mt-10">
+        <h2>Los tres modelos de cobro</h2>
+        <ul>
+          <li><strong>Por guardia (usuario) al mes.</strong> El más común en productos angloparlantes. Directorios públicos como Capterra listan opciones desde ~US$10 por guardia/mes; las plataformas enterprise reportadas por TrustRadius e ITQlick van de US$29 a US$89 por usuario/mes. El problema en LATAM: la rotación de personal hace que pagues por cédulas, no por operación.</li>
+          <li><strong>Por puesto de servicio.</strong> Pagas por cada puesto que operas, sin importar cuántos guardias roten por él. Para vigilancia física con turnos 24x24 suele ser el modelo más predecible — es el que usa CGuardPro, con precios públicos.</li>
+          <li><strong>Cotización personalizada.</strong> “Contáctanos para precios”. Legítimo en proyectos enterprise, pero significa semanas de llamadas para saber un número — y casi siempre cargos de implementación aparte (los agregadores reportan proyectos de US$1.000 a US$10.000 en plataformas grandes).</li>
+        </ul>
+
+        <h2>Los 5 costos ocultos</h2>
+        <ol>
+          <li><strong>Implementación y onboarding:</strong> pregunta si el arranque tiene costo y cuánto dura. (Un software moderno se implementa en días con tus propios datos.)</li>
+          <li><strong>Hardware propietario:</strong> bastones de ronda, lectores iButton y sus reposiciones eternas. Las rondas con QR y el celular del guardia eliminan esta línea completa del presupuesto.</li>
+          <li><strong>Módulos “adicionales”:</strong> portal del cliente, reportes, app del supervisor — confirma qué está incluido en la mensualidad y qué es add-on.</li>
+          <li><strong>Permanencia mínima:</strong> contratos anuales con penalidad. Prefiere mensualidades que se ganen tu renovación.</li>
+          <li><strong>Soporte en otro idioma:</strong> un ticket en inglés a otra zona horaria cuesta horas de operación cada vez. El soporte en español no es un lujo: es tiempo de respuesta.</li>
+        </ol>
+
+        <h2>Cómo calcular si se paga solo</h2>
+        <p>Suma tres números de tu operación actual: las horas al mes que supervisión y administración gastan en asistencia, roles y reportes manuales; el costo anual de disputas de horas y descuentos por servicio no demostrado; y el valor de un contrato que se te fue por no poder demostrar el servicio. Compara ese total contra la mensualidad del software: con que retengas un solo contrato mediano, el año queda pagado.</p>
+      </div>
+
+      <div class="mt-12 rounded-2xl p-7" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)">
+        <h2 class="font-display font-bold text-xl mb-2">¿Y CGuardPro cuánto cuesta?</h2>
+        <p class="text-[15px] mb-4" style="color:var(--text-muted)">
+          Precios públicos, por puesto, con la app del vigilante, rondas QR, bitácora digital,
+          botón de pánico, radio PTT y portal del cliente incluidos. Sin cargos de implementación
+          ni hardware.
+        </p>
+        <a href="/pricing" class="btn-primary">Ver los precios</a>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <h2 class="font-display font-bold text-2xl mb-6">Preguntas frecuentes</h2>
+        {faqs.map(({ q, a }) => (
+          <details class="card-glass rounded-xl px-5 py-4 group">
+            <summary class="cursor-pointer font-semibold text-[15px] list-none flex items-center justify-between gap-4">
+              {q}<span class="shrink-0 transition-transform group-open:rotate-45" style="color:var(--brand)">+</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed" style="color:var(--text-muted)">{a}</p>
+          </details>
+        ))}
+      </div>
+
+      <p class="mt-8 text-xs" style="color:var(--text-faint)">
+        Los rangos de mercado citados provienen de directorios públicos (Capterra, TrustRadius,
+        ITQlick) a la fecha de publicación y pueden cambiar; verifica cada valor con el proveedor
+        correspondiente.
+      </p>
+
+      <div class="mt-12 flex flex-wrap gap-2.5">
+        {[
+          { label: 'Alternativa a TrackTik', href: '/alternativas-tracktik' },
+          { label: 'Alternativa a GuardsPro', href: '/alternativas-guardspro' },
+          { label: 'Software en Ecuador', href: '/ecuador' },
+          { label: 'Control de rondas QR', href: '/control-de-rondas-qr' },
+        ].map((r) => (
+          <a href={r.href} class="rounded-full border px-4 py-2 text-sm transition-colors hover:border-brand" style="color:var(--text-muted);border-color:var(--border)">{r.label}</a>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

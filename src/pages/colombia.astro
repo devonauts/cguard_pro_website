@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CountryLanding from '../components/CountryLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Software para Empresas de Vigilancia y Seguridad Privada en Colombia"
+  lang={lang}
+  description="Plataforma de operaciones para empresas de vigilancia y seguridad privada en Colombia: control de vigilantes, rondas con QR, minuta digital, turnos, botón de pánico, supervisión GPS y portal del cliente. En español, con evidencia para tus clientes."
+>
+  <Navbar lang={lang} />
+  <CountryLanding
+    flag="🇨🇴"
+    country="Colombia"
+    h1a="Software para empresas de"
+    h1b="vigilancia y seguridad privada"
+    intro="CGuardPro es la plataforma de operaciones para empresas de vigilancia: vigilantes, turnos, rondas, minuta de novedades, emergencias y clientes en un solo sistema — con la terminología del sector y evidencia verificable para tus contratos."
+    localTitle="Hecho para cómo se opera la vigilancia en Colombia"
+    localCards={[
+      { t: 'Vigilantes, no “users”', d: 'Plataforma y apps 100% en español, con el vocabulario del sector: vigilantes, guardas, puestos, minuta y consignas — no una traducción automática.' },
+      { t: 'Evidencia para un sector regulado', d: 'En un mercado supervisado por la Superintendencia de Vigilancia y Seguridad Privada, la evidencia importa: bitácoras con hora y GPS, rondas verificadas y reportes exportables por periodo.' },
+      { t: 'La minuta, digital', d: 'La minuta de vigilancia y el relevo de turno quedan digitales: novedades con foto, autor identificado y entrega automática al vigilante entrante.' },
+      { t: 'Clientes que ven el servicio', d: 'Portal del cliente con rondas, novedades y avisos de turno de sus copropiedades e instalaciones — la transparencia que gana licitaciones y renueva contratos.' },
+    ]}
+    faqs={[
+      { q: '¿CGuardPro sirve para empresas de vigilancia reguladas en Colombia?', a: 'Sí. CGuardPro genera la evidencia operativa que una empresa de vigilancia y seguridad privada necesita para sus clientes, interventorías y auditorías: minuta digital con hora y GPS, historial de rondas verificadas, asistencia con selfie y reportes exportables.' },
+      { q: '¿Funciona para vigilancia en copropiedades y conjuntos residenciales?', a: 'Sí — es uno de los casos más comunes: control de rondas por torres y zonas comunes, minuta digital, control de visitantes y un portal para que la administración vea el servicio en tiempo real.' },
+      { q: '¿Los vigilantes necesitan equipos especiales?', a: 'No. La app funciona en cualquier Android o iPhone razonable; los puntos de ronda son códigos QR impresos y la radio PTT usa el mismo celular. Cero hardware propietario.' },
+      { q: '¿En qué ciudades de Colombia funciona?', a: 'En todo el país: la plataforma es en la nube y la app opera donde haya datos móviles — Bogotá, Medellín, Cali, Barranquilla y cualquier municipio con cobertura celular.' },
+      { q: '¿Cuánto tarda la implementación?', a: 'Días, no meses: se cargan puestos, vigilantes y turnos, se imprimen los QR de rondas y el personal instala la app en sus celulares. El soporte es en español y en tu zona horaria.' },
+    ]}
+    ctaTitle="Moderniza tu empresa de vigilancia"
+    ctaBody="Agenda una demo con tu operación real: tus puestos, tus turnos y tu minuta, funcionando en la plataforma."
+  />
+  <Footer lang={lang} />
+</Layout>
