@@ -36,6 +36,9 @@ const posts = (await getCollection('blog'))
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <a href={`/blog/${post.id}/`} class="card-glass group hover:border-brand/30 transition-all duration-300 animate-on-scroll">
+            {post.data.image && (
+              <img src={post.data.image} alt="" width="1200" height="630" class="w-full rounded-t-[inherit]" loading="lazy" decoding="async" />
+            )}
             <div class="p-6">
               <div class="flex items-center gap-2 mb-3">
                 <time class="text-xs text-white/40 font-mono">

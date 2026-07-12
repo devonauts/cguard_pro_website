@@ -37,6 +37,9 @@ const posts = (await getCollection('blog'))
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <a href={`/en/blog/${post.id}`} class="card-glass p-6 rounded-2xl hover:border-brand/30 transition-all duration-300 group animate-on-scroll">
+              {post.data.image && (
+                <img src={post.data.image} alt="" width="1200" height="630" class="w-full rounded-xl mb-4" loading="lazy" decoding="async" />
+              )}
               <div class="mb-4">
                 <time class="text-xs text-white/30 font-mono">
                   {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}

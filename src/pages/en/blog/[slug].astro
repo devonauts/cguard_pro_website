@@ -23,6 +23,7 @@ const lang = 'en';
   title={post.data.title}
   lang={lang}
   description={post.data.description}
+  image={post.data.image || '/og-image.jpg'}
 >
   <Navbar lang={lang} />
 
@@ -32,6 +33,7 @@ const lang = 'en';
     "@type": "Article",
     "headline": post.data.title,
     "description": post.data.description,
+    ...(post.data.image ? { "image": `https://cguardpro.com${post.data.image}` } : {}),
     "datePublished": post.data.pubDate.toISOString(),
     "dateModified": (post.data.updatedDate || post.data.pubDate).toISOString(),
     "author": {
