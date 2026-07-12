@@ -245,6 +245,37 @@ html.light .card-glass:hover {
   --tw-prose-td-borders: rgba(255, 255, 255, 0.08);
 }
 
+/* LIGHT MODE: the blog templates hardcode `prose-invert` + white `prose-p:
+   text-white/70`-style utilities, and the same static HTML serves both themes —
+   so in light mode the body text rendered white-on-white. Re-point every prose
+   token at the semantic theme vars, and out-specific the per-element white
+   utilities (they set color directly, so they need !important, same pattern as
+   the .text-white compatibility layer above). */
+html.light .prose {
+  --tw-prose-body: var(--text-muted);
+  --tw-prose-headings: var(--text);
+  --tw-prose-bold: var(--text);
+  --tw-prose-counters: var(--text-faint);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--text);
+  --tw-prose-th-borders: var(--border-strong);
+  --tw-prose-td-borders: var(--border);
+}
+html.light .prose p,
+html.light .prose li,
+html.light .prose td { color: var(--text-muted) !important; }
+html.light .prose strong { color: var(--text) !important; }
+html.light .prose h1,
+html.light .prose h2,
+html.light .prose h3,
+html.light .prose h4,
+html.light .prose th,
+html.light .prose blockquote { color: var(--text) !important; }
+html.light .prose a { color: var(--brand) !important; }
+html.light .prose code { color: #8a6508; }
+html.light .prose h2 { border-bottom-color: var(--border); }
+html.light .prose table { border-color: var(--border); }
+
 .prose h1, .prose h2, .prose h3, .prose h4 {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-weight: 600;
