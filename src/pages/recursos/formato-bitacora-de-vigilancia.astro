@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceLanding from '../../components/ResourceLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Formato de Bitácora de Vigilancia — Excel y PDF Gratis"
+  lang={lang}
+  description="Descarga gratis el formato de bitácora de vigilancia en Excel y PDF: registro diario de novedades del puesto con hora, evento, involucrados, acción tomada y firma. Listo para imprimir o editar, sin registro."
+>
+  <Navbar lang={lang} />
+  <ResourceLanding
+    badge="Plantilla Gratuita"
+    h1a="Formato de bitácora de vigilancia"
+    h1b="en Excel y PDF, listo para usar"
+    intro="El registro diario del puesto, bien estructurado: hora, novedad, personas o vehículos involucrados, acción tomada y firma del responsable. Descárgalo gratis en PDF para imprimir o en Excel para adaptarlo a tu empresa — sin dejar tu correo."
+    pdf="/recursos/formato-bitacora-de-vigilancia.pdf"
+    xlsx="/recursos/formato-bitacora-de-vigilancia.xlsx"
+    includes={[
+      'Encabezado de control: empresa, puesto/sitio, fecha, turno, guardia responsable y supervisor',
+      'Tabla de novedades: hora, evento, persona/vehículo involucrado, acción tomada y firma',
+      'Versión PDF tamaño A4 lista para imprimir y archivar',
+      'Versión Excel editable para añadir tu logo y campos propios',
+    ]}
+    howTo={[
+      { title: 'Un formato por puesto y por día', body: 'La bitácora pierde valor probatorio cuando mezcla puestos o días. Abre una hoja por puesto/fecha y archívalas en orden.' },
+      { title: 'Registra en el momento, no al final del turno', body: 'Una novedad escrita horas después pierde detalle y credibilidad. La hora de la columna debe ser la del evento, no la de la escritura.' },
+      { title: 'Sin novedad también se registra', body: 'El “sin novedad” con firma demuestra que el puesto estuvo atendido. Los espacios en blanco solo generan dudas en una auditoría.' },
+      { title: 'Haz que el supervisor la revise y firme', body: 'Una bitácora revisada semanalmente por supervisión se convierte en evidencia sólida ante el cliente; una que nadie lee, en papel muerto.' },
+    ]}
+    faqs={[
+      { q: '¿Qué debe llevar una bitácora de vigilancia?', a: 'Como mínimo: identificación del puesto y la fecha, el turno y el guardia responsable, y por cada novedad la hora exacta, la descripción del evento, las personas o vehículos involucrados, la acción tomada y la firma de quien registra. Este formato incluye todos esos campos.' },
+      { q: '¿La descarga es realmente gratis?', a: 'Sí — PDF y Excel, sin registro y sin correo. Es una plantilla de CGuardPro, el software para empresas de seguridad privada.' },
+      { q: '¿Puedo ponerle el logo de mi empresa?', a: 'Sí, la versión Excel es completamente editable: agrega tu logo, cambia campos o añade columnas según tu operación.' },
+      { q: '¿Cuál es la limitación de una bitácora en papel?', a: 'No demuestra hora real (se puede escribir después), no adjunta fotos, se pierde o daña, y consultar algo de hace meses toma horas. Por eso las empresas que crecen migran a una bitácora digital con hora de servidor, GPS y fotos.' },
+    ]}
+    pitchTitle="¿Y si la bitácora se llenara sola de evidencia?"
+    pitchBody="Con CGuardPro cada novedad se registra desde el celular del vigilante con foto, hora de servidor, GPS y autor identificado — y queda consultable por sitio, guardia y fecha en segundos. El papel es un buen comienzo; la evidencia digital renueva contratos."
+    pitchHref="/libro-de-novedades-digital"
+    pitchLabel="Conocer la bitácora digital"
+    related={[
+      { label: 'Formato de parte de novedades', href: '/recursos/formato-parte-de-novedades' },
+      { label: 'Plantilla rol de turnos 24x24', href: '/recursos/plantilla-rol-de-turnos-24x24' },
+      { label: 'Hoja de supervisión de puestos', href: '/recursos/hoja-de-supervision-de-puestos' },
+      { label: 'Todas las plantillas gratis', href: '/recursos' },
+    ]}
+  />
+  <Footer lang={lang} />
+</Layout>

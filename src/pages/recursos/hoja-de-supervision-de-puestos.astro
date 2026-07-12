@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceLanding from '../../components/ResourceLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Hoja de Supervisión de Puestos de Vigilancia — Checklist en Excel y PDF Gratis"
+  lang={lang}
+  description="Descarga gratis la hoja de supervisión de puestos: checklist de 12 puntos para la visita del supervisor (presentación, bitácora, consignas, equipo, rondas, perímetro), con observaciones y firmas. Excel y PDF."
+>
+  <Navbar lang={lang} />
+  <ResourceLanding
+    badge="Plantilla Gratuita"
+    h1a="Hoja de supervisión de puestos"
+    h1b="con checklist de 12 puntos"
+    intro="La visita de supervisión que se documenta es la que cuenta. Este checklist estandariza qué revisar en cada puesto — del uniforme y la bitácora al estado del perímetro — con espacio para observaciones, compromisos y firmas. Gratis en PDF y Excel."
+    pdf="/recursos/hoja-de-supervision-de-puestos.pdf"
+    xlsx="/recursos/hoja-de-supervision-de-puestos.xlsx"
+    includes={[
+      'Checklist de 12 puntos: presencia, uniforme, acreditación, bitácora, consignas, comunicación, equipo, control de visitas, rondas, accesos, CCTV y novedades pendientes',
+      'Encabezado con puesto, fecha, supervisor y horas de llegada/salida',
+      'Sección de observaciones generales y compromisos',
+      'Firmas del supervisor y del guardia visitado',
+      'PDF A4 para la carpeta del supervisor + Excel editable',
+    ]}
+    howTo={[
+      { title: 'Visita sin avisar, documenta siempre', body: 'La supervisión sorpresa mide la operación real. Lo que no cambia nunca es el registro: cada visita deja hoja firmada, buena o mala.' },
+      { title: 'El checklist se responde en el puesto, no en el carro', body: 'Cada punto se verifica físicamente: abrir la bitácora, pedir las consignas, probar la radio. Marcar de memoria convierte el control en teatro.' },
+      { title: 'Convierte cada NO en un compromiso con fecha', body: 'Un incumplimiento sin plan de corrección se repetirá en la próxima visita. La sección de compromisos existe para eso.' },
+      { title: 'Cierra el ciclo con el cliente', body: 'Un resumen mensual de visitas de supervisión es de los argumentos comerciales más fuertes en una renovación: pocos competidores pueden demostrarlo.' },
+    ]}
+    faqs={[
+      { q: '¿Qué debe revisar un supervisor en cada puesto?', a: 'Los 12 puntos del checklist cubren lo esencial: guardia presente, presentación y uniforme, acreditación vigente, bitácora al día, conocimiento de consignas, comunicación operativa, equipo asignado, control de visitas, cumplimiento de rondas, estado de accesos y perímetro, CCTV/luminarias y novedades pendientes.' },
+      { q: '¿Con qué frecuencia se debe supervisar cada puesto?', a: 'Depende del riesgo del sitio y del contrato: puestos críticos suelen visitarse a diario o por turno; el resto, varias veces por semana. Lo importante es que la frecuencia esté definida y las visitas queden documentadas.' },
+      { q: '¿La descarga es gratis?', a: 'Sí — PDF y Excel, sin registro. Es una plantilla de CGuardPro, el software para empresas de seguridad privada.' },
+      { q: '¿Cómo se digitaliza este proceso?', a: 'Con la app de supervisión de CGuardPro: el patrullaje vehicular registra cada visita con GPS, hora de llegada y salida, checklist y novedades — y la central lo ve en el mapa en tiempo real.' },
+    ]}
+    pitchTitle="Supervisión con GPS, no con papel carbón"
+    pitchBody="En CGuardPro el supervisor registra sus visitas desde la app de patrullaje: recorridos con GPS, horas reales, checklist y novedades por puesto. La central ve el mapa en vivo y el historial queda listo para el informe del cliente."
+    pitchHref="/supervision-gps-guardias"
+    pitchLabel="Ver la supervisión GPS"
+    related={[
+      { label: 'Formato de bitácora de vigilancia', href: '/recursos/formato-bitacora-de-vigilancia' },
+      { label: 'Formato de parte de novedades', href: '/recursos/formato-parte-de-novedades' },
+      { label: 'Plantilla rol de turnos 24x24', href: '/recursos/plantilla-rol-de-turnos-24x24' },
+      { label: 'Todas las plantillas gratis', href: '/recursos' },
+    ]}
+  />
+  <Footer lang={lang} />
+</Layout>

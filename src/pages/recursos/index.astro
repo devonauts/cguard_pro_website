@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+const lang = 'es';
+
+const resources = [
+  {
+    href: '/recursos/formato-bitacora-de-vigilancia',
+    title: 'Formato de bitácora de vigilancia',
+    desc: 'El registro diario del puesto: hora, novedad, involucrados, acción tomada y firma. La base documental de cualquier operación.',
+    tag: 'Excel + PDF',
+  },
+  {
+    href: '/recursos/formato-parte-de-novedades',
+    title: 'Formato de parte de novedades (relevo de turno)',
+    desc: 'Novedades con prioridad, consignas pendientes y firmas de guardia saliente y entrante — el relevo sin vacíos de información.',
+    tag: 'Excel + PDF',
+  },
+  {
+    href: '/recursos/plantilla-rol-de-turnos-24x24',
+    title: 'Plantilla de rol de turnos 24x24 y 12x12',
+    desc: 'El rol mensual del puesto con la nomenclatura del sector: T, D/N, L y SF (sacafranco). Incluye patrones de ejemplo.',
+    tag: 'Excel + PDF',
+  },
+  {
+    href: '/recursos/hoja-de-supervision-de-puestos',
+    title: 'Hoja de supervisión de puestos',
+    desc: 'Checklist de 12 puntos para la visita del supervisor, con observaciones, compromisos y firmas.',
+    tag: 'Excel + PDF',
+  },
+];
+---
+
+<Layout
+  hasAlternate={false}
+  title="Plantillas Gratis para Empresas de Seguridad Privada — Bitácora, Novedades, Turnos"
+  lang={lang}
+  description="Descarga gratis plantillas en Excel y PDF para tu empresa de seguridad: formato de bitácora de vigilancia, parte de novedades, rol de turnos 24x24 con sacafrancos y hoja de supervisión de puestos. Sin registro."
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-28 lg:pt-32 pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <span class="section-label mb-5 inline-flex">Recursos Gratuitos</span>
+      <h1 class="font-display font-bold text-[2.4rem] lg:text-[3rem] leading-[1.08] tracking-tight">
+        Plantillas gratis para<br /><span class="gold-gradient-text">empresas de seguridad privada</span>
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed max-w-2xl" style="color:var(--text-muted)">
+        Los formatos operativos que toda compañía de vigilancia necesita — hechos por el
+        equipo de CGuardPro, en Excel editable y PDF listo para imprimir. Descarga directa,
+        sin registro y sin correo.
+      </p>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-5">
+        {resources.map((r) => (
+          <a href={r.href} class="rounded-2xl p-7 block transition-transform duration-300 hover:-translate-y-1" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)">
+            <span class="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full inline-block mb-4" style="background:rgba(200,134,10,0.12);color:var(--brand)">{r.tag}</span>
+            <h2 class="font-display font-semibold text-xl mb-2">{r.title}</h2>
+            <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{r.desc}</p>
+            <span class="mt-4 inline-block text-sm font-semibold" style="color:var(--brand)">Descargar gratis →</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-14 rounded-3xl px-8 py-12 text-center relative overflow-hidden" style="background:#141414">
+        <div class="gold-line absolute top-0 left-0 right-0"></div>
+        <h2 class="font-display font-bold text-2xl text-white">El papel es el comienzo</h2>
+        <p class="mt-3 text-white/60 max-w-xl mx-auto">
+          Cuando tu operación crezca, cada uno de estos formatos existe digital en CGuardPro:
+          con foto, GPS, hora de servidor y consultable en segundos.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="/ecuador" class="btn-primary">Conocer la plataforma</a>
+          <a href="/contact" class="btn-outline" style="color:#fff">Agendar una demo</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceLanding from '../../components/ResourceLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Plantilla de Rol de Turnos 24x24 y 12x12 para Guardias — Excel Gratis"
+  lang={lang}
+  description="Descarga gratis la plantilla de rol de turnos para guardias de seguridad en Excel: rotaciones 24x24 y 12x12 con ejemplo de patrón, marcación de francos y sacafrancos, mes completo de 31 días. También en PDF."
+>
+  <Navbar lang={lang} />
+  <ResourceLanding
+    badge="Plantilla Gratuita"
+    h1a="Plantilla de rol de turnos"
+    h1b="24x24 y 12x12 para guardias"
+    intro="El rol mensual del puesto en una sola hoja: guardias en filas, los 31 días en columnas, y la nomenclatura del sector — T (turno 24h), D/N (día/noche), L (libre) y SF (sacafranco). Incluye hojas 24x24 y 12x12 con patrón de ejemplo. Gratis en Excel editable y PDF."
+    pdf="/recursos/plantilla-rol-de-turnos-24x24.pdf"
+    xlsx="/recursos/plantilla-rol-de-turnos-24x24.xlsx"
+    includes={[
+      'Hoja “Rol 24x24”: rotación de dos titulares con patrón T/L de ejemplo',
+      'Hoja “Rol 12x12”: rotación día/noche/libres con patrón D/N/L de ejemplo',
+      'Cuadrícula de 31 días + columna de observaciones por guardia',
+      'Nomenclatura estándar: T · D · N · L · SF (sacafranco)',
+      'Excel editable para tu logo y tus puestos + PDF A4 horizontal para la cartelera',
+    ]}
+    howTo={[
+      { title: 'Arma primero los titulares, después los sacafrancos', body: 'Marca la rotación T/L de los titulares del puesto; los huecos que quedan en L son exactamente los días que deben cubrir los sacafrancos.' },
+      { title: 'Desfasa las rotaciones entre puestos', body: 'Si todos tus puestos 24x24 rotan el mismo día, todos los francos caen juntos y los sacafrancos no alcanzan. Alterna la fase de cada puesto para repartir la carga.' },
+      { title: 'Respeta los descansos al reasignar', body: 'Cuando alguien falte, verifica que el reemplazo no venga saliendo de un 24: un guardia agotado es el mayor riesgo operativo del rol.' },
+      { title: 'Publica el rol antes del día 25', body: 'El personal necesita planificar su mes. Un rol publicado tarde multiplica los cambios de última hora y los reclamos.' },
+    ]}
+    faqs={[
+      { q: '¿Cómo funciona un rol de turnos 24x24?', a: 'Cada guardia trabaja 24 horas y descansa 24: dos titulares alternan el puesto día por medio. Los días libres que la rotación deja al descubierto los cubre un “sacafranco”, un guardia dedicado a cubrir francos de varios puestos.' },
+      { q: '¿Cuántos sacafrancos necesito?', a: 'Depende de cuántos puestos y cómo estén desfasadas sus rotaciones: como regla práctica, cada sacafranco puede cubrir los francos de 2 puestos 24x24 bien desfasados. La plantilla te deja marcar los SF para visualizarlo; un software como CGuardPro lo calcula automáticamente.' },
+      { q: '¿La plantilla sirve para 12x12?', a: 'Sí — incluye una segunda hoja con nomenclatura D/N/L y patrón de ejemplo para rotaciones de 12 horas día/noche.' },
+      { q: '¿Es gratis de verdad?', a: 'Sí: Excel y PDF sin registro. Es una plantilla de CGuardPro, el software para empresas de seguridad privada.' },
+      { q: '¿Cuándo deja de alcanzar el Excel?', a: 'Cuando los puestos pasan de unos pocos: dobles asignaciones invisibles, francos mal calculados y cambios que no llegan al guardia. El programador de CGuardPro genera el mes completo con sacafrancos automáticos y le muestra su horario a cada guardia en el celular.' },
+    ]}
+    pitchTitle="CGuardPro genera este rol solo — sacafrancos incluidos"
+    pitchBody="Define la rotación del puesto una vez y el motor arma el mes completo: titulares, francos y sacafrancos distribuidos sin dobles asignaciones. Cada vigilante ve su horario en la app y recibe aviso de cualquier cambio."
+    pitchHref="/roles-de-turnos-guardias"
+    pitchLabel="Ver el programador de turnos"
+    related={[
+      { label: 'Formato de bitácora de vigilancia', href: '/recursos/formato-bitacora-de-vigilancia' },
+      { label: 'Formato de parte de novedades', href: '/recursos/formato-parte-de-novedades' },
+      { label: 'Hoja de supervisión de puestos', href: '/recursos/hoja-de-supervision-de-puestos' },
+      { label: 'Todas las plantillas gratis', href: '/recursos' },
+    ]}
+  />
+  <Footer lang={lang} />
+</Layout>

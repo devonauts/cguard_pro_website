@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ResourceLanding from '../../components/ResourceLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Formato de Parte de Novedades — Relevo de Turno en Excel y PDF Gratis"
+  lang={lang}
+  description="Descarga gratis el formato de parte de novedades para el relevo de turno: novedades con hora y prioridad, consignas pendientes para el turno entrante y firmas de ambos guardias. Excel editable y PDF para imprimir."
+>
+  <Navbar lang={lang} />
+  <ResourceLanding
+    badge="Plantilla Gratuita"
+    h1a="Formato de parte de novedades"
+    h1b="para un relevo de turno sin vacíos"
+    intro="La mitad de los reclamos nacen en el cambio de turno: lo que el saliente sabía y el entrante nunca supo. Este parte de novedades estructura el relevo — novedades con prioridad, consignas pendientes y firmas de ambos guardias. Gratis en PDF y Excel."
+    pdf="/recursos/formato-parte-de-novedades.pdf"
+    xlsx="/recursos/formato-parte-de-novedades.xlsx"
+    includes={[
+      'Identificación del relevo: puesto, fecha, guardia saliente, guardia entrante y hora',
+      'Tabla de novedades del turno con hora, prioridad (alta/media/baja) y acción de seguimiento',
+      'Sección de consignas y pendientes para el turno entrante',
+      'Bloque de firmas: saliente, entrante y V°B° del supervisor',
+      'PDF A4 para imprimir + Excel editable con tu logo',
+    ]}
+    howTo={[
+      { title: 'El saliente lo llena ANTES de que llegue el relevo', body: 'Un parte escrito con el reemplazo esperando en la puerta omite la mitad. Complétalo en los últimos 30 minutos del turno.' },
+      { title: 'El entrante lee y firma antes de recibir el puesto', body: 'La firma del entrante es el acuse de recibo: desde ese momento, los pendientes son suyos. Sin firma no hay relevo completo.' },
+      { title: 'Prioriza: no todo es “novedad”', body: 'Marca ALTA solo lo que exige acción del turno entrante. Un parte donde todo es urgente no comunica nada.' },
+      { title: '“Sin novedad” también se escribe y se firma', body: 'El relevo sin novedades registrado con ambas firmas es la prueba de continuidad del servicio que pide cualquier auditoría.' },
+    ]}
+    faqs={[
+      { q: '¿Qué es el parte de novedades?', a: 'Es el documento del relevo de turno: el guardia saliente deja constancia de las novedades del servicio y de las consignas pendientes, y el guardia entrante firma su recepción. Garantiza que la información del puesto no se pierda entre turnos.' },
+      { q: '¿Se descarga gratis?', a: 'Sí — PDF y Excel, sin registro. Es una plantilla de CGuardPro, el software para empresas de seguridad privada.' },
+      { q: '¿Qué diferencia hay entre la bitácora y el parte de novedades?', a: 'La bitácora es el registro continuo del puesto durante el turno; el parte de novedades es el resumen del relevo: qué le entrega el saliente al entrante. Se complementan — descarga también nuestro formato de bitácora.' },
+      { q: '¿Cómo se hace el relevo cuando el entrante llega tarde o no llega?', a: 'El saliente registra la hora real y notifica a su central; el parte queda como evidencia. En un sistema digital como CGuardPro, además, la central recibe la alerta de puesto descubierto automáticamente.' },
+    ]}
+    pitchTitle="En CGuardPro el pase de turno es automático"
+    pitchBody="Al marcar salida, el vigilante registra sus novedades y el sistema se las entrega al relevo entrante en su app — con acuse de recibo, incluso el “sin novedad”. Nada depende de que alguien encuentre el cuaderno."
+    pitchHref="/libro-de-novedades-digital"
+    pitchLabel="Ver el pase de turno digital"
+    related={[
+      { label: 'Formato de bitácora de vigilancia', href: '/recursos/formato-bitacora-de-vigilancia' },
+      { label: 'Plantilla rol de turnos 24x24', href: '/recursos/plantilla-rol-de-turnos-24x24' },
+      { label: 'Hoja de supervisión de puestos', href: '/recursos/hoja-de-supervision-de-puestos' },
+      { label: 'Todas las plantillas gratis', href: '/recursos' },
+    ]}
+  />
+  <Footer lang={lang} />
+</Layout>
