@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const lastUpdated = 'July 11, 2026';
+---
+
+<Layout
+  title="Terms of Service — CGuardPro"
+  lang={lang}
+  description="CGuardPro Terms of Service: conditions for using the security operations platform, mobile apps, and client portal."
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <header class="mb-12">
+        <span class="section-label mb-4 inline-flex">Legal</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl mb-4">Terms of Service</h1>
+        <p class="text-white/50 text-sm">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="prose max-w-none">
+
+        <p>These Terms of Service ("Terms") govern access to and use of the CGuardPro security operations platform — including the web panel (app.cguardpro.com), the mobile apps for guards, supervisors and clients, and the cguardpro.com website (together, the "Service") — operated by CGuardPro ("we", "us"). By creating an account, purchasing a subscription, or using the Service, you agree to these Terms. If you subscribe on behalf of a company, you represent that you have authority to bind it.</p>
+
+        <h2>1. Description of the Service</h2>
+        <p>CGuardPro is a business (B2B) platform for private security companies: guard management, shifts and attendance, patrol rounds with checkpoints, incident reporting, voice radio, dispatch, client communication, and reporting. The Service is purchased by the company (the "Customer"), which administers the accounts of its users (administrators, supervisors, guards, and its own clients' contacts).</p>
+
+        <h2>2. Accounts and Security</h2>
+        <ul>
+          <li>Credentials are personal and non-transferable. Each user must have their own account; sharing an account among several people is prohibited.</li>
+          <li>The Service enforces one active session per app type: signing in on a new device may end the previous session of the same type.</li>
+          <li>The Customer is responsible for keeping its users' credentials confidential and for all activity under its accounts, and must promptly notify us of any unauthorized access at <a href="mailto:support@cguardpro.com">support@cguardpro.com</a>.</li>
+        </ul>
+
+        <h2>3. Subscription, Seats, and Payments</h2>
+        <ul>
+          <li>The Service is billed by subscription according to the plan purchased and the number of enabled seats (users).</li>
+          <li>Trial periods, where offered, end automatically on the stated date; if no subscription is purchased, access may be limited or suspended.</li>
+          <li>Subscriptions renew automatically unless cancelled beforehand. Payments are non-refundable except where required by applicable law.</li>
+          <li>Non-payment may result in limitation, suspension, or termination of access, with reasonable notice.</li>
+        </ul>
+
+        <h2>4. Acceptable Use</h2>
+        <p>You agree not to: (a) use the Service for unlawful purposes or purposes other than operating security services; (b) attempt to access other customers' (tenants') data or circumvent security controls; (c) resell, sublicense, or copy the Service; (d) interfere with its operation (reverse engineering, unauthorized load testing, mass scraping); (e) upload illegal or malicious content; (f) use the panic button, alerts, or the radio for deliberate false alarms.</p>
+
+        <h2>5. Customer Data</h2>
+        <ul>
+          <li>The operational data the Customer and its users enter (personnel, shifts, patrols, incidents, visitors, messages) is and remains the Customer's property. We process it on the Customer's behalf to provide the Service.</li>
+          <li>The Customer warrants that it has the necessary legal bases (including employee consent where applicable) for selfie-verified attendance, GPS location during shifts, and other operational data.</li>
+          <li>Personal data processing is governed by our <a href="/en/privacy">Privacy Policy</a>. Deletion requests are handled per our <a href="/meta/data-deletion">data deletion instructions</a>.</li>
+          <li>Upon termination, the Customer may request an export of its data within 30 days; afterwards we may securely delete it.</li>
+        </ul>
+
+        <h2>6. Emergency Services</h2>
+        <p><strong>The Service is not a substitute for public emergency services.</strong> Panic/SOS features, alerts, and the radio complement — but do not replace — official channels (for example, 911). Notification delivery depends on factors outside our control (cellular coverage, battery, device settings), so we do not guarantee real-time receipt.</p>
+
+        <h2>7. Availability and Support</h2>
+        <p>We work to keep the Service continuously available, but interruptions may occur due to maintenance, third-party failures, or force majeure. Support is provided through the published channels, primarily <a href="mailto:support@cguardpro.com">support@cguardpro.com</a>.</p>
+
+        <h2>8. Intellectual Property</h2>
+        <p>The Service, its software, design, trademarks, and documentation are the property of CGuardPro or its licensors. We grant you a limited, non-exclusive, non-transferable license to use the Service for the duration of the subscription. No other rights are acquired.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law: (a) the Service is provided "as is" and "as available", without implied warranties; (b) we shall not be liable for indirect damages, lost profits, data loss, or damages arising from security events occurring at the Customer's or its clients' premises; (c) our total aggregate liability is limited to the amount paid by the Customer for the Service in the 12 months preceding the event giving rise to it.</p>
+
+        <h2>10. Termination</h2>
+        <p>You may cancel the subscription at any time, effective at the end of the paid period. We may suspend or terminate access for material breaches of these Terms, fraudulent use, or risks to platform security, providing notice where reasonable.</p>
+
+        <h2>11. Changes to These Terms</h2>
+        <p>We may update these Terms. For material changes we will give notice through the Service or by email at least 15 days in advance. Continued use after the effective date constitutes acceptance.</p>
+
+        <h2>12. Governing Law</h2>
+        <p>These Terms are governed by the laws of the Republic of Ecuador. Any dispute shall be submitted to the competent courts of CGuardPro's domicile, without prejudice to applicable consumer-protection rules.</p>
+
+        <h2>13. Contact</h2>
+        <p>For any questions about these Terms, write to us at <a href="mailto:support@cguardpro.com">support@cguardpro.com</a>.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

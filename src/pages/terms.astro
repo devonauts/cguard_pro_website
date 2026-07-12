@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'es';
+const lastUpdated = '11 de julio de 2026';
+---
+
+<Layout
+  title="Términos de Servicio — CGuardPro"
+  lang={lang}
+  description="Términos de servicio de CGuardPro: condiciones de uso de la plataforma de operaciones de seguridad, apps móviles y portal del cliente."
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <header class="mb-12">
+        <span class="section-label mb-4 inline-flex">Legal</span>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl mb-4">Términos de Servicio</h1>
+        <p class="text-white/50 text-sm">Última actualización: {lastUpdated}</p>
+      </header>
+
+      <div class="prose max-w-none">
+
+        <p>Estos Términos de Servicio ("Términos") regulan el acceso y uso de la plataforma de operaciones de seguridad CGuardPro — incluido el panel web (app.cguardpro.com), las aplicaciones móviles para vigilantes, supervisores y clientes, y el sitio cguardpro.com (en conjunto, el "Servicio") — operada por CGuardPro ("nosotros"). Al crear una cuenta, contratar una suscripción o usar el Servicio, aceptas estos Términos. Si contratas en nombre de una empresa, declaras tener autoridad para obligarla.</p>
+
+        <h2>1. Descripción del Servicio</h2>
+        <p>CGuardPro es una plataforma empresarial (B2B) para empresas de seguridad privada: gestión de vigilantes, turnos y asistencia, rondas con puntos de control, reportes de incidentes, radio de voz, despacho, comunicación con clientes y reportería. El Servicio se contrata por la empresa (el "Cliente"), quien administra las cuentas de sus usuarios (administradores, supervisores, vigilantes y contactos de sus propios clientes).</p>
+
+        <h2>2. Cuentas y Seguridad</h2>
+        <ul>
+          <li>Las credenciales son personales e intransferibles. Cada usuario debe tener su propia cuenta; está prohibido compartir cuentas entre varias personas.</li>
+          <li>El Servicio aplica una sesión activa por tipo de aplicación: iniciar sesión en un nuevo dispositivo puede cerrar la sesión anterior del mismo tipo.</li>
+          <li>El Cliente es responsable de mantener la confidencialidad de las credenciales de sus usuarios y de la actividad realizada bajo sus cuentas, y debe notificarnos sin demora a <a href="mailto:support@cguardpro.com">support@cguardpro.com</a> cualquier acceso no autorizado.</li>
+        </ul>
+
+        <h2>3. Suscripción, Puestos y Pagos</h2>
+        <ul>
+          <li>El Servicio se factura por suscripción según el plan contratado y el número de puestos (usuarios) habilitados.</li>
+          <li>Los periodos de prueba, si se ofrecen, terminan automáticamente en la fecha indicada; al vencer sin contratación, el acceso puede limitarse o suspenderse.</li>
+          <li>Las suscripciones se renuevan automáticamente salvo cancelación previa. Los pagos no son reembolsables, salvo que la ley aplicable disponga lo contrario.</li>
+          <li>El impago puede resultar en la limitación, suspensión o cancelación del acceso, previa notificación razonable.</li>
+        </ul>
+
+        <h2>4. Uso Aceptable</h2>
+        <p>Te comprometes a no: (a) usar el Servicio para fines ilícitos o distintos a la operación de servicios de seguridad; (b) intentar acceder a datos de otros clientes (tenants) o eludir controles de seguridad; (c) revender, sublicenciar o copiar el Servicio; (d) interferir con su funcionamiento (ingeniería inversa, pruebas de carga no autorizadas, scraping masivo); (e) cargar contenido ilegal o malicioso; (f) usar el botón de pánico, las alertas o la radio para falsas alarmas deliberadas.</p>
+
+        <h2>5. Datos del Cliente</h2>
+        <ul>
+          <li>Los datos operativos que el Cliente y sus usuarios ingresan (personal, turnos, rondas, incidentes, visitantes, mensajes) son y siguen siendo propiedad del Cliente. Nosotros los tratamos por cuenta del Cliente para prestar el Servicio.</li>
+          <li>El Cliente garantiza que cuenta con las bases legales necesarias (incluido el consentimiento de sus trabajadores cuando aplique) para el registro de asistencia con selfie, la ubicación GPS durante el turno y demás datos operativos.</li>
+          <li>El tratamiento de datos personales se rige por nuestra <a href="/privacy">Política de Privacidad</a>. Las solicitudes de eliminación se gestionan según las <a href="/meta/data-deletion">instrucciones de eliminación de datos</a>.</li>
+          <li>Al terminar el contrato, el Cliente puede solicitar la exportación de sus datos dentro de los 30 días siguientes; después podremos eliminarlos de forma segura.</li>
+        </ul>
+
+        <h2>6. Servicios de Emergencia</h2>
+        <p><strong>El Servicio no sustituye a los servicios públicos de emergencia.</strong> Las funciones de pánico/SOS, alertas y radio complementan — pero no reemplazan — los canales oficiales (por ejemplo, ECU-911 o el 911). La entrega de notificaciones depende de factores fuera de nuestro control (cobertura celular, batería, configuración del dispositivo), por lo que no garantizamos su recepción en tiempo real.</p>
+
+        <h2>7. Disponibilidad y Soporte</h2>
+        <p>Trabajamos para mantener el Servicio disponible de forma continua, pero puede haber interrupciones por mantenimiento, fallas de terceros o causas de fuerza mayor. El soporte se brinda por los canales publicados, principalmente <a href="mailto:support@cguardpro.com">support@cguardpro.com</a>.</p>
+
+        <h2>8. Propiedad Intelectual</h2>
+        <p>El Servicio, su software, diseño, marcas y documentación son propiedad de CGuardPro o de sus licenciantes. Te otorgamos una licencia limitada, no exclusiva e intransferible para usar el Servicio durante la vigencia de la suscripción. No adquieres ningún otro derecho.</p>
+
+        <h2>9. Limitación de Responsabilidad</h2>
+        <p>En la máxima medida permitida por la ley: (a) el Servicio se presta "tal cual" y "según disponibilidad", sin garantías implícitas; (b) no seremos responsables por daños indirectos, lucro cesante, pérdida de datos ni daños derivados de hechos de seguridad ocurridos en las instalaciones del Cliente o de sus clientes; (c) nuestra responsabilidad total acumulada se limita al monto pagado por el Cliente por el Servicio en los 12 meses anteriores al hecho que la origine.</p>
+
+        <h2>10. Terminación</h2>
+        <p>Puedes cancelar la suscripción en cualquier momento con efecto al final del periodo pagado. Podremos suspender o terminar el acceso ante incumplimientos graves de estos Términos, uso fraudulento o riesgos para la seguridad de la plataforma, notificándolo cuando sea razonable.</p>
+
+        <h2>11. Cambios a estos Términos</h2>
+        <p>Podemos actualizar estos Términos. Si el cambio es sustancial, lo notificaremos por el Servicio o por correo con al menos 15 días de anticipación. El uso continuado tras la fecha de vigencia constituye aceptación.</p>
+
+        <h2>12. Ley Aplicable</h2>
+        <p>Estos Términos se rigen por las leyes de la República del Ecuador. Cualquier controversia se someterá a los jueces competentes del domicilio de CGuardPro, sin perjuicio de las normas de protección al consumidor que resulten aplicables.</p>
+
+        <h2>13. Contacto</h2>
+        <p>Para cualquier consulta sobre estos Términos, escríbenos a <a href="mailto:support@cguardpro.com">support@cguardpro.com</a>.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
