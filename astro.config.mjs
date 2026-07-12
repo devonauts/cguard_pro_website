@@ -8,6 +8,9 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      // Keep noIndex'd pages (compliance/404) out of the sitemap — listing
+      // pages Google is told not to index sends mixed signals.
+      filter: (page) => !page.includes('/meta/') && !page.includes('/404'),
       i18n: {
         defaultLocale: 'es',
         locales: { es: 'es', en: 'en' },

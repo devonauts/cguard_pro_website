@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Botón de Pánico para Guardias de Seguridad — SOS en la App del Vigilante"
+  lang={lang}
+  description="Botón de pánico en el celular de cada guardia: SOS que dispara sirena en la central, alerta al equipo en sitio y abre un caso prioritario con protocolo de despacho hasta resolverse. También para tus clientes."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Botón de Pánico"
+    h1a="Botón de pánico en el bolsillo"
+    h1b="de cada vigilante y cada cliente"
+    intro="Un toque en la app y se dispara la respuesta completa: sirena y alerta visual en la central de monitoreo, notificación inmediata a los guardias cercanos y un caso de máxima prioridad que nadie puede ignorar hasta reconocerlo, despacharlo y resolverlo. El mismo protocolo protege a tus vigilantes y a tus clientes."
+    browserShot="/screenshots/incidents.png"
+    shotAlt="Cola de incidentes y alarmas en tiempo real en la central de monitoreo de CGuardPro"
+    painsTitle="El problema de las emergencias sin protocolo"
+    pains={[
+      { title: 'El guardia está solo', body: 'Ante un asalto o una emergencia médica, llamar por teléfono toma minutos que no hay. Sin un canal de pánico, el vigilante depende de que alguien conteste.' },
+      { title: 'La alerta se pierde en el ruido', body: 'Un mensaje más en un grupo de WhatsApp no es un protocolo de emergencia. Sin escalamiento forzoso, las alertas críticas se leen tarde.' },
+      { title: 'Nadie documenta la respuesta', body: 'Quién recibió la alerta, a qué hora se despachó ayuda, cuándo se resolvió: sin registro, no puedes demostrar tu tiempo de respuesta ante el cliente.' },
+    ]}
+    howTitle="Qué pasa cuando alguien presiona SOS"
+    how={[
+      { title: 'Alarma en la central', body: 'La central de monitoreo recibe sirena y alerta en pantalla con la identidad, el puesto y la ubicación GPS de quien pidió ayuda.' },
+      { title: 'El equipo en sitio se entera', body: 'Los guardias del sitio reciben notificación inmediata en sus celulares para acudir o asegurar el perímetro.' },
+      { title: 'Caso prioritario abierto', body: 'Se crea un caso de prioridad máxima que exige reconocimiento, despacho y resolución — la alarma persiste hasta que alguien responde.' },
+      { title: 'Todo queda documentado', body: 'Tiempos de reconocimiento, despacho y cierre quedan registrados: tu tiempo de respuesta real, demostrable ante el cliente.' },
+    ]}
+    benefitsTitle="Una respuesta, no una esperanza"
+    benefits={[
+      'SOS del vigilante y SOS del cliente final con el mismo protocolo completo',
+      'Sirena y alerta persistente en la central hasta ser reconocida',
+      'Ubicación GPS y contexto del puesto incluidos en cada alerta',
+      'Notificación simultánea a los guardias del sitio',
+      'Caso con estados (reconocer, despachar, resolver) y tiempos medibles',
+      'Historial de emergencias por sitio y cliente para auditorías',
+    ]}
+    faqs={[
+      { q: '¿El botón de pánico es solo para los guardias?', a: 'No. Tus clientes también cuentan con SOS en su app Mi Seguridad: al activarlo se dispara el mismo protocolo completo — alarma en la central, alerta a los guardias del sitio y caso prioritario con seguimiento.' },
+      { q: '¿Qué evita que una alerta se quede sin atender?', a: 'La alarma en la central es persistente y el caso queda en prioridad máxima hasta que un operador lo reconoce. No es un mensaje que se puede pasar por alto: es una cola de alarmas con estados obligatorios.' },
+      { q: '¿La alerta incluye la ubicación del guardia?', a: 'Sí: identidad, puesto asignado y posición GPS del dispositivo al momento de la activación, para despachar ayuda sin adivinar.' },
+      { q: '¿Reemplaza a la policía o al ECU-911?', a: 'No — lo complementa. CGuardPro coordina tu respuesta operativa interna; los canales oficiales de emergencia siguen siendo los indicados para cada evento. La ventaja es que tu central se entera en segundos y actúa mientras tanto.' },
+      { q: '¿Puedo medir el tiempo de respuesta de mi central?', a: 'Sí. Cada caso registra la hora de activación, reconocimiento, despacho y resolución — métricas reales para tus informes de servicio.' },
+    ]}
+    related={[
+      { label: 'Radio PTT para guardias', href: '/radio-ptt-para-guardias' },
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Supervisión GPS de guardias', href: '/supervision-gps-guardias' },
+      { label: 'Portal del cliente', href: '/portal-del-cliente' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Prueba el SOS en vivo en la demo"
+    ctaBody="Activamos un pánico de prueba y ves la sirena en la central, la alerta al equipo y el caso prioritario — el protocolo completo en segundos."
+  />
+  <Footer lang={lang} />
+</Layout>

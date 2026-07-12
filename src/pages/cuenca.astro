@@ -9,6 +9,7 @@ const description = `Software de gestión de seguridad privada en ${city}. CGuar
 ---
 
 <Layout
+  hasAlternate={false}
   title={`Software de Seguridad Privada en ${city} — CGuardPro`}
   lang={lang}
   description={description}
@@ -88,10 +89,21 @@ const description = `Software de gestión de seguridad privada en ${city}. CGuar
           Sectores que servimos en {city}
         </h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {['Condominios residenciales', 'Patrimonio cultural', 'Universidades', 'Centros comerciales', 'Clínicas y hospitales', 'Edificios corporativos', 'Comunidades expatriadas', 'Sector hotelero'].map(sector => (
-            <div class="card-glass px-4 py-3 text-center text-sm text-white/70 animate-on-scroll">
-              {sector}
-            </div>
+          {[
+            { n: 'Condominios residenciales', h: '/seguridad-urbanizaciones-residenciales' },
+            { n: 'Patrimonio cultural', h: null },
+            { n: 'Universidades', h: '/seguridad-instituciones-educativas' },
+            { n: 'Centros comerciales', h: '/seguridad-centros-comerciales' },
+            { n: 'Clínicas y hospitales', h: '/seguridad-hospitales-clinicas' },
+            { n: 'Edificios corporativos', h: '/seguridad-edificios-corporativos' },
+            { n: 'Comunidades expatriadas', h: null },
+            { n: 'Sector hotelero', h: null },
+          ].map((sector) => (
+            sector.h ? (
+              <a href={sector.h} class="card-glass px-4 py-3 text-center text-sm text-white/70 animate-on-scroll transition-colors hover:text-white block">{sector.n}</a>
+            ) : (
+              <div class="card-glass px-4 py-3 text-center text-sm text-white/70 animate-on-scroll">{sector.n}</div>
+            )
           ))}
         </div>
       </section>

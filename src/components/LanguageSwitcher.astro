@@ -13,7 +13,7 @@ const altPath = alternatePath(lang, pathname);
 
 <div class="flex items-center gap-1 border border-white/10 rounded-lg p-0.5">
   <a
-    href="/"
+    href={lang === 'es' ? pathname : altPath}
     class={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
       lang === 'es'
         ? 'bg-brand/20 text-brand border border-brand/30'
@@ -25,7 +25,7 @@ const altPath = alternatePath(lang, pathname);
     ES
   </a>
   <a
-    href={altPath}
+    href={lang === 'en' ? pathname : altPath}
     class={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
       lang === 'en'
         ? 'bg-brand/20 text-brand border border-brand/30'

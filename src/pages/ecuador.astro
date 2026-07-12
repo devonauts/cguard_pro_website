@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+/**
+ * Flagship Ecuador country page (SEO Phase 2 anchor). Targets the legal
+ * phrasing "compañías de vigilancia y seguridad privada" (LOVSP) plus the
+ * commercial head term with the Ecuador modifier. Hub page: links the 8
+ * feature LPs, the 3 city pages, and the industry pages.
+ */
+const lang = 'es';
+
+const features = [
+  { href: '/control-de-rondas-qr', title: 'Control de rondas con QR', desc: 'Puntos de control escaneados con el celular, verificados con GPS y hora de servidor.' },
+  { href: '/control-de-asistencia-de-guardias', title: 'Control de asistencia', desc: 'Marcación con selfie y GPS en el puesto; consolidado listo para nómina.' },
+  { href: '/roles-de-turnos-guardias', title: 'Roles de turnos', desc: 'Rotaciones 24x24 y 12x12 con sacafrancos generados automáticamente.' },
+  { href: '/libro-de-novedades-digital', title: 'Libro de novedades digital', desc: 'Parte de novedades con foto y pase de turno automático al relevo.' },
+  { href: '/boton-de-panico-guardias', title: 'Botón de pánico', desc: 'SOS del vigilante y del cliente con alarma persistente en tu central.' },
+  { href: '/supervision-gps-guardias', title: 'Supervisión GPS', desc: 'Mapa en vivo de guardias y patrullaje vehicular de supervisores.' },
+  { href: '/radio-ptt-para-guardias', title: 'Radio PTT', desc: 'Canal abierto de voz en el celular — sin comprar radios UHF.' },
+  { href: '/portal-del-cliente', title: 'Portal del cliente', desc: 'Cada cliente ve rondas, novedades y avisos de turno de sus sitios.' },
+];
+
+const cities = [
+  { href: '/quito', name: 'Quito' },
+  { href: '/guayaquil', name: 'Guayaquil' },
+  { href: '/cuenca', name: 'Cuenca' },
+];
+
+const industries = [
+  { href: '/seguridad-edificios-corporativos', name: 'Edificios corporativos' },
+  { href: '/seguridad-centros-comerciales', name: 'Centros comerciales' },
+  { href: '/seguridad-urbanizaciones-residenciales', name: 'Urbanizaciones' },
+  { href: '/seguridad-hospitales-clinicas', name: 'Hospitales y clínicas' },
+  { href: '/seguridad-sector-financiero', name: 'Sector financiero' },
+  { href: '/seguridad-instituciones-educativas', name: 'Instituciones educativas' },
+  { href: '/seguridad-parques-industriales', name: 'Parques industriales' },
+  { href: '/seguridad-embajadas-organismos', name: 'Embajadas y organismos' },
+];
+
+const faqs = [
+  { q: '¿CGuardPro está adaptado a la operación de seguridad en Ecuador?', a: 'Sí — está construido desde la operación ecuatoriana: rotaciones 24x24 con sacafrancos, parte de novedades, pase de turno entre guardias, control de rondas y supervisión con patrullaje vehicular. La plataforma y el soporte son en español.' },
+  { q: '¿Sirve para una compañía de vigilancia y seguridad privada regulada por la LOVSP?', a: 'Sí. CGuardPro genera la evidencia operativa que las compañías de vigilancia y seguridad privada necesitan para sus clientes y auditorías: bitácoras digitales con hora y GPS, historial de rondas verificadas, asistencia con selfie y reportes exportables por periodo.' },
+  { q: '¿Cuánto tarda la implementación?', a: 'Una operación típica queda funcionando en días, no meses: se cargan puestos, guardias y turnos, se imprimen los códigos QR de rondas y los vigilantes instalan la app en sus propios celulares. Sin hardware ni instaladores.' },
+  { q: '¿Los guardias necesitan teléfonos especiales?', a: 'No. La app del vigilante funciona en cualquier Android o iPhone razonablemente actual, consume pocos datos y opera sin señal, sincronizando cuando la conexión vuelve.' },
+  { q: '¿En qué ciudades de Ecuador trabaja CGuardPro?', a: 'En todo el país: la plataforma es en la nube y la app funciona donde haya datos móviles. Tenemos presencia y clientes de referencia en Quito, Guayaquil y Cuenca.' },
+];
+---
+
+<Layout
+  hasAlternate={false}
+  title="Software para Empresas de Seguridad Privada en Ecuador"
+  lang={lang}
+  description="La plataforma de operaciones para compañías de vigilancia y seguridad privada en Ecuador: control de guardias, rondas QR, asistencia con selfie y GPS, turnos 24x24 con sacafrancos, parte de novedades digital, radio PTT y portal del cliente."
+>
+  <Navbar lang={lang} />
+
+  <Fragment set:html={`<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question', name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  })}</script>`} />
+
+  <main class="pt-28 lg:pt-32">
+    <!-- Hero -->
+    <section class="pb-14 lg:pb-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <span class="section-label mb-5 inline-flex">🇪🇨 Ecuador</span>
+        <h1 class="font-display font-bold text-[2.4rem] lg:text-[3.2rem] leading-[1.07] tracking-tight">
+          Software para empresas de<br />
+          <span class="gold-gradient-text">seguridad privada en Ecuador</span>
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed max-w-2xl mx-auto" style="color:var(--text-muted)">
+          CGuardPro es la plataforma de operaciones creada para compañías de vigilancia y
+          seguridad privada: guardias, turnos, rondas, novedades, emergencias y clientes en
+          un solo sistema — con la terminología y la operación de la seguridad ecuatoriana,
+          no una traducción.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Solicitar demo</a>
+          <a href="/pricing" class="btn-outline">Ver precios</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <!-- Why localized -->
+    <section class="py-16 lg:py-20" style="background:var(--surface-2)">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-display font-bold text-[1.9rem] lg:text-[2.4rem] leading-[1.1] tracking-tight mb-10 max-w-3xl animate-on-scroll">
+          Hecho para cómo se opera la seguridad en Ecuador
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { t: 'Turnos como los tuyos', d: 'Rotaciones 24x24 y 12x12 con sacafrancos automáticos — el rol de turnos real de la vigilancia ecuatoriana, no plantillas de oficina.' },
+            { t: 'Parte de novedades', d: 'El libro de novedades y el pase de turno entre guardias, digitales y con evidencia: la práctica operativa de siempre, sin papel.' },
+            { t: 'Evidencia para tus clientes', d: 'Bitácoras con hora y GPS, rondas verificadas y reportes exportables para auditorías y renovaciones de contrato.' },
+            { t: 'En español, con soporte local', d: 'Plataforma, apps y soporte en tu idioma y tu zona horaria — a diferencia de las alternativas en inglés cotizadas en dólares por usuario.' },
+          ].map((c) => (
+            <div class="animate-on-scroll rounded-2xl p-6" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)">
+              <h3 class="font-display font-semibold text-[17px] mb-2">{c.t}</h3>
+              <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature hub -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-display font-bold text-[1.9rem] lg:text-[2.4rem] leading-[1.1] tracking-tight mb-4 animate-on-scroll">
+          Todo lo que tu operación necesita
+        </h2>
+        <p class="mb-10 max-w-2xl text-lg" style="color:var(--text-muted)">
+          Cada módulo funciona solo — y juntos son tu centro de mando completo.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {features.map((f) => (
+            <a href={f.href} class="animate-on-scroll rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1 block" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)">
+              <h3 class="font-display font-semibold text-[16px] mb-2" style="color:var(--brand)">{f.title}</h3>
+              <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{f.desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cities + industries -->
+    <section class="py-16 lg:py-20" style="background:var(--surface-2)">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="font-display font-bold text-2xl mb-5 animate-on-scroll">Presencia en todo el país</h2>
+          <p class="mb-5 text-[15px]" style="color:var(--text-muted)">
+            De la Sierra a la Costa: la app del vigilante funciona donde haya datos móviles
+            y la central ve toda la operación desde un solo panel.
+          </p>
+          <div class="flex flex-wrap gap-2.5">
+            {cities.map((c) => (
+              <a href={c.href} class="rounded-full border px-4 py-2 text-sm transition-colors hover:border-brand" style="color:var(--text-muted);border-color:var(--border)">Seguridad privada en {c.name}</a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl mb-5 animate-on-scroll">Para cada tipo de instalación</h2>
+          <div class="flex flex-wrap gap-2.5">
+            {industries.map((i) => (
+              <a href={i.href} class="rounded-full border px-4 py-2 text-sm transition-colors hover:border-brand" style="color:var(--text-muted);border-color:var(--border)">{i.name}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="font-display font-bold text-[1.9rem] lg:text-[2.4rem] tracking-tight mb-8 animate-on-scroll">Preguntas frecuentes</h2>
+        <div class="space-y-3">
+          {faqs.map(({ q, a }) => (
+            <details class="card-glass rounded-xl px-5 py-4 group">
+              <summary class="cursor-pointer font-semibold text-[15px] list-none flex items-center justify-between gap-4">
+                {q}
+                <span class="shrink-0 transition-transform group-open:rotate-45" style="color:var(--brand)">+</span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed" style="color:var(--text-muted)">{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pb-24 px-6">
+      <div class="max-w-4xl mx-auto rounded-3xl px-8 py-14 text-center relative overflow-hidden" style="background:#141414">
+        <div class="gold-line absolute top-0 left-0 right-0"></div>
+        <h2 class="font-display font-bold text-3xl text-white animate-on-scroll">Moderniza tu compañía de vigilancia</h2>
+        <p class="mt-4 text-white/60 max-w-xl mx-auto animate-on-scroll">
+          Agenda una demo con tu operación real: tus puestos, tus turnos y tus rondas, funcionando en la plataforma.
+        </p>
+        <div class="mt-8 animate-on-scroll">
+          <a href="/contact" class="btn-primary">Agendar una demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

@@ -5,7 +5,10 @@ import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  // ES posts only: without this filter every EN post was ALSO built under the
+  // Spanish /blog/ path — 12 duplicate, self-canonical, indexable URLs
+  // (the EN tree at /en/blog/[slug] already filters lang === 'en').
+  const posts = (await getCollection('blog')).filter((p) => p.data.lang === 'es');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },

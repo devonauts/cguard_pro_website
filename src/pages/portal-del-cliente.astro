@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Portal del Cliente para Empresas de Seguridad Privada"
+  lang={lang}
+  description="Dale a cada cliente su portal y su app: rondas verificadas, novedades e incidentes de sus sitios en tiempo real, solicitudes de tareas al guardia, SOS y avisos de inicio y fin de turno. Transparencia que renueva contratos."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Portal del Cliente"
+    h1a="Tu cliente ve el servicio"
+    h1b="que está pagando, en vivo"
+    intro="Cada cliente de tu empresa recibe su propio acceso: las rondas verificadas de sus sitios, las novedades con fotos, los reportes de incidentes y hasta avisos automáticos cuando su guardia marca entrada y salida. La transparencia que convierte renovaciones difíciles en decisiones obvias."
+    phoneShot="/screenshots/worker-app/es-tasks.png"
+    shotAlt="Tareas solicitadas por el cliente en la app del vigilante de CGuardPro"
+    painsTitle="El problema de un servicio invisible"
+    pains={[
+      { title: 'El cliente solo te llama para reclamar', body: 'Si lo único que ve del servicio es la factura mensual, cada renovación es una negociación a ciegas contra el competidor más barato.' },
+      { title: 'Reportes manuales que llegan tarde', body: 'Armar el informe mensual en Word con fotos pegadas consume horas de supervisión — y aun así el cliente duda de las fechas.' },
+      { title: 'Pedidos por WhatsApp que se pierden', body: 'El cliente pide “revisen el portón de atrás” por WhatsApp al vendedor; tres intermediarios después, el guardia nunca se enteró.' },
+    ]}
+    howTitle="Qué recibe cada cliente con CGuardPro"
+    how={[
+      { title: 'Su portal y su app Mi Seguridad', body: 'Acceso propio (para uno o varios usuarios del cliente) con la actividad de sus sitios: rondas, novedades, incidentes y visitas.' },
+      { title: 'Avisos de turno automáticos', body: 'Notificación cuando el guardia de su sitio marca entrada, salida y en cada relevo — su seguridad se siente presente todos los días.' },
+      { title: 'Solicitudes que llegan al turno', body: 'El cliente registra pedidos (“verificar extintores”, “reforzar puerta trasera”); tras tu aprobación llegan como tareas a la app del guardia, con seguimiento.' },
+      { title: 'SOS del cliente', body: 'Su botón de pánico dispara tu protocolo completo: alarma en tu central, alerta a los guardias del sitio y caso prioritario.' },
+    ]}
+    benefitsTitle="Transparencia que retiene contratos"
+    benefits={[
+      'Evidencia del servicio en tiempo real: rondas, novedades e incidentes con foto',
+      'Avisos automáticos de inicio y fin de turno del guardia de su sitio',
+      'Tareas del cliente con aprobación tuya y seguimiento de cumplimiento',
+      'Múltiples usuarios por cliente (representante legal + delegados)',
+      'SOS del cliente conectado a tu central de monitoreo',
+      'Menos llamadas de “¿qué pasó anoche?” — la respuesta ya está en su portal',
+    ]}
+    faqs={[
+      { q: '¿Cada cliente ve solo sus propios sitios?', a: 'Sí. El acceso de cada cliente está aislado a sus instalaciones y su información. Tu operación interna y el resto de clientes son invisibles para él.' },
+      { q: '¿El cliente puede pedirle cosas directamente al guardia?', a: 'El cliente registra solicitudes en su app; tu central las aprueba y entonces llegan como tareas a la app del vigilante en turno, con estado y prioridad. Tú mantienes el control del canal.' },
+      { q: '¿Varias personas del cliente pueden tener acceso?', a: 'Sí: el representante o titular puede tener usuarios adicionales (administrador del edificio, jefe de seguridad, etc.), cada uno con su propia cuenta.' },
+      { q: '¿Qué avisos automáticos recibe el cliente?', a: 'Inicio y fin de turno del guardia de su sitio, cambios de turno (relevo con novedades) y los eventos de sus solicitudes — configurables según lo que quieras exponer.' },
+      { q: '¿Esto realmente ayuda a renovar contratos?', a: 'Un cliente que ve rondas verificadas y novedades con fotos cada semana no necesita que le “demuestres” el servicio en la renovación: lo ha visto todos los días. Esa es la diferencia frente a competir solo por precio.' },
+    ]}
+    related={[
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Control de rondas con QR', href: '/control-de-rondas-qr' },
+      { label: 'Botón de pánico', href: '/boton-de-panico-guardias' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Enséñale a tu cliente lo que paga"
+    ctaBody="En la demo te mostramos el portal como lo vería tu cliente más exigente — y cómo eso cambia la conversación de renovación."
+  />
+  <Footer lang={lang} />
+</Layout>

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Control de Rondas de Vigilancia con Código QR"
+  lang={lang}
+  description="Software de control de rondas para guardias: puntos de control con código QR escaneados desde el celular, verificación GPS en el servidor y alertas de rondas incumplidas en tiempo real. Sin bastones ni hardware."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Control de Rondas"
+    h1a="Control de rondas de vigilancia"
+    h1b="con código QR, sin hardware"
+    intro="Cada punto de control es un código QR que el vigilante escanea con su propio celular. El sistema verifica la ubicación y la hora en el servidor, arma el recorrido completo y alerta a la central cuando una ronda se incumple — sin bastones de ronda, sin descargas manuales, sin papel."
+    phoneShot="/screenshots/worker-app/es-dashboard.png"
+    shotAlt="App del vigilante de CGuardPro mostrando la ronda activa y el próximo punto de control"
+    painsTitle="El problema con los bastones de ronda y el papel"
+    pains={[
+      { title: 'No sabes si la ronda se hizo', body: 'Con hojas firmadas o bastones que se descargan al día siguiente, te enteras de una ronda incumplida cuando ya no importa — o cuando el cliente reclama.' },
+      { title: 'El hardware se daña y cuesta', body: 'Bastones perdidos, lectores dañados, botones iButton arrancados. Cada reposición cuesta dinero y deja puestos sin control durante semanas.' },
+      { title: 'El cliente no tiene evidencia', body: 'Cuando el cliente pregunta si el guardia recorrió su instalación anoche, un cuaderno con firmas no convence a nadie.' },
+    ]}
+    howTitle="Cómo funciona el control de rondas en CGuardPro"
+    how={[
+      { title: 'Imprime los códigos QR', body: 'Genera los puntos de control desde el panel, imprímelos y pégalos en el recorrido. Cero hardware especial.' },
+      { title: 'El vigilante escanea con su celular', body: 'La app del vigilante escanea cada punto; funciona también con puntos NFC si prefieres etiquetas.' },
+      { title: 'El servidor verifica todo', body: 'Hora, secuencia y ubicación GPS se validan en el servidor — un escaneo falsificado o fuera de lugar no cuenta.' },
+      { title: 'La central ve el recorrido en vivo', body: 'Rondas completadas, puntos omitidos y atrasos aparecen al instante en el panel, con alertas automáticas por incumplimiento.' },
+    ]}
+    benefitsTitle="Rondas verificadas, clientes tranquilos"
+    benefits={[
+      'Alertas en tiempo real por puntos omitidos o rondas atrasadas',
+      'Reglas configurables por puesto: frecuencia, tolerancia y horarios',
+      'Evidencia con hora, GPS y guardia identificado para cada escaneo',
+      'Historial completo por sitio, exportable para auditorías del cliente',
+      'Funciona sin señal: los escaneos se guardan y suben al reconectar',
+      'Sin bastones ni lectores — el celular del vigilante es el único equipo',
+    ]}
+    faqs={[
+      { q: '¿Necesito comprar bastones de ronda o algún lector?', a: 'No. Los puntos de control son códigos QR impresos (o etiquetas NFC opcionales) y se escanean con el celular del vigilante usando la app de CGuardPro. No hay hardware propietario que comprar ni reponer.' },
+      { q: '¿Qué pasa si el guardia no tiene señal durante la ronda?', a: 'Los escaneos se registran localmente en el teléfono y se sincronizan automáticamente cuando vuelve la conexión, conservando la hora real de cada escaneo.' },
+      { q: '¿Se puede falsificar un escaneo, por ejemplo fotografiando el QR?', a: 'La validación ocurre en el servidor: se verifica la ubicación GPS del teléfono, la secuencia y los tiempos configurados para el recorrido. Un código escaneado desde otro lugar no se acepta.' },
+      { q: '¿El cliente puede ver las rondas de su instalación?', a: 'Sí. A través del portal del cliente, cada cliente ve el historial de rondas de sus sitios con horas y puntos verificados — evidencia real del servicio que paga.' },
+      { q: '¿Cuántos puntos de control puedo crear?', a: 'No hay límite práctico: define los recorridos, la cantidad de puntos y las reglas de frecuencia por cada puesto o sitio desde el panel.' },
+    ]}
+    related={[
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Supervisión GPS de guardias', href: '/supervision-gps-guardias' },
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Control de asistencia', href: '/control-de-asistencia-de-guardias' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Mira una ronda verificada de principio a fin"
+    ctaBody="Agenda una demo y te mostramos el recorrido completo: del escaneo del QR en el celular del vigilante a la alerta en la central."
+  />
+  <Footer lang={lang} />
+</Layout>

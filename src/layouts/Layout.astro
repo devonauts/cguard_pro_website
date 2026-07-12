@@ -10,6 +10,13 @@ export interface Props {
   image?: string;
   canonicalURL?: string;
   noIndex?: boolean;
+  /**
+   * Set false on pages that exist in ONLY ONE language (city/industry/feature
+   * pages, bilingual one-URL pages). The default hreflang pair is computed by
+   * blind path math, so single-language pages would otherwise advertise
+   * alternates that 404 — Google drops those annotations entirely.
+   */
+  hasAlternate?: boolean;
 }
 
 const {
@@ -19,6 +26,7 @@ const {
   image = '/og-image.jpg',
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   noIndex = false,
+  hasAlternate = true,
 } = Astro.props;
 
 const siteName = 'CGuardPro';
@@ -88,10 +96,14 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).href} />
 
-    <!-- hreflang alternate links -->
-    <link rel="alternate" hreflang="es" href={esURL} />
-    <link rel="alternate" hreflang="en" href={enURL} />
-    <link rel="alternate" hreflang="x-default" href={esURL} />
+    <!-- hreflang alternate links (only when the language twin actually exists) -->
+    {hasAlternate && (
+      <>
+        <link rel="alternate" hreflang="es" href={esURL} />
+        <link rel="alternate" hreflang="en" href={enURL} />
+        <link rel="alternate" hreflang="x-default" href={esURL} />
+      </>
+    )}
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -217,9 +229,12 @@ const enURL = new URL(`/en${pathname === '/' ? '' : pathname.replace(/^\/en/, ''
         }
       })} />
 
-    <!-- Preconnect for fonts -->
+    <!-- Fonts: preconnect + direct stylesheet link. Moved out of global.css
+         (@import) where the font CSS download chained behind the main
+         stylesheet — a render-blocking double hop on every page. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   </head>
   <body class="min-h-screen">
     <slot />

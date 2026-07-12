@@ -10,6 +10,22 @@ const p = (path: string) => localePath(lang, path);
 const year = new Date().getFullYear();
 
 const links = {
+  // ES gets a dedicated feature-pages column (the SEO landing pages);
+  // EN has no feature pages yet, so its footer keeps 3 columns.
+  ...(lang === 'es'
+    ? {
+        'Funcionalidades': [
+          { href: '/control-de-rondas-qr', label: 'Control de Rondas QR' },
+          { href: '/control-de-asistencia-de-guardias', label: 'Control de Asistencia' },
+          { href: '/roles-de-turnos-guardias', label: 'Roles de Turnos' },
+          { href: '/libro-de-novedades-digital', label: 'Libro de Novedades Digital' },
+          { href: '/boton-de-panico-guardias', label: 'Botón de Pánico' },
+          { href: '/supervision-gps-guardias', label: 'Supervisión GPS' },
+          { href: '/radio-ptt-para-guardias', label: 'Radio PTT' },
+          { href: '/portal-del-cliente', label: 'Portal del Cliente' },
+        ],
+      }
+    : {}),
   [t.footer.sections.product]: [
     { href: p('/#features'), label: t.footer.links.features },
     { href: p('/app-movil'), label: t.footer.links.mobileApp },
@@ -25,11 +41,18 @@ const links = {
     { href: p('/terms'), label: t.footer.links.terms },
   ],
   [t.footer.sections.industry]: lang === 'es' ? [
+    { href: '/ecuador', label: 'Software en Ecuador' },
+    { href: '/quito', label: 'Seguridad en Quito' },
+    { href: '/guayaquil', label: 'Seguridad en Guayaquil' },
+    { href: '/cuenca', label: 'Seguridad en Cuenca' },
     { href: '/seguridad-edificios-corporativos', label: 'Edificios Corporativos' },
     { href: '/seguridad-centros-comerciales', label: 'Centros Comerciales' },
     { href: '/seguridad-urbanizaciones-residenciales', label: 'Urbanizaciones' },
     { href: '/seguridad-hospitales-clinicas', label: 'Hospitales y Clínicas' },
     { href: '/seguridad-sector-financiero', label: 'Sector Financiero' },
+    { href: '/seguridad-instituciones-educativas', label: 'Instituciones Educativas' },
+    { href: '/seguridad-parques-industriales', label: 'Parques Industriales' },
+    { href: '/seguridad-embajadas-organismos', label: 'Embajadas y Organismos' },
   ] : [
     { href: '/en/austin', label: 'Security in Austin' },
     { href: '/en/san-antonio', label: 'Security in San Antonio' },
@@ -42,7 +65,7 @@ const links = {
 
 <footer class="border-t border-white/5 bg-navy-900">
   <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+    <div class={`grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 ${lang === 'es' ? 'lg:grid-cols-6' : 'lg:grid-cols-5'}`}>
 
       <!-- Brand Column -->
       <div class="lg:col-span-2">

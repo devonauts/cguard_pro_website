@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Roles de Turnos para Guardias de Seguridad — 24x24, 12x12 y Sacafrancos"
+  lang={lang}
+  description="Programación de turnos para guardias de seguridad: rotaciones 24x24 y 12x12, sacafrancos automáticos, cobertura sin huecos y el horario en el celular de cada vigilante. Sin doble asignación y sin Excel."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Roles de Turnos"
+    h1a="Roles de turnos para guardias"
+    h1b="24x24, 12x12 y sacafrancos sin Excel"
+    intro="Arma la rotación de cada puesto una sola vez y CGuardPro genera los turnos del mes completo: fijos 24 horas, rotaciones 12x12, días libres y los sacafrancos que cubren cada franco automáticamente. Cada vigilante ve su horario en el celular y recibe aviso de cualquier cambio."
+    phoneShot="/screenshots/worker-app/es-schedule.png"
+    shotAlt="Horario mensual del vigilante en la app de CGuardPro"
+    painsTitle="El problema de programar turnos en Excel"
+    pains={[
+      { title: 'Huecos de cobertura invisibles', body: 'Un franco mal calculado y el puesto amanece sin guardia. En Excel nadie lo ve hasta que el cliente llama a las 6 de la mañana.' },
+      { title: 'Dobles asignaciones y reclamos', body: 'El mismo guardia asignado a dos puestos, francos que no se respetan, horas extra que nadie autorizó: el rol manual genera conflictos cada quincena.' },
+      { title: 'El guardia se entera tarde', body: 'Cuando el horario vive en un papel pegado en la garita o en un grupo de WhatsApp, los cambios de última hora nunca llegan a todos.' },
+    ]}
+    howTitle="Cómo funciona el programador de CGuardPro"
+    how={[
+      { title: 'Define la rotación del puesto', body: 'Configura el esquema de cada puesto: 24x24, 12x12, horarios diurnos/nocturnos y cuántos guardias necesita cada franja.' },
+      { title: 'Genera el mes completo', body: 'El motor asigna guardias respetando francos y descansos, y calcula automáticamente los sacafrancos necesarios para cubrir días libres.' },
+      { title: 'Valida sin dobles asignaciones', body: 'Un respaldo universal impide que un guardia quede asignado a dos puestos a la misma hora — sin importar cómo se creó el turno.' },
+      { title: 'Cada vigilante ve su horario', body: 'El horario del mes aparece en la app del vigilante (incluidos los turnos que cruzan la medianoche) y los cambios llegan con notificación.' },
+    ]}
+    benefitsTitle="Cobertura completa, cero sorpresas"
+    benefits={[
+      'Rotaciones 24x24 y 12x12 generadas automáticamente para todo el mes',
+      'Sacafrancos calculados y distribuidos según los francos reales',
+      'Bloqueo de dobles asignaciones y solapamientos de turnos',
+      'Horario en el celular de cada guardia, con avisos de cambios',
+      'Conciliación automática entre turno programado y asistencia real',
+      'Intercambios de turno con aprobación, sin romper la cobertura',
+    ]}
+    faqs={[
+      { q: '¿Maneja rotaciones 24x24 con sacafrancos?', a: 'Sí — es el caso central del motor: turnos fijos de 24 horas con su fase de rotación, días libres respetados y sacafrancos generados dinámicamente para cubrir cada franco, distribuidos de forma equitativa.' },
+      { q: '¿Qué pasa si un guardia falta el mismo día?', a: 'Marcas la ausencia y reasignas desde el panel; el sistema te muestra quién está disponible sin violar descansos ni crear doble asignación, y el reemplazo recibe el turno en su app al instante.' },
+      { q: '¿Los guardias pueden intercambiar turnos?', a: 'Sí, mediante solicitudes de intercambio que pasan por aprobación. El sistema ejecuta el intercambio real de ambos turnos y verifica que ninguno quede con solapamientos.' },
+      { q: '¿Cómo se entera el guardia de su horario?', a: 'En la app del vigilante: vista de día, semana y mes, incluidos los turnos nocturnos que cruzan la medianoche. Los cambios generan notificación push.' },
+      { q: '¿La asistencia se cruza con el rol de turnos?', a: 'Sí. Cada marcación de entrada/salida se concilia contra el turno programado, así ves atrasos, ausencias y horas reales por periodo sin cálculos manuales.' },
+    ]}
+    related={[
+      { label: 'Control de asistencia de guardias', href: '/control-de-asistencia-de-guardias' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Control de rondas con QR', href: '/control-de-rondas-qr' },
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Trae tu rol de turnos más difícil"
+    ctaBody="En la demo lo armamos en vivo: tu rotación real, tus francos y tus sacafrancos, generados para el mes completo en minutos."
+  />
+  <Footer lang={lang} />
+</Layout>

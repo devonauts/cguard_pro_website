@@ -28,6 +28,14 @@ const resultIcons = [
   `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
   `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
 ];
+
+// Feature-card deep links → the Spanish SEO landing pages (order matches
+// t.features.items: GPS, Rondas, Turnos, Despacho, Incidentes, Portal).
+// EN has no feature pages yet → nulls render plain cards.
+const featureHrefs: (string | null)[] = lang === 'es'
+  ? ['/supervision-gps-guardias', '/control-de-rondas-qr', '/roles-de-turnos-guardias', '/radio-ptt-para-guardias', '/libro-de-novedades-digital', '/portal-del-cliente']
+  : [null, null, null, null, null, null];
+
 ---
 
 <Layout
@@ -161,8 +169,13 @@ const resultIcons = [
                 <Fragment set:html={featureIcons[i]} />
               </svg>
             </div>
-            <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text)">{title}</h3>
+            <h3 class="font-display font-semibold text-lg mb-2" style="color:var(--text)">
+              {featureHrefs[i] ? <a href={featureHrefs[i]} class="hover:underline underline-offset-4">{title}</a> : title}
+            </h3>
             <p class="text-sm leading-relaxed" style="color:var(--text-muted)">{desc}</p>
+            {featureHrefs[i] && (
+              <a href={featureHrefs[i]} class="mt-4 inline-block text-sm font-semibold" style="color:var(--brand)">Conocer más →</a>
+            )}
           </article>
         ))}
       </div>

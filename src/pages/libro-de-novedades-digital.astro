@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Libro de Novedades Digital para Vigilancia — Parte de Novedades y Bitácora"
+  lang={lang}
+  description="Reemplaza el libro de novedades de papel: parte de novedades digital con foto, hora y guardia identificado, bitácora de vigilancia consultable por sitio y pase de turno automático al relevo. Evidencia real para tu cliente."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Novedades y Bitácora"
+    h1a="Libro de novedades digital:"
+    h1b="adiós al cuaderno de la garita"
+    intro="Cada novedad se registra desde el celular del vigilante con foto, hora exacta, ubicación y autor — y queda en una bitácora digital consultable por puesto, cliente y fecha. Al cambio de turno, el pase de novedades llega automáticamente al relevo entrante: nada se pierde entre guardia y guardia."
+    phoneShot="/screenshots/worker-app/es-incidents.png"
+    shotAlt="Registro de novedades e incidentes en la app del vigilante de CGuardPro"
+    painsTitle="El problema del parte de novedades en papel"
+    pains={[
+      { title: 'Ilegible, incompleto, extraviable', body: 'Cuadernos con letra imposible, hojas arrancadas y cafés derramados. Cuando necesitas la novedad de hace tres meses para un reclamo, no aparece.' },
+      { title: 'El relevo no se entera', body: 'Las consignas y pendientes del turno saliente se pierden si el relevo no lee (o no encuentra) el cuaderno. Los errores de relevo son el origen de la mitad de los reclamos.' },
+      { title: 'Sin valor como evidencia', body: 'Ante un siniestro o una auditoría del cliente, un parte manuscrito sin hora verificable ni autor identificado vale poco.' },
+    ]}
+    howTitle="Cómo funciona el parte de novedades en CGuardPro"
+    how={[
+      { title: 'El vigilante registra desde la app', body: 'Novedad con descripción, fotos, prioridad y ubicación en menos de un minuto — desde el mismo celular con el que marca asistencia.' },
+      { title: 'La central lo ve al instante', body: 'Cada novedad aparece en tiempo real en el panel de operaciones, con alertas para las de prioridad alta.' },
+      { title: 'Pase de turno automático', body: 'Al marcar salida, el guardia deja novedades e instrucciones; el relevo entrante las recibe en su app al iniciar turno — incluso “Sin novedad” queda registrado.' },
+      { title: 'Bitácora consultable y exportable', body: 'Todo queda indexado por sitio, guardia y fecha: la bitácora completa de cada puesto, lista para auditorías y reportes al cliente.' },
+    ]}
+    benefitsTitle="Una bitácora que sí sirve de evidencia"
+    benefits={[
+      'Cada registro con hora del servidor, GPS, autor y fotos adjuntas',
+      'Pase de novedades automático entre turno saliente y entrante',
+      'Alertas inmediatas a la central para novedades de prioridad alta',
+      'Búsqueda por sitio, cliente, guardia y rango de fechas en segundos',
+      'El cliente ve las novedades de sus sitios desde su portal',
+      'Historial inalterable: nada se arranca, nada se pierde',
+    ]}
+    faqs={[
+      { q: '¿Esto reemplaza el libro de novedades físico que exige mi cliente?', a: 'Sí. La bitácora digital registra más que el cuaderno (fotos, GPS, hora de servidor, autor verificado) y se puede exportar por periodo para entregar al cliente o al organismo que lo requiera.' },
+      { q: '¿Qué es el pase de turno y cómo funciona?', a: 'Al marcar salida, el guardia registra las novedades del turno y las instrucciones pendientes. El sistema se las entrega automáticamente al guardia entrante en su app, con acuse de recibo. Si no hubo nada, queda constancia del “Sin novedad”.' },
+      { q: '¿Las novedades pueden incluir fotos y ubicación?', a: 'Sí — fotos tomadas en el momento, prioridad, descripción y la ubicación del registro. Todo con la hora del servidor, no la del teléfono.' },
+      { q: '¿Puede el guardia registrar una novedad sin señal?', a: 'Sí. El registro se guarda en el teléfono y se envía automáticamente al recuperar conexión, conservando su hora original.' },
+      { q: '¿Mi cliente puede ver las novedades de su instalación?', a: 'Sí, desde el portal del cliente ve las novedades e incidentes de sus sitios en cuanto ocurren — transparencia que renueva contratos.' },
+    ]}
+    related={[
+      { label: 'Botón de pánico para guardias', href: '/boton-de-panico-guardias' },
+      { label: 'Control de rondas con QR', href: '/control-de-rondas-qr' },
+      { label: 'Portal del cliente', href: '/portal-del-cliente' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Convierte tu cuaderno de novedades en evidencia"
+    ctaBody="Agenda una demo y mira el flujo completo: registro con foto en el celular, alerta en la central y pase de turno automático al relevo."
+  />
+  <Footer lang={lang} />
+</Layout>

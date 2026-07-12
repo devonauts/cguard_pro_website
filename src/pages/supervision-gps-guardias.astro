@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Supervisión GPS de Guardias de Seguridad en Tiempo Real"
+  lang={lang}
+  description="Monitoreo de guardias con GPS: mapa en vivo de vigilantes y vehículos, verificación de ubicación en marcaciones y rondas, alertas de zona y patrullaje vehicular supervisado. Sabe dónde está tu operación ahora mismo."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Supervisión GPS"
+    h1a="¿Dónde están tus guardias?"
+    h1b="Míralo en el mapa, ahora mismo"
+    intro="CGuardPro pone tu operación completa en un mapa en vivo: vigilantes en servicio, supervisores en patrullaje vehicular y cada marcación o escaneo verificado por ubicación. La supervisión deja de depender de llamadas — la central ve, en tiempo real, que cada puesto está donde debe estar."
+    browserShot="/screenshots/dashboard.png"
+    shotAlt="Centro de mando de CGuardPro con mapa GPS de guardias en vivo"
+    painsTitle="El problema de supervisar por teléfono"
+    pains={[
+      { title: '“¿Estás en tu puesto?” no es supervisión', body: 'Llamar puesto por puesto consume la noche del supervisor y solo prueba que alguien contestó el teléfono — no dónde estaba.' },
+      { title: 'El recorrido del supervisor no se ve', body: 'Sin rastreo del patrullaje vehicular, no sabes qué puestos visitó el supervisor ni cuánto duró cada visita.' },
+      { title: 'El cliente pide pruebas', body: 'Ante un reclamo de “no había nadie”, necesitas evidencia de presencia con hora y ubicación — no testimonios.' },
+    ]}
+    howTitle="Cómo funciona la supervisión en CGuardPro"
+    how={[
+      { title: 'Mapa en vivo de la operación', body: 'Guardias en servicio y vehículos de supervisión sobre el mapa del centro de mando, con estado y último reporte de cada uno.' },
+      { title: 'Ubicación verificada en cada acción', body: 'Marcaciones de asistencia, escaneos de ronda y novedades registran su posición GPS — la presencia se demuestra sola.' },
+      { title: 'Patrullaje vehicular supervisado', body: 'Los supervisores registran sus visitas a puestos con la app de patrullaje: recorridos, llegadas y novedades de cada punto.' },
+      { title: 'Alertas por comportamiento anómalo', body: 'Salidas de zona asignada, inactividad prolongada o puestos sin cobertura generan alertas para actuar en el momento.' },
+    ]}
+    benefitsTitle="Supervisión que se demuestra"
+    benefits={[
+      'Mapa en tiempo real de vigilantes, supervisores y vehículos',
+      'GPS verificado en asistencia, rondas y novedades — no autoreportado',
+      'Historial de recorridos de supervisión por puesto y fecha',
+      'Alertas de salida de zona y de puestos descubiertos',
+      'Consumo de batería optimizado: rastreo solo durante el servicio',
+      'Evidencia de presencia lista para responder cualquier reclamo',
+    ]}
+    faqs={[
+      { q: '¿El rastreo GPS invade la privacidad del guardia?', a: 'La ubicación se registra únicamente durante el turno y para fines operativos, con el consentimiento gestionado por tu empresa como empleador. Fuera de servicio, la app no rastrea.' },
+      { q: '¿Cuánta batería consume el rastreo?', a: 'El rastreo está optimizado para reportar con la frecuencia necesaria durante el servicio sin drenar el teléfono en un turno de 12 o 24 horas.' },
+      { q: '¿Puedo ver el recorrido que hizo el supervisor anoche?', a: 'Sí. El patrullaje vehicular queda registrado por ruta: qué puestos visitó, a qué hora llegó a cada uno y qué novedades reportó.' },
+      { q: '¿Qué pasa si el guardia apaga el GPS o el teléfono?', a: 'La central lo ve: el estado del dispositivo (última señal, batería) es visible y la falta de reporte prolongada genera alerta de inactividad.' },
+      { q: '¿El cliente puede ver esta información?', a: 'El cliente ve la evidencia del servicio en sus sitios (rondas verificadas, novedades, asistencia) desde su portal — tú decides el nivel de detalle.' },
+    ]}
+    related={[
+      { label: 'Control de rondas con QR', href: '/control-de-rondas-qr' },
+      { label: 'Control de asistencia de guardias', href: '/control-de-asistencia-de-guardias' },
+      { label: 'Botón de pánico para guardias', href: '/boton-de-panico-guardias' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Mira tu operación en el mapa"
+    ctaBody="Agenda una demo y te mostramos el centro de mando en vivo: guardias, supervisores y alertas de tu operación, en una sola pantalla."
+  />
+  <Footer lang={lang} />
+</Layout>

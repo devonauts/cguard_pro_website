@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Fonts are loaded via <link> in Layout.astro (non-blocking) — a CSS @import
+   here chained the font CSS behind this stylesheet's download. */
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Control de Asistencia para Guardias de Seguridad"
+  lang={lang}
+  description="Control de asistencia de guardias con selfie y GPS: marcación de entrada y salida desde el celular, verificación de ubicación en el puesto, alertas de atraso y reporte listo para nómina. Adiós a las hojas de papel."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Control de Asistencia"
+    h1a="Control de asistencia de guardias"
+    h1b="con selfie, GPS y hora exacta"
+    intro="El vigilante marca entrada y salida desde su celular con una selfie y su ubicación verificada en el puesto. La central ve quién está en servicio en tiempo real, recibe alertas de atrasos y ausencias, y la asistencia queda lista para alimentar la nómina — sin biométricos costosos ni cuadernos."
+    phoneShot="/screenshots/worker-app/es-dashboard.png"
+    shotAlt="App del vigilante de CGuardPro mostrando el turno actual en servicio con cronómetro"
+    painsTitle="El problema de la asistencia en papel"
+    pains={[
+      { title: 'Marcaciones que nadie puede verificar', body: 'Una firma en un cuaderno no prueba que el guardia llegó a la hora, ni siquiera que estuvo en el puesto. Las disputas de horas terminan en su palabra contra la tuya.' },
+      { title: 'Los atrasos se descubren tarde', body: 'Sin marcación en tiempo real, un puesto descubierto se detecta cuando el cliente llama — no cuando el relevo no llegó.' },
+      { title: 'Nómina a mano, errores caros', body: 'Pasar hojas de asistencia a Excel cada quincena consume días y produce errores que cuestan dinero o generan reclamos del personal.' },
+    ]}
+    howTitle="Cómo funciona la marcación en CGuardPro"
+    how={[
+      { title: 'Entrada con selfie y GPS', body: 'Al iniciar turno, el vigilante toma una selfie y el sistema registra hora y ubicación, verificando que esté dentro del perímetro del puesto.' },
+      { title: 'Estado en vivo en la central', body: 'El panel muestra quién está en servicio, en qué puesto y desde qué hora — con alertas automáticas de atraso y de puesto sin cubrir.' },
+      { title: 'Salida con pase de turno', body: 'Al marcar salida, el guardia deja sus novedades e instrucciones, que el relevo entrante recibe automáticamente.' },
+      { title: 'Asistencia lista para nómina', body: 'Horas trabajadas, atrasos y ausencias quedan consolidados por periodo, listos para exportar o alimentar tu proceso de pago.' },
+    ]}
+    benefitsTitle="Cada hora trabajada, verificada"
+    benefits={[
+      'Selfie + GPS: imposible marcar por otro compañero o desde la casa',
+      'Alertas inmediatas de atraso, ausencia y salida anticipada',
+      'Solicitudes de salida anticipada con aprobación del supervisor',
+      'Historial de asistencia por guardia, puesto y cliente',
+      'Consolidado por periodo listo para nómina, sin digitación manual',
+      'Funciona en cualquier celular Android o iPhone del vigilante',
+    ]}
+    faqs={[
+      { q: '¿Cómo evita que un guardia marque por otro?', a: 'Cada marcación exige una selfie tomada en el momento y valida la ubicación GPS contra el perímetro del puesto. Además, cada cuenta permite una sola sesión activa por dispositivo, así que compartir cuentas no funciona.' },
+      { q: '¿Qué pasa si el guardia llega y no tiene señal?', a: 'La marcación se guarda en el teléfono con su hora real y se sincroniza automáticamente al recuperar conexión.' },
+      { q: '¿Sirve para turnos de 12 y 24 horas (24x24, 12x12)?', a: 'Sí. El programador de turnos de CGuardPro maneja rotaciones 24x24, 12x12 y sacafrancos, y la asistencia se concilia contra el turno programado, incluyendo turnos que cruzan la medianoche.' },
+      { q: '¿Puedo saber en este momento qué puestos están cubiertos?', a: 'Sí. El panel de operaciones muestra en tiempo real los guardias en servicio por puesto y cliente, y alerta los puestos descubiertos.' },
+      { q: '¿Reemplaza al reloj biométrico?', a: 'Para personal distribuido en puestos de clientes, sí: la selfie con GPS cumple la misma función de identidad sin instalar hardware en cada sitio ni cablear nada.' },
+    ]}
+    related={[
+      { label: 'Roles de turnos para guardias', href: '/roles-de-turnos-guardias' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Supervisión GPS de guardias', href: '/supervision-gps-guardias' },
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Deja las hojas de asistencia este mes"
+    ctaBody="En una demo de 30 minutos te mostramos la marcación con selfie, las alertas de atraso y el consolidado para nómina con tus propios turnos."
+  />
+  <Footer lang={lang} />
+</Layout>

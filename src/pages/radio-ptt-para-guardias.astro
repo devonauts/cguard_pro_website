@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FeatureLanding from '../components/FeatureLanding.astro';
+const lang = 'es';
+---
+
+<Layout
+  hasAlternate={false}
+  title="Radio PTT para Guardias en el Celular — Canal Abierto de Voz"
+  lang={lang}
+  description="Radio con pulsar-para-hablar (PTT) integrada en la app del vigilante: canal abierto cifrado entre central, supervisores y guardias, funciona en segundo plano y sin comprar radios. Incluye pase de novedades por voz."
+>
+  <Navbar lang={lang} />
+  <FeatureLanding
+    badge="Radio PTT"
+    h1a="La radio de tu operación,"
+    h1b="sin comprar radios"
+    intro="CGuardPro convierte el celular de cada vigilante en una radio profesional: canal abierto con pulsar-para-hablar donde central, supervisores y guardias se escuchan al instante, con audio cifrado que sigue funcionando con la pantalla bloqueada. Sin equipos UHF que comprar, mantener ni perder."
+    phoneShot="/screenshots/worker-app/es-radio.png"
+    shotAlt="Radio PTT en vivo en la app del vigilante de CGuardPro con botón de hablar"
+    painsTitle="El problema de las radios tradicionales"
+    pains={[
+      { title: 'Equipos caros que desaparecen', body: 'Radios UHF, baterías, cargadores y repetidoras: una inversión enorme que se daña, se pierde y queda obsoleta — multiplicada por cada puesto.' },
+      { title: 'Cobertura limitada', body: 'La radio convencional no cruza la ciudad ni llega al puesto rural. Terminas coordinando la operación por llamadas y WhatsApp, sin canal común.' },
+      { title: 'Sin registro de nada', body: 'Lo que se dijo por radio no queda en ninguna parte. El pase de novedades por voz depende de la memoria de quien lo escuchó.' },
+    ]}
+    howTitle="Cómo funciona la radio de CGuardPro"
+    how={[
+      { title: 'Canal abierto por tenant', body: 'Al iniciar turno, el vigilante queda conectado al canal de tu operación. La central y los supervisores comparten el mismo canal desde el CRM y sus apps.' },
+      { title: 'Pulsar para hablar', body: 'Mantén presionado el botón y habla; todos escuchan al instante. El canal muestra quién está conectado y quién está hablando.' },
+      { title: 'Funciona en segundo plano', body: 'Con la pantalla bloqueada o usando otra app, la radio sigue recibiendo — como una radio de verdad, con audio Opus cifrado extremo a extremo del canal.' },
+      { title: 'Pase de novedades por voz', body: 'La central puede realizar pases de novedades programados por el canal, con registro de quién respondió y cuándo.' },
+    ]}
+    benefitsTitle="Comunicación de radio, costos de app"
+    benefits={[
+      'Cero inversión en radios, baterías, cargadores o repetidoras',
+      'Cobertura nacional: funciona donde el celular tenga datos',
+      'Audio cifrado (WebRTC/Opus) con calidad de llamada',
+      'Sigue sonando en segundo plano y con pantalla bloqueada',
+      'Roster en vivo: quién está en el canal y quién habla',
+      'Puente opcional con radios físicas UHF/VHF vía RoIP para operaciones mixtas',
+    ]}
+    faqs={[
+      { q: '¿De verdad reemplaza a las radios UHF/VHF?', a: 'Para la mayoría de operaciones urbanas, sí: el canal PTT sobre datos móviles cubre toda la ciudad (y el país) sin repetidoras. Si conservas radios físicas, CGuardPro puede integrarlas al mismo canal mediante un puente RoIP.' },
+      { q: '¿Qué consumo de datos tiene?', a: 'El audio se transmite solo mientras alguien habla (pulsar-para-hablar), con códec Opus eficiente — el consumo es una fracción del de una llamada continua.' },
+      { q: '¿Funciona si el guardia está usando otra aplicación?', a: 'Sí. La radio corre en segundo plano con un servicio dedicado: el guardia escucha el canal aunque tenga la pantalla bloqueada o esté en otra app.' },
+      { q: '¿Quiénes pueden hablar en el canal?', a: 'La central desde el CRM, los supervisores desde su app y los vigilantes en servicio. El canal es por empresa (tenant) y muestra en vivo quién está conectado.' },
+      { q: '¿Qué es el pase de novedades por radio?', a: 'Un pase de lista por voz: la central convoca por el canal y cada guardia responde; el sistema registra quién respondió y a qué hora, dejando constancia del control.' },
+    ]}
+    related={[
+      { label: 'Botón de pánico para guardias', href: '/boton-de-panico-guardias' },
+      { label: 'App para guardias de seguridad', href: '/app-movil' },
+      { label: 'Supervisión GPS de guardias', href: '/supervision-gps-guardias' },
+      { label: 'Libro de novedades digital', href: '/libro-de-novedades-digital' },
+      { label: 'Software para empresas de seguridad en Ecuador', href: '/ecuador' },
+    ]}
+    ctaTitle="Escucha el canal en vivo en la demo"
+    ctaBody="Conectamos la central, un supervisor y un vigilante al mismo canal y hablas por la radio tú mismo — desde un celular normal."
+  />
+  <Footer lang={lang} />
+</Layout>
