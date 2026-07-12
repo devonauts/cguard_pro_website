@@ -117,6 +117,13 @@ const links = {
       <p class="text-white/30 text-xs">
         &copy; {year} CGuardPro. {t.footer.rights}
       </p>
+      {lang === 'es' && (
+        <p class="text-white/30 text-xs text-center">
+          <a target="_blank" rel="noopener" href="https://www.comparasoftware.ec/c-guard-pro" class="underline underline-offset-2 hover:text-brand transition-colors">C-Guard Pro</a>
+          {' '}se encuentra verificado como{' '}
+          <a target="_blank" rel="noopener" href="https://www.comparasoftware.ec/sistemas-de-seguridad" class="underline underline-offset-2 hover:text-brand transition-colors">Software de sistema de seguridad en Ecuador</a>
+        </p>
+      )}
       <p class="text-white/20 text-xs font-mono">
         {t.footer.builtFor}
       </p>
