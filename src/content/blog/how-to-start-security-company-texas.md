@@ -3,6 +3,7 @@ title: "How to Start a Security Guard Company in Texas: Complete 2026 Guide"
 description: "Step-by-step guide to starting a private security company in Texas. Covers TDLR licensing, insurance requirements, hiring, and essential software tools for success."
 pubDate: 2026-05-18
 author: "CGuardPro"
+image: "/blog/how-to-start-security-company-texas.jpg"
 tags: ["texas", "security business", "licensing", "startup"]
 lang: "en"
 ---

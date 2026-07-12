@@ -3,6 +3,7 @@ title: "Cómo Cotizar Servicios de Seguridad Privada en Ecuador"
 description: "Aprende a calcular correctamente el costo de tus servicios de seguridad privada. Fórmulas, factores clave y errores comunes al cotizar en el mercado ecuatoriano."
 pubDate: 2026-04-28
 author: "CGuardPro"
+image: "/blog/como-cotizar-servicios-seguridad-ecuador.jpg"
 tags: ["negocios", "ecuador"]
 lang: "es"
 ---

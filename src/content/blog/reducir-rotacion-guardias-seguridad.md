@@ -3,6 +3,7 @@ title: "Cómo Reducir la Rotación de Guardias de Seguridad: 7 Estrategias Proba
 description: "La rotación de personal es el mayor dolor de cabeza del sector. Descubre 7 estrategias efectivas para retener a tus guardias de seguridad y reducir costos operativos."
 pubDate: 2026-05-08
 author: "CGuardPro"
+image: "/blog/reducir-rotacion-guardias-seguridad.jpg"
 tags: ["recursos humanos", "gestión"]
 lang: "es"
 ---

@@ -3,6 +3,7 @@ title: "SICOSEP: Cómo Consultar Guardias y Compañías de Seguridad en Ecuador 
 description: "Guía práctica del SICOSEP del Ministerio del Interior: cómo verificar gratis la acreditación de un guardia de seguridad o de una compañía de vigilancia en Ecuador, y por qué tu empresa debe revisarlo antes de contratar."
 pubDate: 2026-07-12
 author: "CGuardPro"
+image: "/blog/sicosep-consulta-guardias-ecuador.jpg"
 tags: ["sicosep", "ecuador", "regulaciones", "guardias"]
 lang: "es"
 ---

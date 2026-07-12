@@ -3,6 +3,7 @@ title: "Incidentes de Seguridad: Cómo Documentarlos Correctamente"
 description: "Guía paso a paso para documentar incidentes de seguridad de forma profesional. Protege a tu empresa, satisface a tus clientes y cumple con los requisitos legales."
 pubDate: 2026-04-20
 author: "CGuardPro"
+image: "/blog/documentar-incidentes-seguridad-correctamente.jpg"
 tags: ["incidentes", "gestión"]
 lang: "es"
 ---

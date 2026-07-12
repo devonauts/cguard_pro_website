@@ -3,6 +3,7 @@ title: "Regulaciones de Seguridad Privada en Ecuador: Lo que Debes Saber en 2026
 description: "Resumen actualizado de las regulaciones, requisitos legales y normativas que rigen a las empresas de seguridad privada en Ecuador. Evita multas y opera en cumplimiento."
 pubDate: 2026-05-12
 author: "CGuardPro"
+image: "/blog/regulaciones-seguridad-privada-ecuador.jpg"
 tags: ["regulaciones", "ecuador"]
 lang: "es"
 ---

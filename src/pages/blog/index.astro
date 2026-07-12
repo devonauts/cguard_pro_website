@@ -8,12 +8,51 @@ const lang = 'es';
 const posts = (await getCollection('blog'))
   .filter(post => post.data.lang === 'es')
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+/**
+ * Curated categories over the free-form tags (91+ posts need structure).
+ * A post lands in the FIRST category whose tag set intersects its tags;
+ * "Países" collects every country tag; fallback = Gestión.
+ */
+// Order matters: feature categories are checked FIRST so a country-tagged
+// feature post ("rondas" + "ecuador") lands in its topic, and "Países" keeps
+// only the country overview/trámite guides.
+const CATEGORIES: { id: string; label: string; tags: string[] }[] = [
+  { id: 'rondas', label: 'Rondas', tags: ['rondas'] },
+  { id: 'turnos', label: 'Turnos y Asistencia', tags: ['turnos', 'asistencia', 'nómina'] },
+  { id: 'novedades', label: 'Novedades y Reportes', tags: ['novedades', 'bitácora', 'reportes', 'consignas', 'visitas'] },
+  { id: 'emergencias', label: 'Emergencias y Radio', tags: ['emergencias', 'radio', 'protocolos', 'supervisión'] },
+  { id: 'clientes', label: 'Clientes y Ventas', tags: ['clientes', 'ventas', 'marketing'] },
+  { id: 'personal', label: 'Personal', tags: ['personal', 'capacitación', 'contratación', 'rotación'] },
+  { id: 'normativa', label: 'Normativa', tags: ['regulaciones', 'sicosep', 'licencias', 'TDLR', 'permiso de operación'] },
+  { id: 'apps', label: 'App y Producto', tags: ['app móvil', 'producto', 'funcionalidades'] },
+  { id: 'paises', label: 'Países', tags: ['ecuador', 'colombia', 'méxico', 'perú', 'chile', 'argentina', 'panamá', 'guatemala', 'costa rica', 'república dominicana', 'bolivia', 'el salvador', 'honduras', 'paraguay', 'latam', 'estados unidos', 'texas'] },
+  { id: 'gestion', label: 'Gestión y Software', tags: ['software', 'tecnología', 'administración', 'kpis', 'finanzas', 'comparativa', 'plantillas', 'checklist', 'operaciones', 'tendencias', 'emprendimiento'] },
+];
+
+function categoryOf(tags: string[]): { id: string; label: string } {
+  const lower = tags.map((t) => t.toLowerCase());
+  for (const c of CATEGORIES) {
+    if (c.tags.some((t) => lower.includes(t.toLowerCase()))) return c;
+  }
+  return { id: 'gestion', label: 'Gestión y Software' };
+}
+
+const withCat = posts.map((p) => ({ post: p, cat: categoryOf(p.data.tags) }));
+const counts = new Map<string, number>();
+for (const { cat } of withCat) counts.set(cat.id, (counts.get(cat.id) || 0) + 1);
+const chips = CATEGORIES.filter((c) => counts.get(c.id));
+
+const featured = withCat[0];
+const rest = withCat.slice(1);
+
+const fmt = (d: Date) => d.toLocaleDateString('es-EC', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
 <Layout
-  title="Blog — Gestión de Seguridad Privada en Ecuador"
+  title="Blog — Gestión de Seguridad Privada en América Latina"
   lang={lang}
-  description="Artículos, guías y recursos sobre gestión de seguridad privada, tecnología para empresas de seguridad y mejores prácticas del sector en Ecuador."
+  description="Más de 90 guías prácticas para empresas de seguridad privada: rondas, turnos, novedades, emergencias, clientes y normativa — para Ecuador y toda América Latina."
 >
   <Navbar lang={lang} />
 
@@ -21,52 +60,155 @@ const posts = (await getCollection('blog'))
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Header -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <span class="section-label mb-4 inline-flex">Blog</span>
         <h1 class="font-display font-bold text-5xl mb-4 animate-on-scroll">
           Recursos para Empresas<br />
           <span class="text-brand">de Seguridad</span>
         </h1>
         <p class="text-white/50 text-lg max-w-xl mx-auto animate-on-scroll">
-          Guías prácticas, tendencias del sector y consejos para digitalizar y hacer crecer tu empresa de seguridad en Ecuador.
+          {posts.length} guías prácticas sobre rondas, turnos, novedades, emergencias y clientes — escritas desde la operación real.
         </p>
       </div>
 
+      <!-- Featured (latest) -->
+      {featured && (
+        <a href={`/blog/${featured.post.id}/`} class="card-glass group hover:border-brand/30 transition-all duration-300 grid md:grid-cols-2 overflow-hidden mb-12 animate-on-scroll">
+          {featured.post.data.image && (
+            <img src={featured.post.data.image} alt="" width="1200" height="630" class="w-full h-full object-cover" loading="eager" decoding="async" />
+          )}
+          <div class="p-8 flex flex-col justify-center">
+            <div class="flex items-center gap-2.5 mb-4">
+              <span class="text-[11px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-full" style="background:rgba(200,134,10,0.15);color:var(--brand)">Destacado</span>
+              <span class="text-xs bg-brand/10 text-brand px-2 py-0.5 rounded-full">{featured.cat.label}</span>
+              <time class="text-xs text-white/40 font-mono">{fmt(featured.post.data.pubDate)}</time>
+            </div>
+            <h2 class="font-display font-bold text-2xl lg:text-[1.7rem] leading-snug text-white group-hover:text-brand transition-colors mb-3">
+              {featured.post.data.title}
+            </h2>
+            <p class="text-white/50 text-[15px] leading-relaxed line-clamp-3">{featured.post.data.description}</p>
+            <span class="mt-5 text-brand text-sm font-semibold flex items-center gap-1">
+              Leer artículo
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      )}
+
+      <!-- Filters: search + category chips -->
+      <div class="mb-10 space-y-4">
+        <div class="max-w-md mx-auto relative">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input
+            id="blog-search"
+            type="search"
+            placeholder="Buscar entre los artículos…"
+            class="w-full rounded-full border border-white/10 bg-white/5 py-3 pl-11 pr-5 text-sm text-white placeholder-white/30 outline-none focus:border-brand/50 transition-colors"
+            autocomplete="off"
+          />
+        </div>
+        <div class="flex flex-wrap justify-center gap-2" role="group" aria-label="Categorías">
+          <button type="button" data-cat="all" class="blog-chip is-active" aria-pressed="true">Todos <span class="cnt">{posts.length}</span></button>
+          {chips.map((c) => (
+            <button type="button" data-cat={c.id} class="blog-chip" aria-pressed="false">{c.label} <span class="cnt">{counts.get(c.id)}</span></button>
+          ))}
+        </div>
+      </div>
+
       <!-- Blog Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <a href={`/blog/${post.id}/`} class="card-glass group hover:border-brand/30 transition-all duration-300 animate-on-scroll">
+      <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {rest.map(({ post, cat }) => (
+          <a
+            href={`/blog/${post.id}/`}
+            class="blog-card card-glass group hover:border-brand/30 transition-all duration-300"
+            data-cat={cat.id}
+            data-search={`${post.data.title} ${post.data.description}`.toLowerCase()}
+          >
             {post.data.image && (
               <img src={post.data.image} alt="" width="1200" height="630" class="w-full rounded-t-[inherit]" loading="lazy" decoding="async" />
             )}
             <div class="p-6">
               <div class="flex items-center gap-2 mb-3">
-                <time class="text-xs text-white/40 font-mono">
-                  {post.data.pubDate.toLocaleDateString('es-EC', { year: 'numeric', month: 'short', day: 'numeric' })}
-                </time>
-                {post.data.tags.slice(0, 2).map(tag => (
-                  <span class="text-xs bg-brand/10 text-brand px-2 py-0.5 rounded-full">{tag}</span>
-                ))}
+                <span class="text-xs bg-brand/10 text-brand px-2 py-0.5 rounded-full">{cat.label}</span>
+                <time class="text-xs text-white/40 font-mono">{fmt(post.data.pubDate)}</time>
               </div>
               <h2 class="font-display font-semibold text-lg text-white group-hover:text-brand transition-colors mb-2 line-clamp-2">
                 {post.data.title}
               </h2>
-              <p class="text-white/50 text-sm line-clamp-3">
-                {post.data.description}
-              </p>
+              <p class="text-white/50 text-sm line-clamp-3">{post.data.description}</p>
               <div class="mt-4 text-brand text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                 Leer más
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
           </a>
         ))}
       </div>
 
+      <p id="blog-empty" class="hidden text-center text-white/40 py-16">
+        No hay artículos que coincidan con tu búsqueda.
+      </p>
+
     </div>
   </main>
 
   <Footer lang={lang} />
 </Layout>
+
+<style>
+  .blog-chip {
+    font-family: var(--font-family-mono, ui-monospace);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.55);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .blog-chip:hover { color: #fff; border-color: rgba(255, 255, 255, 0.3); }
+  .blog-chip.is-active {
+    color: var(--brand, #C8860A);
+    border-color: color-mix(in srgb, var(--brand, #C8860A) 55%, transparent);
+    background: color-mix(in srgb, var(--brand, #C8860A) 10%, transparent);
+  }
+  .blog-chip .cnt { opacity: 0.55; margin-left: 2px; }
+</style>
+
+<script>
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.blog-chip'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.blog-card'));
+  const search = document.getElementById('blog-search') as HTMLInputElement | null;
+  const empty = document.getElementById('blog-empty');
+
+  let activeCat = 'all';
+
+  function apply() {
+    const q = (search?.value || '').trim().toLowerCase();
+    let visible = 0;
+    for (const card of cards) {
+      const okCat = activeCat === 'all' || card.dataset.cat === activeCat;
+      const okSearch = !q || (card.dataset.search || '').includes(q);
+      const show = okCat && okSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    }
+    empty?.classList.toggle('hidden', visible > 0);
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      activeCat = chip.dataset.cat || 'all';
+      chips.forEach((c) => {
+        const on = c === chip;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      apply();
+    });
+  });
+  search?.addEventListener('input', apply);
+</script>

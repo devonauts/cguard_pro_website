@@ -3,6 +3,7 @@ title: "Texas TDLR Security License Requirements: What You Need to Know in 2026"
 description: "Complete guide to Texas Department of Licensing and Regulation (TDLR) requirements for security companies, guards, and managers. Updated for 2026."
 pubDate: 2026-05-15
 author: "CGuardPro"
+image: "/blog/texas-tdlr-security-license-requirements.jpg"
 tags: ["texas", "TDLR", "licensing", "compliance"]
 lang: "en"
 ---

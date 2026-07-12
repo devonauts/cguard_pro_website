@@ -3,6 +3,7 @@ title: "Security Company KPIs: 12 Metrics Every Operations Manager Should Track"
 description: "The essential KPIs for security guard companies. Track these 12 metrics to improve operations, retain clients, and grow your security business profitably."
 pubDate: 2026-04-10
 author: "CGuardPro"
+image: "/blog/security-company-kpis-metrics-to-track.jpg"
 tags: ["KPIs", "metrics", "operations management", "business growth"]
 lang: "en"
 ---

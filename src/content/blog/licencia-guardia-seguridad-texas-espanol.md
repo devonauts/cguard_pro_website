@@ -3,6 +3,7 @@ title: "Licencia de Guardia de Seguridad en Texas (Nivel II y III): Guía en Esp
 description: "Cómo obtener la licencia de guardia de seguridad en Texas explicado en español: niveles II, III y IV del TDLR, requisitos, horas de capacitación, antecedentes y lo que debe saber una compañía que contrata personal hispano."
 pubDate: 2026-07-12
 author: "CGuardPro"
+image: "/blog/licencia-guardia-seguridad-texas-espanol.jpg"
 tags: ["texas", "TDLR", "licencias", "español"]
 lang: "es"
 ---

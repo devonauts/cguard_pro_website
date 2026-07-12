@@ -3,6 +3,7 @@ title: "Checklist para Auditorías de Seguridad Privada en Ecuador"
 description: "Prepárate para inspecciones y auditorías del COSP con esta checklist completa. Documentación requerida, errores comunes y cómo pasar una auditoría sin observaciones."
 pubDate: 2026-04-10
 author: "CGuardPro"
+image: "/blog/checklist-auditorias-seguridad-privada.jpg"
 tags: ["auditorías", "cumplimiento"]
 lang: "es"
 ---

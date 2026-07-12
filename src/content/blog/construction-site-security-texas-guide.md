@@ -3,6 +3,7 @@ title: "Construction Site Security in Texas: Requirements, Costs, and Best Pract
 description: "Complete guide to construction site security in Texas. Covers theft prevention, OSHA requirements, guard costs, and technology for monitoring active job sites."
 pubDate: 2026-04-05
 author: "CGuardPro"
+image: "/blog/construction-site-security-texas-guide.jpg"
 tags: ["construction security", "texas", "theft prevention", "site security"]
 lang: "en"
 ---

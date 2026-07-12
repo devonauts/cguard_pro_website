@@ -3,6 +3,7 @@ title: "App Móvil para Guardias de Seguridad: Funcionalidades Esenciales"
 description: "¿Qué debe tener una app para guardias de seguridad? Análisis de las funcionalidades esenciales que necesita tu empresa para operar de forma profesional y eficiente."
 pubDate: 2026-04-05
 author: "CGuardPro"
+image: "/blog/app-movil-guardias-seguridad-funcionalidades.jpg"
 tags: ["app móvil", "tecnología"]
 lang: "es"
 ---

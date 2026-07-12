@@ -3,6 +3,7 @@ title: "Control de Asistencia para Guardias: Adiós a las Hojas de Papel"
 description: "Implementa un sistema de control de asistencia digital para tus guardias de seguridad. Elimina errores, conflictos laborales y reduce costos operativos."
 pubDate: 2026-04-24
 author: "CGuardPro"
+image: "/blog/control-asistencia-guardias-digital.jpg"
 tags: ["asistencia", "tecnología"]
 lang: "es"
 ---

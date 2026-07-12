@@ -3,6 +3,7 @@ title: "Guía Completa para Gestionar una Empresa de Seguridad en Ecuador [2026]
 description: "Todo lo que necesitas saber para administrar una empresa de seguridad privada en Ecuador: requisitos legales, gestión operativa, tecnología y mejores prácticas del sector."
 pubDate: 2026-05-15
 author: "CGuardPro"
+image: "/blog/guia-gestionar-empresa-seguridad-ecuador.jpg"
 tags: ["gestión", "ecuador"]
 lang: "es"
 ---

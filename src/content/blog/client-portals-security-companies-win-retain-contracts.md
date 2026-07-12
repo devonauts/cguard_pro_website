@@ -3,6 +3,7 @@ title: "Client Portals for Security Companies: Win and Retain More Contracts"
 description: "How client-facing portals help security companies win bids, retain clients, and differentiate from competitors. Implementation guide and ROI analysis."
 pubDate: 2026-04-28
 author: "CGuardPro"
+image: "/blog/client-portals-security-companies-win-retain-contracts.jpg"
 tags: ["client portal", "client retention", "sales", "technology"]
 lang: "en"
 ---

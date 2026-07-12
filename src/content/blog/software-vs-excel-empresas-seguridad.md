@@ -3,6 +3,7 @@ title: "Software vs. Excel: Por Qué las Empresas de Seguridad Necesitan Digital
 description: "¿Sigues manejando tu empresa de seguridad con Excel y WhatsApp? Descubre por qué la digitalización ya no es opcional y cómo hacer la transición sin dolor."
 pubDate: 2026-05-01
 author: "CGuardPro"
+image: "/blog/software-vs-excel-empresas-seguridad.jpg"
 tags: ["digitalización", "gestión"]
 lang: "es"
 ---

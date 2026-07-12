@@ -3,6 +3,7 @@ title: "Cómo Abrir una Compañía de Seguridad en Estados Unidos: Guía en Espa
 description: "Guía en español para emprendedores hispanos: cómo abrir una compañía de seguridad privada en Estados Unidos — licencias estatales (ejemplo Texas/TDLR), seguros y fianzas, modelo de servicios, primeros contratos y operación."
 pubDate: 2026-07-12
 author: "CGuardPro"
+image: "/blog/como-abrir-compania-seguridad-estados-unidos.jpg"
 tags: ["estados unidos", "texas", "emprendimiento", "español"]
 lang: "es"
 ---

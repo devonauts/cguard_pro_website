@@ -3,6 +3,7 @@ title: "Cómo Constituir y Operar una Compañía de Vigilancia y Seguridad Priva
 description: "Guía general para crear una compañía de vigilancia y seguridad privada en Ecuador: constitución, permiso de operación, acreditación del personal, registro en SICOSEP y las obligaciones operativas que vienen después."
 pubDate: 2026-07-12
 author: "CGuardPro"
+image: "/blog/permiso-operacion-compania-vigilancia-ecuador.jpg"
 tags: ["ecuador", "regulaciones", "permiso de operación", "empresas de seguridad"]
 lang: "es"
 ---

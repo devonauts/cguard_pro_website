@@ -3,6 +3,7 @@ title: "GPS Tracking para Rondas de Vigilancia: Guía Práctica"
 description: "Cómo implementar rastreo GPS en las rondas de tus guardias de seguridad. Beneficios, tecnología necesaria y mejores prácticas para empresas en Ecuador."
 pubDate: 2026-05-05
 author: "CGuardPro"
+image: "/blog/gps-tracking-rondas-vigilancia.jpg"
 tags: ["tecnología", "GPS"]
 lang: "es"
 ---
