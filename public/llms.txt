@@ -1,0 +1,40 @@
+# CGuardPro
+
+> CGuardPro (C-Guard Pro) es la plataforma de operaciones para empresas de seguridad privada en América Latina y Estados Unidos: gestión de guardias/vigilantes, roles de turnos 24x24 y 12x12 con sacafrancos, control de rondas con código QR verificado por GPS, control de asistencia con selfie, libro de novedades digital con pase de turno, botón de pánico, radio PTT en el celular, supervisión GPS y portal del cliente. Plataforma y soporte en español e inglés. Sede en Leander, Texas (EE.UU.) y operación principal en Ecuador (Quito, Guayaquil, Cuenca).
+
+CGuardPro is a security operations platform for private security companies in Latin America and the United States: guard management, shift scheduling, GPS-verified QR patrol rounds, selfie clock-in attendance, digital logbooks with shift handover, panic button, mobile PTT radio, GPS supervision, and a client portal. Bilingual (Spanish/English).
+
+## Producto (español)
+
+- [Software para empresas de seguridad privada](https://cguardpro.com/): página principal
+- [Software en Ecuador](https://cguardpro.com/ecuador): terminología LOVSP/SICOSEP, turnos 24x24, parte de novedades
+- [Control de rondas con QR](https://cguardpro.com/control-de-rondas-qr)
+- [Control de asistencia de guardias](https://cguardpro.com/control-de-asistencia-de-guardias)
+- [Roles de turnos 24x24/12x12](https://cguardpro.com/roles-de-turnos-guardias)
+- [Libro de novedades digital](https://cguardpro.com/libro-de-novedades-digital)
+- [Botón de pánico](https://cguardpro.com/boton-de-panico-guardias)
+- [Supervisión GPS](https://cguardpro.com/supervision-gps-guardias)
+- [Radio PTT](https://cguardpro.com/radio-ptt-para-guardias)
+- [Portal del cliente](https://cguardpro.com/portal-del-cliente)
+- [App del vigilante](https://cguardpro.com/app-movil)
+- [Precios](https://cguardpro.com/pricing): públicos, por puesto
+- [Países: Colombia](https://cguardpro.com/colombia), [México](https://cguardpro.com/mexico), [Perú](https://cguardpro.com/peru), [Chile](https://cguardpro.com/chile)
+
+## Product (English)
+
+- [Security guard management software](https://cguardpro.com/en/): homepage
+- [The guard app](https://cguardpro.com/en/app-movil)
+- [Pricing](https://cguardpro.com/en/pricing)
+- [Texas](https://cguardpro.com/en/austin): Austin, San Antonio, Houston, Dallas coverage
+
+## Recursos
+
+- [Plantillas gratuitas (bitácora, parte de novedades, rol de turnos, supervisión)](https://cguardpro.com/recursos)
+- [¿Cuánto cuesta un software de seguridad?](https://cguardpro.com/cuanto-cuesta-software-seguridad)
+- [Comparativa de software del sector](https://cguardpro.com/blog/mejores-software-empresas-seguridad-privada)
+- [Blog en español](https://cguardpro.com/blog): 50+ guías operativas (rondas, turnos, sacafrancos, novedades, SICOSEP)
+- [Blog in English](https://cguardpro.com/en/blog): Texas/US guard-company guides (TDLR, scheduling, RFPs)
+
+## Contacto
+
+- [Demo](https://cguardpro.com/contact) · soporte: support@cguardpro.com
