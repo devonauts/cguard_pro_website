@@ -157,6 +157,20 @@ html.light .on-video .hover\:text-white:hover { color: #fff !important; }
 html.light .on-video .hover\:bg-white\/5:hover { background-color: rgba(255,255,255,0.08) !important; }
 html.light .on-video .site-logo { background: transparent; padding: 0; border-radius: 0; }
 
+/* Always-dark surfaces (the fixed #141414 CTA/pitch panels): keep light text in
+   light mode — the .text-white compat remaps above would otherwise render the
+   copy near-black on the dark card. Same convention as .on-video: add `on-dark`
+   to ANY element with a hardcoded dark background whose children use white
+   utility classes. */
+html.light .on-dark { color: #ECEDEE; }
+html.light .on-dark .text-white { color: #fff !important; }
+html.light .on-dark .text-white\/70,
+html.light .on-dark .text-white\/65,
+html.light .on-dark .text-white\/60 { color: rgba(255,255,255,0.65) !important; }
+html.light .on-dark .text-white\/50,
+html.light .on-dark .text-white\/45,
+html.light .on-dark .text-white\/40 { color: rgba(255,255,255,0.5) !important; }
+
 /* Light-mode logo fallback: the current logo has white text, so on a light
    background wrap it in a subtle dark chip so it stays legible. Replace with a
    dedicated dark-text /logo-light.png and delete this rule when available. */

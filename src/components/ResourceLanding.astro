@@ -94,10 +94,10 @@ const { badge, h1a, h1b, intro, pdf, xlsx, includes, howTo, faqs, pitchTitle, pi
     </div>
 
     <!-- Digitize pitch -->
-    <div class="mt-14 rounded-3xl px-8 py-12 relative overflow-hidden" style="background:#141414">
+    <div class="on-dark mt-14 rounded-3xl px-8 py-12 relative overflow-hidden" style="background:#141414">
       <div class="gold-line absolute top-0 left-0 right-0"></div>
-      <h2 class="font-display font-bold text-2xl text-white">{pitchTitle}</h2>
-      <p class="mt-3 text-white/60 max-w-2xl">{pitchBody}</p>
+      <h2 class="font-display font-bold text-2xl" style="color:#fff">{pitchTitle}</h2>
+      <p class="mt-3 max-w-2xl" style="color:rgba(255,255,255,0.65)">{pitchBody}</p>
       <div class="mt-6 flex flex-wrap gap-4">
         <a href={pitchHref} class="btn-primary">{pitchLabel}</a>
         <a href="/contact" class="btn-outline" style="color:#fff">Agendar una demo</a>
