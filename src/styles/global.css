@@ -295,6 +295,25 @@ html.light .prose table { border-color: var(--border); }
   font-weight: 600;
 }
 
+/* In-body blog images (product screenshots): framed, centered, phone-shot
+   friendly (portrait captures shouldn't span the full column width). */
+.prose img {
+  border-radius: 14px;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  margin: 1.5em auto;
+  display: block;
+  max-height: 640px;
+  width: auto;
+  max-width: 100%;
+}
+.prose img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  margin-top: -0.6em;
+  opacity: 0.75;
+}
+
 .prose h2 {
   margin-top: 2.5em;
   margin-bottom: 0.8em;
