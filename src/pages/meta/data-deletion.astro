@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+/**
+ * Meta (Facebook / WhatsApp Business) compliance page: Data Deletion
+ * Instructions URL for the C-Guard Pro Meta app. Meta reviewers and end
+ * users land here, so the page is bilingual on ONE URL (English first for
+ * review, Spanish below) — deliberately NOT the twin-file pattern, like the
+ * ES-only industry pages. Kept out of search (noIndex) but publicly reachable.
+ */
+const lang = 'es';
+---
+
+<Layout
+  title="Data Deletion Instructions | Eliminación de Datos"
+  lang={lang}
+  description="How to request deletion of your personal data from C-Guard Pro. Cómo solicitar la eliminación de tus datos personales de C-Guard Pro."
+  noIndex
+>
+  <Navbar lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <!-- ═══════════════ ENGLISH ═══════════════ -->
+      <span class="section-label mb-4 inline-flex">Data Privacy</span>
+      <h1 class="font-display font-bold text-4xl mb-3">Data Deletion Instructions</h1>
+      <p class="mb-10" style="color:var(--text-muted)">
+        This page explains how to request the deletion of your personal data from
+        C-Guard Pro (the security-operations platform operated by CGuardPro),
+        including data processed through our mobile apps and our WhatsApp /
+        Meta-platform integrations.
+      </p>
+
+      <div class="space-y-8">
+        <section class="card-glass rounded-2xl p-6">
+          <h2 class="font-display font-semibold text-xl mb-3">What data we hold</h2>
+          <ul class="space-y-2 text-[15px]" style="color:var(--text-muted)">
+            <li>• Account data: name, email address, phone number, and profile photo.</li>
+            <li>• Operational records created while using the service (shift punches, patrol logs, incident reports, messages), controlled by the security company (our customer) that employs or serves you.</li>
+            <li>• WhatsApp delivery data: your phone number and message delivery status, used only to send you the operational notifications you or your company enabled. We do not use Facebook Login and do not import your Facebook profile data.</li>
+          </ul>
+        </section>
+
+        <section class="card-glass rounded-2xl p-6">
+          <h2 class="font-display font-semibold text-xl mb-3">How to request deletion</h2>
+          <ol class="space-y-3 text-[15px]" style="color:var(--text-muted)">
+            <li>1. Send an email to <a href="mailto:privacy@cguardpro.com" class="text-brand underline underline-offset-4">privacy@cguardpro.com</a> with the subject <strong style="color:var(--text)">“Data Deletion Request”</strong>.</li>
+            <li>2. Include the email address or phone number registered in C-Guard Pro and, if you know it, the name of the security company you belong to.</li>
+            <li>3. We will confirm receipt within <strong style="color:var(--text)">72 hours</strong> and complete the deletion within <strong style="color:var(--text)">30 days</strong>, sending you a final confirmation.</li>
+          </ol>
+          <p class="mt-4 text-sm" style="color:var(--text-faint)">
+            If your account was created by your employer, we may need to coordinate the
+            request with them as the data controller of operational records. Certain
+            records may be retained where a legal, safety, or contractual obligation
+            requires it (for example, incident evidence subject to audit); anything
+            retained is isolated and deleted when that obligation ends.
+          </p>
+        </section>
+
+        <section class="card-glass rounded-2xl p-6">
+          <h2 class="font-display font-semibold text-xl mb-3">WhatsApp / Meta data</h2>
+          <p class="text-[15px]" style="color:var(--text-muted)">
+            To stop receiving WhatsApp notifications immediately, reply
+            <strong style="color:var(--text)">STOP</strong> to any message or ask your
+            company to disable the channel. A deletion request as described above also
+            removes your phone number from our WhatsApp notification records.
+          </p>
+        </section>
+      </div>
+
+      <div class="gold-line my-14"></div>
+
+      <!-- ═══════════════ ESPAÑOL ═══════════════ -->
+      <span class="section-label mb-4 inline-flex">Privacidad de Datos</span>
+      <h2 class="font-display font-bold text-3xl mb-3">Instrucciones para eliminar tus datos</h2>
+      <p class="mb-10" style="color:var(--text-muted)">
+        Esta página explica cómo solicitar la eliminación de tus datos personales de
+        C-Guard Pro, incluyendo los datos procesados por nuestras apps móviles y
+        nuestras integraciones con WhatsApp / plataformas de Meta.
+      </p>
+
+      <div class="space-y-8">
+        <section class="card-glass rounded-2xl p-6">
+          <h3 class="font-display font-semibold text-xl mb-3">Qué datos guardamos</h3>
+          <ul class="space-y-2 text-[15px]" style="color:var(--text-muted)">
+            <li>• Datos de cuenta: nombre, correo electrónico, número de teléfono y foto de perfil.</li>
+            <li>• Registros operativos creados al usar el servicio (marcaciones de turno, rondas, reportes de incidentes, mensajes), controlados por la empresa de seguridad (nuestro cliente) que te emplea o te atiende.</li>
+            <li>• Datos de entrega de WhatsApp: tu número y el estado de entrega de los mensajes, usados únicamente para enviarte las notificaciones operativas que tú o tu empresa activaron. No usamos inicio de sesión con Facebook ni importamos datos de tu perfil de Facebook.</li>
+          </ul>
+        </section>
+
+        <section class="card-glass rounded-2xl p-6">
+          <h3 class="font-display font-semibold text-xl mb-3">Cómo solicitar la eliminación</h3>
+          <ol class="space-y-3 text-[15px]" style="color:var(--text-muted)">
+            <li>1. Envía un correo a <a href="mailto:privacy@cguardpro.com" class="text-brand underline underline-offset-4">privacy@cguardpro.com</a> con el asunto <strong style="color:var(--text)">“Solicitud de eliminación de datos”</strong>.</li>
+            <li>2. Incluye el correo o número de teléfono registrado en C-Guard Pro y, si lo conoces, el nombre de la empresa de seguridad a la que perteneces.</li>
+            <li>3. Confirmaremos la recepción en un máximo de <strong style="color:var(--text)">72 horas</strong> y completaremos la eliminación dentro de <strong style="color:var(--text)">30 días</strong>, con una confirmación final.</li>
+          </ol>
+          <p class="mt-4 text-sm" style="color:var(--text-faint)">
+            Si tu cuenta fue creada por tu empleador, podríamos coordinar la solicitud
+            con él como responsable de los registros operativos. Algunos registros
+            pueden conservarse cuando una obligación legal, de seguridad o contractual
+            lo exige (por ejemplo, evidencia de incidentes sujeta a auditoría); lo que
+            se conserve queda aislado y se elimina al terminar esa obligación.
+          </p>
+        </section>
+
+        <section class="card-glass rounded-2xl p-6">
+          <h3 class="font-display font-semibold text-xl mb-3">Datos de WhatsApp / Meta</h3>
+          <p class="text-[15px]" style="color:var(--text-muted)">
+            Para dejar de recibir notificaciones por WhatsApp de inmediato, responde
+            <strong style="color:var(--text)">STOP</strong> a cualquier mensaje o pide a
+            tu empresa desactivar el canal. Una solicitud de eliminación como la descrita
+            arriba también retira tu número de nuestros registros de notificación de WhatsApp.
+          </p>
+        </section>
+      </div>
+
+      <p class="mt-12 text-sm" style="color:var(--text-faint)">
+        Related: <a href="/privacy" class="text-brand underline underline-offset-4">Privacy Policy / Política de Privacidad</a> ·
+        <a href="/terms" class="text-brand underline underline-offset-4">Terms of Service</a>
+      </p>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
